@@ -1,0 +1,186 @@
+@charset "UTF-8";
+//////////////////////////////////////////
+
+//utilitie classes
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+
+//////////////////
+
+// block level
+
+//////////////////
+
+%inner{
+	max-width: $innerWidth;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+}
+
+.wrap{
+	max-width: $outerWidth;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 30px;
+	padding-right: 30px;	
+	box-sizing: border-box;
+	
+	@include break( sp ){
+			padding-left: 10%;
+			padding-right: 10%;
+	}//max 580	
+}
+
+.contain{
+	@extend %inner;
+}
+
+.inner{
+	@extend %inner;
+}
+
+
+.clearfix{
+	@include clearfix();
+}
+
+
+
+//////////////////
+
+// responsive
+
+//////////////////
+
+
+////////スマホで非表示
+
+.spShow{
+	display: none;
+}
+@include break( sp ){
+	.spHide{
+		display: none;	
+	}
+	.spShow{
+		display: inherit;
+	}
+} //max 580
+
+.tabShow{
+	display: none;
+}
+@include break( tab ){
+	.tabHide{
+		display: none;	
+	}
+	.tabShow{
+		display: inherit;
+	}
+} //max 780
+
+
+
+
+
+//////////////////
+
+// typography
+
+//////////////////
+
+.xxlarge{ font-size: $xxlarge;}
+.xlarge{ font-size: $xlarge;}
+.large{ font-size: $large;}
+.small{ font-size: $small; }
+
+.wfBlack{
+	font-family: $fontFamily_wf_black;
+}
+.wfUltra{
+	font-family: $fontFamily_wf_ultra;
+}
+.wfSemi{
+	font-family: $fontFamily_wf_semi;
+}
+.wfBold{
+	font-family: $fontFamily_wf_bold;
+}
+.wfRegular{
+	font-family: $fontFamily_wf_regular;
+}
+.wfMedium{
+	font-family: $fontFamily_wf_medium;
+}
+.wfLight{
+	font-family: $fontFamily_wf_light;
+}
+.damion{
+	font-family: $fontFamily_damion;
+}
+
+
+//////////////////
+
+// icon
+
+//////////////////
+
+.icon-twitter{
+	@include iconfont(
+		$content: '\f099',
+		$icon-margin-right: 0, 
+		$top : 0, 
+		$font-size: 22px
+	 );
+}
+.icon-facebook{
+	@include iconfont(
+		$content: '\f09a',
+		$icon-margin-right: 0, 			
+		$top : 0, 
+		$font-size: 22px
+	 );
+}
+.icon-instagram{
+	@include iconfont(
+		$content: '\f16d',
+		$icon-margin-right: 0, 			
+		$top : 0, 
+		$font-size: 22px
+	 );
+}
+
+.icon-mouse{
+
+	width: 17px;
+	height: 27px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	display: block;
+	border: solid 1px #fff;
+	border-radius: 5px;
+	
+	&:after{
+		content: " ";
+		display: block;
+		width: 3px;
+		height: 3px;
+		margin-right: auto;
+		margin-left: auto;
+		position: absolute;
+		top: 5px;
+		right: 0;
+		left: 0;
+		animation: mouseScroll 2s ease-in-out 0.8s infinite normal forwards;
+		border-radius: 100%;
+		background-color: #fff;
+		
+	}
+
+}

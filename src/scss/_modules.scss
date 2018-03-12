@@ -1,0 +1,224 @@
+//////////////////////////////////////////
+
+//module
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+
+
+////////////////////
+
+// header
+
+////////////////////
+
+/////// ヘッダー ラッパー
+.siteHeader
+{
+	
+	//////// media queries 
+	@include break( sp ){
+		padding-top: 0;
+		position: static;
+		
+		 > .wrap{
+			display: block;
+			.siteHeader_logo,
+			.siteHeader_nav	{
+				display: block;
+			}
+		}
+		&_logo{
+			position: fixed;
+			z-index: 10;
+			top: 20px;
+			
+			text-shadow: 0 0 5px rgba( #000, 0.15 );
+			.handWrite{
+				top: 0.8em;
+			}
+		}
+
+	} //max 580	
+}
+
+
+
+////////////////////
+
+// navigation
+
+////////////////////
+
+.siteHeader_nav
+{
+
+	
+}
+
+////( スマホ用 )開閉アイコン
+.navToggle
+{
+	display: none;
+
+	@include break( sp ){
+		display: block;
+	$buttonSize : 50px;
+	$buttonTextColor: #fff;
+	
+	&_hitArea,
+	&:after{
+		width: $buttonSize;
+		height: $buttonSize;
+		line-height: 1;
+		padding: 5px;
+		box-sizing: border-box;
+		display: block;
+		position: fixed;
+		bottom: 2%;
+		right: 2%;
+		cursor: pointer;
+	}
+
+	&_hitArea{
+		z-index: 100;
+	}
+
+	&:after{
+		content: " ";
+		// will-change: width, height, border-radius;
+		z-index: 8;
+		transition:all 0.3s linear 0s;
+		border-radius: 100%;
+		box-shadow: 0 4px 4px rgba( #000, 0.1), 0 0 10px rgba( #000, 0.3 );
+		background-color: darken( $blue, 35 );		
+	}
+	
+	
+	//icon
+	&_icon
+	{
+
+		height: 20px;
+		top: 0;
+		bottom: 0;
+		
+		//bar
+		&,
+		&:before , 
+		&:after, 		
+		&_lineCenter{
+			width: 70%;
+			line-height: 0;
+			margin: auto;
+			display: block;
+			position: absolute;
+			right: 0;
+			left: 0;			
+		}
+
+		&:before , 
+		&:after, 		
+		&_lineCenter{
+			height: 1px;
+			background-color: $buttonTextColor;		
+			transition: easeInOutCirc(0.3s);		
+		}		
+		
+		&:before , 
+		&:after{
+			content: " "; 
+			transform-origin: -1px;
+		}
+		//top
+		&:before{
+			top: 0;
+		} 
+		//center
+		&_lineCenter{
+			top: 0;
+			bottom: 0;
+		}
+		//bottom
+		&:after{
+			bottom: 0;
+		}		
+	}
+
+	/////// navigation open (clicked
+	@at-root .navOpen
+	{
+		overflow: hidden;
+	
+		.navToggle
+		{
+			&_hitArea{
+				z-index: 11;
+			}
+
+			&:after{
+				width: 100%;
+				height: 100%;
+				right: 0;
+				bottom: 0;
+				border-radius: 0;
+				box-shadow: none;
+				// @include background-image( linear-gradient( to right, $green, $blue ) );	
+				background-color: darken( $blue, 20 );		
+			}
+			
+			
+			//icon
+			&_icon
+			{
+				
+				//bar
+				//top
+				&:before{
+					transform: rotate( 45deg );
+				} 
+				//center
+				&_lineCenter{
+					width: 200%;
+					opacity: 0;
+				}
+				//bottom
+				&:after{
+					transform: rotate( -45deg );
+				}		
+			}
+		}	
+
+	}		
+	} // min 580
+}
+
+
+
+
+
+
+////////////////////
+
+// footer
+
+////////////////////
+
+.siteFooter
+{
+}
+
+
+
+////////////////////
+
+// logo area
+
+////////////////////
+
+.siteHeader_logo{
+	// display: inline-block;
+	// float: left;
+}

@@ -1,0 +1,131 @@
+//////////////////////////////////////////
+
+//valiables
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+%gradation{
+	// @include background-image( linear-gradient( to right, $blue, $green ) );	
+}
+
+%popspan{
+	transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;		
+	transform: translateY( -0.18em ) scale(1.1);
+	opacity: 0;
+	display: inline-block;
+
+	@for $i from 1 through 10 {
+		&:nth-child( #{$i} ){
+			$delay: 0.1 * $i;
+			transition-delay: #{0.5 + $delay}s;
+		}
+	}	
+}
+
+
+//////////
+
+// path
+
+//////////
+
+// $img : "img";
+// $js : "js";
+// $icon : "#{$fonts}/icomoon/fonts";
+
+
+
+//////////
+
+// fonts
+
+//////////
+
+$fontFamily :'Noto Sans Japanese', "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+$fontFamily_wf_ultra: 'woodford ultra';
+$fontFamily_wf_black: 'woodford black';
+$fontFamily_wf_semi: 'woodford semi';
+$fontFamily_wf_bold: 'woodford bold';
+$fontFamily_wf_regular: 'woodford regular';
+$fontFamily_wf_medium: 'woodford medium';
+$fontFamily_wf_light: 'woodford light';
+$fontFamily_wf_exlight: 'woodford exlight';
+$fontFamily_wf_thin: 'woodford thin';
+$fontFamily_damion: 'Damion', cursive;
+
+$basefontColor : $basefontColor;
+$basefontSize : 15px;
+$baselineHeight : 1.75;
+$mobileFontsize : 0.6;
+
+//silver ratio
+$xxxlarge : 4em;
+$xxlarge : 2.8em;
+$xlarge : 2em;
+$large : 1.414em;
+$small : 0.75em;
+$xsmall: 0.5em;
+
+
+
+//////////////////////
+
+// layouts 
+
+/////////////////////
+
+//column
+$innerWidth: 976px;
+$outerWidth:1080px;
+
+//margin / padding
+$sSpace : 1rem;
+$mSpace : 2.5rem;
+$lSpace : 4rem;
+$xlSpace : 6rem;
+
+// Susy grid
+$gridNum: 12;
+$maxColumnNum: 6;
+
+
+
+//////////////////////
+
+// responsive 
+
+/////////////////////
+
+////////breakpoint
+// $bpSmp : 480px;
+$bpSmp : 580px;
+$bpTab : 780px;
+$bpPc : 1200px;
+
+
+/////
+// 高さを計算する（概算値
+// $height
+//
+@function heightCalc( $mediaType, $height, $rate: 1.78 ){
+	@if ($mediaType == pc ){
+		@return floor($height / $rate);	
+	} @else {
+		@return floor($height * $rate);	
+	}
+}
+
+$bpSmpMax-width : "max-width : #{$bpSmp}";
+$bpSmpMin-width : "min-width : #{$bpSmp}";
+$bpTabMax-width : "max-width : #{$bpTab}";
+$bpTabMin-width : "min-width : #{$bpTab}";
+$bpPcMax-width: "max-width : #{$bpPc}";
+$bpPcMin-width: "min-width : #{$bpPc}";
+
+$bpSmpMax-height : "max-height :" + heightCalc(sp, $bpSmp);
+$bpSmpMin-height : "min-height :" + heightCalc(sp, $bpSmp);
+$bpTabMax-height : "max-height :" + heightCalc(tabl, $bpTab);
+$bpTabMin-height : "min-height :" + heightCalc(tabl, $bpTab);
+$bpPcMax-height: "max-height :" + heightCalc( pc, $bpPc);

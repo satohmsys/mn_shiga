@@ -1,3 +1,4 @@
 import {hello} from './sub';
+import './scss/style.scss';
 
-hello("こんにちは、世界 !");
+hello("lorem !");

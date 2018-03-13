@@ -24,9 +24,7 @@ update : 201803
 const webpack = require( 'webpack' );
 const path = require( 'path' );
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractPlugin = new ExtractTextPlugin({
-   filename: 'main.css'
-});
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MODE = 'development';
 const enabledSourceMap = ( MODE === 'development' );
 
@@ -51,10 +49,10 @@ module.exports = [{
 	* entry point
 	* v4 / エントリーポイントを指定しなければ自動的に「src/index.js」がエントリーポイントに
 	*/
-	entry: [
-		path.resolve(__dirname, './src/index.js'),
-		// path.resolve(__dirname, './dist/index.html')
-	],
+	entry: {
+		'main' : path.resolve(__dirname, './src/bundle.js'),
+		// '' : path.resolve(__dirname, './src/html/index.html') //To Hot Reload
+	},
 
 
 	/**
@@ -149,6 +147,10 @@ module.exports = [{
 				test: /\.(gif|png|jpg|eot|woff|ttf|svg|css)$/,
 				exclude: /node_module/,
 				use: 'url-loader'
+			},
+			{
+				test: /\.html$/,
+				use: 'html-loader'
 			}
 		]
 	},
@@ -158,12 +160,19 @@ module.exports = [{
 	*/
 	output: {
 		path: path.resolve( __dirname, 'dist' ),
-		publicPath: '/dist',
-		filename: 'main.js'
+		// publicPath: '/dist',		
+		publicPath: '/',
+		filename: '[name].js'
 	},
 
     plugins: [
-        extractPlugin
+        new ExtractTextPlugin({
+		   filename: 'main.css'
+		}),
+        new HtmlWebpackPlugin({ 
+			filename: 'index.html',
+			template: './src/html/index.html'
+		})
     ],
 
 	resolve: {

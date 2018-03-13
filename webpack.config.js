@@ -53,7 +53,6 @@ module.exports = [{
 	*/
 	entry: [
 		path.resolve(__dirname, './src/index.js'),
-		path.resolve(__dirname, './src/scss/style.scss'),
 		// path.resolve(__dirname, './dist/index.html')
 	],
 
@@ -84,34 +83,67 @@ module.exports = [{
 			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
-				use: extractPlugin.extract({
-					fallback: 'style-loader',
-					use: [
-						{
-							loader: 'css-loader',
-							options: {
-								url: false,
-								sourceMap: enabledSourceMap,
-								importLoaders: 2,
+				// use: extractPlugin.extract({
+				// 	fallback: 'style-loader',
+				// 	use: [
+				// 		{
+				// 			loader: 'css-loader',
+				// 			options: {
+				// 				url: false,
+				// 				sourceMap: enabledSourceMap,
+				// 				importLoaders: 2,
 
-							}
-						},
-						{
-							loader: 'postcss-loader',
-							options: {
-								plugins: ( loader ) => [ require('autoprefixer') ],
-								sourceMap: enabledSourceMap								
-							}
-						},
-						{
-							loader: 'sass-loader',
-							options:{
-								sourceMap: enabledSourceMap,
-								minimize: true								
-							}
-						}
-					]
-				})
+				// 			}
+				// 		},
+				// 		{
+				// 			loader: 'postcss-loader',
+				// 			options: {
+				// 				plugins: ( loader ) => [ require('autoprefixer') ],
+				// 				sourceMap: enabledSourceMap								
+				// 			}
+				// 		},
+				// 		{
+				// 			loader: 'sass-loader',
+				// 			options:{
+				// 				sourceMap: enabledSourceMap,
+				// 				minimize: true								
+				// 			}
+				// 		}
+				// 	]
+				// })
+				use: [
+				  // linkタグに出力する機能
+				  'style-loader',
+				  // CSSをバンドルするための機能
+				  {
+				    loader: 'css-loader',
+				    options: {
+				      // オプションでCSS内のurl()メソッドの取り込みを禁止する
+				      url: false,
+				      // ソースマップの利用有無
+				      sourceMap: enabledSourceMap,
+				      // Sass+PostCSSの場合は2を指定
+				      importLoaders: 2
+				    },
+				  },
+				  // PostCSSのための設定
+				  {
+				    loader: 'postcss-loader',
+				    options: {
+				    	plugins: ( loader ) => [require('autoprefixer') ],
+				      // PostCSS側でもソースマップを有効にする
+				      sourceMap: enabledSourceMap,
+				    },
+				  },
+				  // Sassをバンドルするための機能
+				  {
+				    loader: 'sass-loader',
+				    options: {
+				      // ソースマップの利用有無
+				      sourceMap: enabledSourceMap,
+				    }
+				  }
+				],
 			},
 			{
 				test: /\.(gif|png|jpg|eot|woff|ttf|svg|css)$/,

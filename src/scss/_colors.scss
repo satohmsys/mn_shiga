@@ -7,25 +7,25 @@
 
 //////////////////////////////////////////
 
-
-////base settings
-$basefontColor : #3a3a3a;
-$link: #12aaaf;
-
-
-
 ////project settings
 $gray: #fcfcfc;
 
-$red : #9a0000;
-$blue : #00d8fd;
-$green: #0eff9e;
-$green_deep: #005f70;
-$green_dark: #24383f;
-$green_black: #003640;
+$blue : #4ddeff;
+$blue_dull: #00a4c4;
+
+$navy: #0f2a8c;
+
+$orange: #e6682e;
 
 
 $instagram: #3f729b;
 $twitter: #55acee;
 $facebook: #3b5998;
 $hatena: #008fed;
+
+////base settings
+$basefontColor : #3a3a3a;
+$link: $navy;
+
+
+

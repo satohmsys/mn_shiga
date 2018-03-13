@@ -10,6 +10,59 @@
 
 ////////////////////
 
+// frame
+
+////////////////////
+
+.frame{
+	&:after,
+	&:before{
+		content: " ";
+		display: block;
+		position: fixed;
+		background-color: $blue_dull;
+	}
+
+	//縦
+	&--v{
+		&:before,
+		&:after{
+			width: 10px;
+			height: 100%;
+		}
+
+		&:before{
+			top: 0;
+			right: 0;
+		}
+		&:after{
+			bottom: 0;
+			left: 0;
+		}
+	}	
+
+	//横
+	&--h{
+		&:before,
+		&:after{
+			width: 100%;
+			height: 10px;
+		}
+
+		&:before{
+			top: 0;
+			left: 0;
+		}
+		&:after{
+			bottom: 0;
+			right: 0;
+		}
+	}
+}
+
+
+////////////////////
+
 // header
 
 ////////////////////
@@ -17,6 +70,50 @@
 /////// ヘッダー ラッパー
 .siteHeader
 {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	background-color: #fff;
+
+	&__logo{
+		width: 120px;
+		height: 120px;
+		margin-top: auto;
+		margin-right: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+	&__nav{
+		height: 150px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		
+		li{
+			margin-right: 50px;
+			
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+
+		.button{
+			width: 200px;
+		}
+		
+		a{
+			color: inherit;
+		}
+	}
 	
 	//////// media queries 
 	@include break( sp ){
@@ -197,6 +294,31 @@
 
 
 
+////////////////////
+
+// nav
+
+////////////////////
+
+
+.nav {
+	li{
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+
+
+////////////////////
+
+// main content
+
+////////////////////
+
+.mainContent{
+	padding-top: 150px;
+}
 
 
 
@@ -214,11 +336,46 @@
 
 ////////////////////
 
-// logo area
+// button
 
 ////////////////////
 
-.siteHeader_logo{
-	// display: inline-block;
-	// float: left;
+.button
+{
+	display: inline-block;
+	
+	a{
+		padding: 1em;
+		display: block;
+		position: relative;
+		border-radius: 3px;
+		text-align: center;
+		color: #fff;	
+		transition: transition();
+		background-size: 100% auto;
+		background-image: linear-gradient( to right, $orange, saturate(darken($orange, 10%), 25%));	
+		
+		@include mouseOver(){
+			background-size: 300% auto;
+		}
+	}
+
+	&--inquiry{
+
+		&.-hasArrow a{
+			&:after{
+				content: " ";
+				width: 16px;
+				height: 8px;
+				margin-top: auto;
+				margin-bottom: auto;
+				position: absolute;
+				top: 0;
+				right: 5px;
+				bottom: 0;
+				display: block;
+				background: url(../img/common/icon-arrow-white.svg) center center no-repeat;
+			}
+		}
+	}
 }

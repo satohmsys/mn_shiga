@@ -45,20 +45,21 @@
 
 // $fontFamily :"Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 $fontFamily : "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-
+$fontFamily_bodoniSans_r: 'BodoniSansDisplayRegular';
+$fontFamily_bodoniSans_b: 'BodoniSansDisplayBold';
+$fontFamily_yugothic_b: 'Yu Gothic Bold';
 
 $basefontColor : $basefontColor;
-$basefontSize : 14px;
+$basefontSize : 16px;
 $baselineHeight : 1.75;
 $mobileFontsize : 0.6;
 
 //silver ratio
-$xxxlarge : 4em;
-$xxlarge : 2.8em;
-$xlarge : 2em;
-$large : 1.414em;
-$small : 0.75em;
-$xsmall: 0.5em;
+$xxlarge : 2em;
+$xlarge : 1.5em;
+$large : 1.25em;
+$small : 0.85em;
+$xsmall: 0.75em;
 
 
 
@@ -86,13 +87,22 @@ $maxColumnNum: 6;
 
 //////////////////////
 
+// property
+
+/////////////////////
+
+$radius: 5px;
+
+
+//////////////////////
+
 // responsive 
 
 /////////////////////
 
 ////////breakpoint
 // $bpSmp : 480px;
-$bpSmp : 580px;
+$bpSmp : 640px;
 $bpTab : 780px;
 $bpPc : 1200px;
 

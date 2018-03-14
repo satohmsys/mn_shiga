@@ -20,6 +20,7 @@
 		content: " ";
 		display: block;
 		position: fixed;
+		z-index: 10;
 		background-color: $blue_dull;
 	}
 
@@ -29,6 +30,9 @@
 		&:after{
 			width: 10px;
 			height: 100%;
+			@include break( tab ){
+				width: 5px;
+			} 			
 		}
 
 		&:before{
@@ -47,6 +51,9 @@
 		&:after{
 			width: 100%;
 			height: 10px;
+			@include break( tab ){
+				height: 5px;
+			} 			
 		}
 
 		&:before{
@@ -72,10 +79,16 @@
 {
 	width: 100%;
 	position: fixed;
+	z-index: 9;
 	top: 0;
 	right: 0;
 	left: 0;
 	background-color: #fff;
+	@include break( tab ){
+		width: auto;
+		position: static;
+		background-color: transparent;
+	} 	
 
 	&__logo{
 		width: 120px;
@@ -89,6 +102,22 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
+			@include break( tab ){
+				width: 100%;
+				height: auto;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				text-align: center;
+				position: fixed;
+				z-index: 9;
+				top: 0;
+				right: 0;
+				left: 0;
+				
+				img{
+					max-width: 40px;
+				}
+			} 		
 	}
 
 	&__nav{
@@ -98,8 +127,19 @@
 		align-items: center;
 		justify-content: space-between;
 		
+			@include break( tab ){
+				height: 100%;
+				justify-content: center;
+				flex-direction: column;
+				text-align: center;
+			}		
+		
 		li{
 			margin-right: 50px;
+			
+			@include break( tab ){
+				margin-right: 0;
+			}			
 			
 			&:last-child{
 				margin-right: 0;
@@ -154,6 +194,23 @@
 
 	
 }
+
+.nav {
+	font-size: 0.9375em;
+	li{
+		display: inline-block;
+		vertical-align: middle;
+			@include break( tab ){
+				display: block;
+			}		
+	}
+
+	.-notActive{
+		opacity: 0.3;
+		pointer-events: none;
+	}
+}
+
 
 ////( スマホ用 )開閉アイコン
 .navToggle
@@ -296,22 +353,6 @@
 
 ////////////////////
 
-// nav
-
-////////////////////
-
-
-.nav {
-	li{
-		display: inline-block;
-		vertical-align: middle;
-	}
-}
-
-
-
-////////////////////
-
 // main content
 
 ////////////////////
@@ -330,6 +371,170 @@
 
 .siteFooter
 {
+	margin-top: 100px;
+	
+	.nav{
+	    display: flex;
+	    flex-direction: row;
+	    align-items: center;
+	    justify-content: space-between;
+	}			
+	
+	li{
+		display: block;
+	}
+
+	li a{
+		display: block;
+	}	
+	
+	///////// バナー
+	&__banners{
+			padding-top: 80px;
+			padding-right: 30px;
+			padding-bottom: 80px;
+			padding-left: 30px;
+			background-color: #f2fdff;
+			
+			.banners{
+				overflow: hidden;
+			}
+			
+			li{
+				padding-right: 30px;
+				padding-left: 30px;
+				float: left;
+				display: block;
+			}
+	}
+
+	//////// nav
+	&__nav{
+		padding-top: 45px;
+		padding-bottom: 45px;
+		background-color: $blue_dull;
+		position: relative;
+		
+		.nav{
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		
+		li a{
+			color: #fff;
+		}
+
+		.button--inquiry{
+			width: 200px;
+		}
+	}
+
+	//////// page top
+	.pagetop{
+		width: 60px;
+		height: 60px;
+		display: block;
+		position: absolute;
+		right: 50px;
+		bottom: -30px;
+		transition: transition();
+		border-radius: 50px;
+		background-color: $navy;
+		cursor: pointer;
+		box-shadow: 0 0 10px rgba( #000,0.3 );
+		
+		@include mouseOver(){
+			box-shadow: none;
+			background-color: darken( $navy, 2.5% );
+		}
+		
+		&:before{
+			content: " ";
+			width: 37px;
+			height: 20px;
+			margin: auto;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			transform: rotate( -90deg );
+			display: block;
+			background: url(../img/common/icon-arrow-white.svg) center center no-repeat;
+			background-size: 20px auto;
+		}
+	}
+
+
+	////////クレジットとローカルナビ
+	&__creditArea{
+		padding-top: 40px;
+		padding-bottom: 50px;
+		font-size: $small;		
+		background-color: #fff;
+		
+
+		.creditArea{
+		    display: flex;
+		    flex-direction: row;
+		    align-items: center;
+		    justify-content: space-between;
+		}
+
+		///// ←
+		.areaLeft{
+		    display: flex;
+		    flex-direction: row;
+		    align-items: center;
+		    justify-content: space-between;	
+		    
+		    &__logo{
+		    	width: 100px;
+		    	margin-right: 40px;
+		    }
+
+		    &__address{
+
+		    	p{
+		    		margin-top: 0;
+		    		margin-bottom: 10px;
+		    	}
+
+		    	.copyright{
+		    		color: $gray;
+		    		font-size: 10px;
+		    	}
+		    }		
+		}
+
+		/////→
+		.areaRight{
+			.nav li{
+				margin-right: 20px;
+			}
+		}
+	}
+
+}
+
+
+
+
+////////////////////
+
+// link
+
+////////////////////
+
+.-hasArrow{
+	a:after{
+		content: " ";
+		width: 16px;
+		height: 8px;
+		margin-left: 10px;
+		display: inline-block;
+		background: url(../img/common/icon-arrow-navy.svg) center center no-repeat;
+	}
 }
 
 
@@ -362,20 +567,22 @@
 
 	&--inquiry{
 
-		&.-hasArrow a{
-			&:after{
-				content: " ";
-				width: 16px;
-				height: 8px;
-				margin-top: auto;
-				margin-bottom: auto;
-				position: absolute;
-				top: 0;
-				right: 5px;
-				bottom: 0;
-				display: block;
-				background: url(../img/common/icon-arrow-white.svg) center center no-repeat;
+
+		&.-hasArrow {
+			@extend .-hasArrow;			
+			a{
+				&:after{
+					margin-top: auto;
+					margin-bottom: auto;
+					position: absolute;
+					top: 0;
+					right: 5px;
+					bottom: 0;
+					display: block;
+					background: url(../img/common/icon-arrow-white.svg) center center no-repeat;
+				}
 			}
 		}
+
 	}
 }

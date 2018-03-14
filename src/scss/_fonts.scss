@@ -1,4 +1,4 @@
-@charset "utf-8";//////////////////////////////////////////
+//////////////////////////////////////////
 
 //font setting
 
@@ -25,18 +25,25 @@
 //   src: local("Yu Gothic Medium");
 //   font-weight: 400;
 // }
-// @font-face {
-//   font-family: "Yu Gothic Bold";
-//   src: local("Yu Gothic Bold");
-//   font-weight: bold;
-// }
+@font-face {
+  font-family: "Yu Gothic Bold";
+  src: local("Yu Gothic Bold");
+  font-weight: bold;
+}
 
 @font-face {
 	font-family: 'BodoniSansDisplayBold';
-	src: url('../fonts/bodonisansBodoniSansDisplay-Bold.eot');
-	src: url('../fonts/bodonisansBodoniSansDisplay-Bold.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/bodonisansBodoniSansDisplay-Bold.ttf') format('truetype');
+	src: url('../fonts/bodonisans/BodoniSansDisplay-Bold.eot');
+	src: url('../fonts/bodonisans/BodoniSansDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/bodonisans/BodoniSansDisplay-Bold.ttf') format('truetype');
 	font-weight: 700;
+}
+@font-face {
+	font-family: 'BodoniSansDisplayRegular';
+	src: url('../fonts/bodonisans/BodoniSansDisplay-Regular.eot');
+	src: url('../fonts/bodonisans/BodoniSansDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/bodonisans/BodoniSansDisplay-Regular.ttf') format('truetype');
+	font-weight: normal;
 }
 
 // @import url("https://fonts.googleapis.com/earlyaccess/notosansjapanese.css");

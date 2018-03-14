@@ -117,8 +117,7 @@ module.exports = [{
 				    loader: 'css-loader',
 				    options: {
 				      // オプションでCSS内のurl()メソッドの取り込みを禁止する
-				      url: false,
-				      // ソースマップの利用有無
+				      url: true,
 				      sourceMap: enabledSourceMap,
 				      // Sass+PostCSSの場合は2を指定
 				      importLoaders: 2
@@ -129,7 +128,6 @@ module.exports = [{
 				    loader: 'postcss-loader',
 				    options: {
 				    	plugins: ( loader ) => [require('autoprefixer') ],
-				      // PostCSS側でもソースマップを有効にする
 				      sourceMap: enabledSourceMap,
 				    },
 				  },
@@ -137,7 +135,6 @@ module.exports = [{
 				  {
 				    loader: 'sass-loader',
 				    options: {
-				      // ソースマップの利用有無
 				      sourceMap: enabledSourceMap,
 				    }
 				  }
@@ -146,8 +143,12 @@ module.exports = [{
 			{
 				test: /\.(gif|png|jpg|eot|woff|ttf|svg|css)$/,
 				exclude: /node_module/,
-				use: 'url-loader'
-			},
+				use: 'file-loader',
+				// options: {
+				// 	limit: 8192,
+    //                 name: './img/[name].[ext]'
+				// }
+			},		
 			{
 				test: /\.html$/,
 				use: 'html-loader'

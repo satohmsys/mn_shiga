@@ -8,14 +8,14 @@
 //////////////////////////////////////////
 
 ////project settings
-$gray: #a9a9a9;
+$gray: #666666;
 $gray_lighten: #ccc;
 
 $blue : #00cfff;
 $blue_lighten : #66e2ff;
 $blue_dull: #00a0c6;
 
-$blue_gradation: linear-gradient( to right, $blue_lighten, $blue_dull);	
+$blue_gradation: linear-gradient( to right, $blue_lighten, $blue);	
 
 
 $navy: #0f298f;

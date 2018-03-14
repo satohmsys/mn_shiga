@@ -353,7 +353,7 @@
 		color: #fff;	
 		transition: transition();
 		background-size: 100% auto;
-		background-image: linear-gradient( to right, $orange, saturate(darken($orange, 10%), 25%));	
+		background-image: linear-gradient( to right, lighten($orange, 10%), $orange);	
 		
 		@include mouseOver(){
 			background-size: 300% auto;

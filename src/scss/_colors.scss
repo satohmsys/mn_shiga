@@ -8,14 +8,19 @@
 //////////////////////////////////////////
 
 ////project settings
-$gray: #fcfcfc;
+$gray: #a9a9a9;
+$gray_lighten: #ccc;
 
-$blue : #4ddeff;
-$blue_dull: #00a4c4;
+$blue : #00cfff;
+$blue_lighten : #66e2ff;
+$blue_dull: #00a0c6;
 
-$navy: #0f2a8c;
+$blue_gradation: linear-gradient( to right, $blue_lighten, $blue_dull);	
 
-$orange: #e6682e;
+
+$navy: #0f298f;
+
+$orange: #e64a00;
 
 
 $instagram: #3f729b;
@@ -26,6 +31,7 @@ $hatena: #008fed;
 ////base settings
 $basefontColor : #3a3a3a;
 $link: $navy;
+$border: $gray_lighten;
 
 
 

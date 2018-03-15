@@ -22,6 +22,17 @@
 		bottom: 130px;
 		font-feature-settings: 'palt';
 		
+			@include break( tab ){
+				bottom: 30px;
+			}
+
+		
+		br{
+			@include break( tab,min ){
+				display: none;
+			}
+		}
+		
 		> span {
 			display: block;
 		}
@@ -31,6 +42,10 @@
 			letter-spacing: 0.15em;
 			font-size: 2.12em;
 			font-weight: 900;
+			
+			@include break( tab ){
+				line-height: 1.4;
+			}				
 		}
 
 		.copyBottom{
@@ -40,16 +55,31 @@
 			justify-content: space-between;
 			align-items: center;
 			
+			@include break( tab ){
+				margin-top: 10px;
+				padding-top: 20px;
+				border-top: solid 1px;
+			}
+
+			
 			&:before{
 				content: " ";
 				width: 60%;
 				height: 1px;
 				background-color: $basefontColor;
 				display: block;
+				
+				@include break( tab ){
+					display: none;
+				}				
 			}
 			&__text{
 				letter-spacing: 0.15em;
 				font-weight: bold;
+				
+				@include break( tab ){
+					font-size: 1.35em;
+				}					
 			}
 		}
 	}
@@ -91,16 +121,33 @@
 	padding-bottom: 70px;
 	text-align: center;
 	
+	@include break( tab ){
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}		
+	
 	&__index{
 		line-height: 1;
 		margin-top: -125px;
 		margin-bottom: 40px;
 		position: relative;
-		z-index: 8;
+		z-index: 2;
+		
+		@include break( tab ){
+			margin-top: 0;
+			margin-bottom: 10px;
+			
+			img{
+				width: 80px;
+			}
+		}			
 	}
 
 	&__content{
 		line-height: 2.5;
+		@include break( tab ){
+			line-height: 1.9;
+		}			
 	}
 	
 }
@@ -116,7 +163,10 @@
 .section-navPanel{
 
 	margin-bottom: 100px;
-
+	
+	@include break( tab ){
+		margin-bottom: 60px;
+	}	
 	
 	&__location{
 		width: 100%;
@@ -127,17 +177,31 @@
 		background-size: cover;
 
 		display: block;
+		
+		@include break( tab ){
+			padding-top: percentage( 200 / 640);
+		}			
 	}
 
 
 	.navPanel{
 		margin-top: -80px;
+				
+		@include break( tab ){
+			margin-top: -30px;
+		}			
+		
 		ul{
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			align-content: center;
 			align-items: stretch;
+			
+			@include break( tab ){
+				flex-direction: column;
+				align-items: center;
+			}				
 			
 			@extend .-hasArrow;	
 			
@@ -155,6 +219,13 @@
 		&__panel{
 			display: block;
 			transition: transition();
+			
+		
+			@include break( tab ){
+				&:not( :last-child ){
+					margin-bottom: 20px;				
+				}
+			}				
 			
 			@for $i from 1 through 3 {
 				&:nth-child( #{$i} ){
@@ -195,14 +266,20 @@
 			text-align: center;
 			margin-bottom: 20px;
 			transition: transition();
-			transition-delay: 0.2s;			
+			transition-delay: 0.2s;	
+			@include break( tab ){
+				margin-bottom: 15px;
+			}	
 		}	
 		.panel-index{
 			margin-bottom: 15px;
 			text-align: center;
 			font-weight: bold;
 			transition: transition();			
-			transition-delay: 0.4s;			
+			transition-delay: 0.4s;	
+			@include break( tab ){
+				margin-bottom: 10px;
+			}						
 		}	
 		.panel-content{
 			font-size: $small;
@@ -230,11 +307,24 @@
 		align-items: flex-start;
 		justify-content: space-between;
 		
+		
+		@include break( tab ){
+			flex-direction: column;
+			justify-content: flex-start;
+		}			
+		
 
 		&__index{
 			width: 120px;
 			margin-right: 35px;
 			color: $blue_dull;
+			
+		
+				@include break( tab ){
+					margin-right: 0;
+					margin-bottom: 30px;
+				}				
+
 			span{
 				line-height: 1;
 				display: block;
@@ -243,10 +333,15 @@
 			.en{
 				font-family: $fontFamily_bodoniSans_b;
 				font-size: 2em;
+				letter-spacing: 0.015em;
 			}
 			.ja{
 				margin-top: 20px;
 				font-weight: bold;
+		
+				@include break( tab ){
+					margin-top: 10px;
+				}					
 			}
 		}
 
@@ -271,6 +366,12 @@
 				box-sizing: border-box;
 				display: table;
 				border-bottom: solid 1px $border;
+				
+		
+				@include break( tab ){
+					padding-top: 15px;
+					padding-bottom: 15px;
+				}					
 				
 				.topics__date,
 				.topics__index{
@@ -302,6 +403,11 @@
 			margin-top: 40px;
 			text-align: right;
 			font-size: $xsmall;
+			
+		
+			@include break( tab ){
+				margin-top: 20px;
+			}				
 		}
 		
 	}

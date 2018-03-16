@@ -45,6 +45,7 @@
 			
 			@include break( tab ){
 				line-height: 1.4;
+				font-size: 2em;
 			}				
 		}
 
@@ -78,7 +79,7 @@
 				font-weight: bold;
 				
 				@include break( tab ){
-					font-size: 1.35em;
+					font-size: 1.225em;
 				}					
 			}
 		}
@@ -122,8 +123,8 @@
 	text-align: center;
 	
 	@include break( tab ){
-		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-top: 40px;
+		padding-bottom: 40px;
 	}		
 	
 	&__index{
@@ -179,7 +180,7 @@
 		display: block;
 		
 		@include break( tab ){
-			padding-top: percentage( 200 / 640);
+			padding-top: percentage( 256 / 640);
 		}			
 	}
 

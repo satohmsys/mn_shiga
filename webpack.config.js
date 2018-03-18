@@ -51,7 +51,7 @@ module.exports = [{
 	* v4 / エントリーポイントを指定しなければ自動的に「src/index.js」がエントリーポイントに
 	*/
 	entry: {
-		'main' : path.resolve(__dirname, './src/bundle.js'),
+		'bundle' : path.resolve(__dirname, './src/main.js'),
 		// '' : path.resolve(__dirname, './src/html/index.html') //To Hot Reload
 	},
 
@@ -179,5 +179,8 @@ module.exports = [{
 
 	resolve: {
 		extensions: ['.js', '.jsx'],
+		alias: {
+			slick: path.resolve( __dirname, 'node_modules/slick-carousel/slick/') 
+		}
 	}
 }];

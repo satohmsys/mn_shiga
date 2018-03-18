@@ -211,7 +211,6 @@
 			opacity: 0;
 			transform: translateX( 5px );
 			transition: transition(all, 1s);
-		
 		}
 	}
 	&.-on .mainvisual__index{
@@ -248,6 +247,16 @@
 			font-size: 1em;
 			letter-spacing: 0.18em;
 		}			
+	}
+	&.js-effect .mainvisual__description{
+		opacity: 0;
+		transform: translateX( 5px );
+		transition: transition(all, 1s);
+		transition-delay: 0.25s;
+	}
+	&.-on .mainvisual__description{
+		opacity: 1;
+		transform: translateX( 0px );		
 	}
 
 

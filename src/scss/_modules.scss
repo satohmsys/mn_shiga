@@ -219,7 +219,7 @@
 }
 
 .nav {
-	@include break( min,tab ){
+	@include break( tab,min ){
 		font-size: 0.9375em;
 	}		
 	li{

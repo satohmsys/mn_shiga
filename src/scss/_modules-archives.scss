@@ -1,0 +1,84 @@
+/************************
+
+// top
+
+************************/
+
+.archive{
+	
+
+
+
+////////////////////////
+
+// list
+
+////////////////////////
+
+.topicsList{
+	
+	&__topic{
+		padding-top: 30px;
+		padding-bottom: 30px;
+		border-bottom: solid 1px $border;
+		
+		@include break( tab ){
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}		
+		
+		&:first-child{
+			padding-top: 0;
+		}
+	}
+
+	.topic{
+
+		&__index{
+			.subject{
+				@extend %indexStyle_a;	
+				margin-bottom: 0;			
+			}
+			.date{
+				margin: 10px 0 0;
+				letter-spacing: 0.1em;
+				font-family: $fontFamily_bodoniSans_b;
+				color: $gray;
+				&:before{
+					content: " ";
+					width: 30px;
+					height: 1px;
+					margin-right: 10px;
+					background-color: $border;
+					display: inline-block;
+					vertical-align: middle;
+					
+				}
+			}
+		}
+		
+		&__content{
+			margin-top: 20px;
+			@include break( tab ){
+				margin-top: 15px;
+			}
+			p:first-child{
+				margin-top: 0;
+			}
+			p:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+	
+}
+
+.topicsListNext{
+	margin-top: 40px;
+	font-size: $small;
+	text-align: right;
+	@extend .-hasArrow;
+}
+}
+
+

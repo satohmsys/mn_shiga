@@ -1,15 +1,17 @@
 
 		<header class="siteHeader">
 			<div class="wrap">
-				<h1 class="siteHeader__logo"><img src="<%- $path %>../img/common/logo.png" width="120" alt=""></h1>
+				<h1 class="siteHeader__logo">
+					<a href="<%- $path %>"><img src="<%- $path %>../img/common/logo.png" width="120" alt=""></a>
+				</h1>
 				<nav class="siteHeader__nav">
 					<ul class="nav nav--left">
-						<li><a href="<%- $path %>about/">教室のご紹介</a></li>
-						<li class="-notActive"><a href="">現場を知る</a></li>
-						<li class="-notActive"><a href="">特徴を知る</a></li>
+						<li <% if( $active == 'about' ){ %>class="current"<%}%>><a href="<%- $path %>about/">教室のご紹介</a></li>
+						<li <% if( $active == 'learn' ){ %>class="current"<%}%> class="-notActive"><a href="">現場を知る</a></li>
+						<li <% if( $active == 'point' ){ %>class="current"<%}%> class="-notActive"><a href="">特徴を知る</a></li>
 					</ul>
 					<ul class="nav nav--right">
-						<li class="-notActive"><a href="">患者様へのご案内</a></li>
+						<li <% if( $active == 'information' ){ %>class="current"<%}%> class="-notActive"><a href="">患者様へのご案内</a></li>
 						<li class="button button--inquiry -hasArrow"><a href="<%- $path %>/inquiry">お問い合わせ</a></li>
 					</ul>
 				</nav>

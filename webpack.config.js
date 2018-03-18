@@ -48,6 +48,7 @@ module.exports = [{
 			port: 3000,
 			host: "0.0.0.0"		
 		},
+		devtool: 'source-map',
 
 
 		/**
@@ -88,67 +89,68 @@ module.exports = [{
 				{
 					test: /\.scss$/,
 					exclude: /node_modules/,
-					// use: extractPlugin.extract({
-					// 	fallback: 'style-loader',
-					// 	use: [
-					// 		{
-					// 			loader: 'css-loader',
-					// 			options: {
-					// 				url: false,
-					// 				sourceMap: enabledSourceMap,
-					// 				importLoaders: 2,
+					use: ExtractTextPlugin.extract({
+						fallback: 'style-loader',
+						use: [
+							{
+								loader: 'css-loader',
+								options: {
+									url: true,
+									minimize: true,
+									sourceMap: enabledSourceMap,
+									importLoaders: 2,
 
-					// 			}
-					// 		},
-					// 		{
-					// 			loader: 'postcss-loader',
-					// 			options: {
-					// 				plugins: ( loader ) => [ require('autoprefixer') ],
-					// 				sourceMap: enabledSourceMap								
-					// 			}
-					// 		},
-					// 		{
-					// 			loader: 'sass-loader',
-					// 			options:{
-					// 				sourceMap: enabledSourceMap,
-					// 				minimize: true								
-					// 			}
-					// 		}
-					// 	]
-					// })
-					use: [
-					  // linkタグに出力する機能
-					  {
-					  	loader:'style-loader'
-					  },
-					  // CSSをバンドルするための機能
-					  {
-					    loader: 'css-loader',
-					    options: {
-					      // オプションでCSS内のurl()メソッドの取り込みを禁止する
-					      url: true,
-					      sourceMap: enabledSourceMap,
-					      // Sass+PostCSSの場合は2を指定
-					      importLoaders: 2
-					    }
-					  },
-					  // PostCSSのための設定
-					  {
-					    loader: 'postcss-loader',
-					    options: {
-					    	plugins: ( loader ) => [require('autoprefixer') ],
-					      sourceMap: enabledSourceMap,
-					    }
-					  },
-					  // Sassをバンドルするための機能
-					  {
-					    loader: 'sass-loader',
-					    options: {
-					    	url:true,
-					      sourceMap: enabledSourceMap,
-					    }
-					  }
-					]
+								}
+							},
+							{
+								loader: 'postcss-loader',
+								options: {
+									plugins: ( loader ) => [ require('autoprefixer') ],
+									sourceMap: enabledSourceMap								
+								}
+							},
+							{
+								loader: 'sass-loader',
+								options:{
+									sourceMap: enabledSourceMap,
+									minimize: true								
+								}
+							}
+						]
+					})
+					// use: [
+					//   // linkタグに出力する機能
+					//   {
+					//   	loader:'style-loader'
+					//   },
+					//   // CSSをバンドルするための機能
+					//   {
+					//     loader: 'css-loader',
+					//     options: {
+					//       // オプションでCSS内のurl()メソッドの取り込みを禁止する
+					//       url: true,
+					//       sourceMap: enabledSourceMap,
+					//       // Sass+PostCSSの場合は2を指定
+					//       importLoaders: 2
+					//     }
+					//   },
+					//   // PostCSSのための設定
+					//   {
+					//     loader: 'postcss-loader',
+					//     options: {
+					//     	plugins: ( loader ) => [require('autoprefixer') ],
+					//       sourceMap: enabledSourceMap,
+					//     }
+					//   },
+					//   // Sassをバンドルするための機能
+					//   {
+					//     loader: 'sass-loader',
+					//     options: {
+					//     	url:true,
+					//       sourceMap: enabledSourceMap,
+					//     }
+					//   }
+					// ]
 				},
 				{
 					/**

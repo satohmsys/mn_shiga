@@ -112,7 +112,9 @@ module.exports = [{
 				// })
 				use: [
 				  // linkタグに出力する機能
-				  'style-loader',
+				  {
+				  	loader:'style-loader'
+				  },
 				  // CSSをバンドルするための機能
 				  {
 				    loader: 'css-loader',
@@ -122,7 +124,7 @@ module.exports = [{
 				      sourceMap: enabledSourceMap,
 				      // Sass+PostCSSの場合は2を指定
 				      importLoaders: 2
-				    },
+				    }
 				  },
 				  // PostCSSのための設定
 				  {
@@ -130,29 +132,48 @@ module.exports = [{
 				    options: {
 				    	plugins: ( loader ) => [require('autoprefixer') ],
 				      sourceMap: enabledSourceMap,
-				    },
+				    }
 				  },
 				  // Sassをバンドルするための機能
 				  {
 				    loader: 'sass-loader',
 				    options: {
+				    	url:true,
 				      sourceMap: enabledSourceMap,
 				    }
 				  }
-				],
+				]
 			},
 			{
-				test: /\.(gif|png|jpg|eot|woff|ttf|svg|css)$/,
-				exclude: /node_module/,
-				use: 'file-loader',
-				// options: {
-				// 	limit: 8192,
-    //                 name: './img/[name].[ext]'
-				// }
-			},		
+				/**
+				*file-loaderはファイルをバンドルせずに外部ファイルの参照を保つためのローダー
+				*/
+				test: /\.(gif|png|jpg|eot|woff|ttf|svg)$/,
+				exclude: /node_modules\/^(slick-carousel)/,
+				use: {
+					loader:'file-loader',
+					// options: {
+	    //                 name: './img/[name].[ext]'
+					// }
+				}
+			},	
+			// {
+			//	/**
+			//	*url-loaderはCSS中で使用するアセットをBase64エンコードしたdata URIとしてバンドルできるようにします。
+			//	* options.limitより大きい場合は外部参照でディレクトリをコピー
+			//	*/
+			// 	test: /\.(eot|woff|ttf|svg|css)$/,
+			// 	use: 'url-loader',
+			// 	// options: {
+			// 	// 	limit: 8192,
+   //  //                 name: './img/[name].[ext]'
+			// 	// }
+			// },								
 			{
 				test: /\.html$/,
-				use: 'html-loader'
+				use: {
+					loader: 'html-loader'
+				}
 			}
 		]
 	},
@@ -178,7 +199,7 @@ module.exports = [{
     ],
 
 	resolve: {
-		extensions: ['.js', '.jsx'],
+		extensions: ['.js', '.jsx', '.css', '.scss'],
 		alias: {
 			slick: path.resolve( __dirname, 'node_modules/slick-carousel/slick/') 
 		}

@@ -201,6 +201,7 @@
 		font-size: $xsmall;
 		margin-bottom: 50px;
 		letter-spacing: 0.25em;
+		word-wrap: break-word;
 		
 		@include break( tab ){
 			padding-left: 5%;

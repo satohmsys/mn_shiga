@@ -278,6 +278,10 @@ module.exports = [{
 				filename: 'about/index.html',
 				template: './src/ejs/about/index.ejs'
 			}),
+			new HtmlWebpackPlugin({ 
+				filename: 'topics/index.html',
+				template: './src/ejs/topics/index.ejs'
+			}),
 	    ]
 	}
 ];

@@ -45,12 +45,6 @@
 			@include break( tab ){
 			}
 
-			img,
-			&:after{
-				transition: easeInOut(all,0.6s);
-				transform: translateY( 10px );			
-			}
-			
 			img{
 				position: relative;
 				z-index: 2;
@@ -72,6 +66,40 @@
 				
 			}
 		}
+		&.js-effect{
+			figure img,
+			figure:after,
+			.greeting__by{
+					opacity: 0;
+					transition-duration: 1s;
+					transition-delay: 1s;
+					transform: translateY( 20px );
+			}
+			figure{
+				img{
+					transition-delay: 1.7s;
+				}
+				&:after{
+					height: 0;
+				}				
+			}
+			.greeting__by{
+				transition-delay: 2s;
+			}
+		}
+		&.-on{
+			figure img,
+			figure:after,
+			.greeting__by{
+					opacity: 1;
+					transform: translateY( 0px );
+			}			
+			figure{
+				&:after{
+					height: 100%;
+				}				
+			}
+		}				
 
 		&__by{
 			position: absolute;
@@ -122,13 +150,13 @@
 		.section--culture__40th{
 			width: 482px;
 			height: 0;
-			padding-top: percentage( 482/ 910);
+			padding-top: percentage( 500/ 910);
 			position: absolute;
 			right: 0;
 			bottom: 0;
 			display: block;
 			background: url(../img/about/about-culture-40th.svg) center top no-repeat;
-			background-size: 100% auto;
+			background-size: auto 100%;
 			mix-blend-mode: multiply;
 			
 			@include break( tab ){

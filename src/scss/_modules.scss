@@ -258,7 +258,7 @@
 		&,
 		&__text:after,
 		&__text:before{
-			transition: transition( all, 0.75s );
+			transition: easeInOutCirc( all, 0.45s );
 			transition-delay: 0.15s;
 		}
 

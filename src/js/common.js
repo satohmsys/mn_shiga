@@ -55,9 +55,34 @@ var navToggle = () => {
 	});		
 }
 
+var commonScrollToggle = () => {
+	$( function() {
+		let f = ( $scrollVal ) =>{
+			let $jsEffect = $('.js-effect'),
+				$scrollBottom = $scrollVal + $w.height();
+
+			/**
+			* all fadein targets
+			*/
+			if( $jsEffect ){
+				$.each( $jsEffect, function(){
+					let $target = $( this );
+
+					if( $target.offset().top < $scrollBottom - 50 ) {
+						$target.addClass( '-on' );
+					}
+
+				});				
+			}					
+		}
+		getScrollVal( f );
+	});
+}
+
 export {$w};
 export {getScrollVal};
 export default function(){
 	navToggle();
 	backToTop();
+	commonScrollToggle();
 }

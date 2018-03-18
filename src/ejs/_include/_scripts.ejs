@@ -1,0 +1,27 @@
+<!-- *****scripts -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>      
+<script
+src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
+<%# $path common/js/pjax/spica.js"> $path common/js/pjax/localsocket.js"> $path common/js/pjax/pjax-api.js"> $path common/js/pjax/config.js"></script> %>
+ <%
+      if($scripts_global){
+        $scripts_global.forEach( function( script ){
+ %>
+<script type="text/javascript" src="<%- script %>"></script>
+ <%           
+       });
+      }
+%> 
+<script type="text/javascript" src="<%- $path %>common/js/common.js"></script>
+<%
+      if( $scripts ){
+            $scripts.forEach( function( script ){
+ %>
+ <script type="text/javascript" src="<%- script %>"></script>
+ <%     
+            });
+      }      
+%>   
+<!-- /////scripts -->

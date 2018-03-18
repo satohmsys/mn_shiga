@@ -11,6 +11,8 @@ var effefcts = () => {
 	let f = function( $scrollVal ){
 		const $scrollBottom = $scrollVal + $w.height();
 
+
+
 		/**
 		* panel navigation area
 		*/
@@ -22,14 +24,28 @@ var effefcts = () => {
 			}
 		});
 
+
+
 		/**
 		* mainvisual 40th num
 		*/
-
 		if( $mainvisualArea.offset().top < $scrollBottom ) {
 			$mainvisualArea.addClass( 'fadeIn' );
 		}
 
+
+		/**
+		* parallax
+		*/
+		let $locationArea = $( '.section-navPanel__location' );
+
+		if( $locationArea.offset().top < $scrollBottom + 30 &&
+			 $scrollVal < ($locationArea.offset().top + $locationArea.outerHeight()) ){
+			let bgpY = 100 - $scrollVal *0.05;
+			$locationArea.css({
+				'background-position': '0 ' + bgpY + '%'
+			});
+		}
 
 	};
 

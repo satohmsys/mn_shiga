@@ -19,3 +19,13 @@
 <meta name="twitter:description" content="<%- $meta.twitter.description %>">
 <link rel="shortcut icon" href="<%- $path %>common/img/favicon.png"> 
 <script src="<%- $path %>bundle.js"></script>
+
+<%
+      if( $scripts ){
+            $scripts.forEach( function( script ){
+ %>
+ <script type="text/javascript" src="<%- script %>"></script>
+ <%     
+            });
+      }      
+%>   

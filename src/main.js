@@ -15,9 +15,9 @@ scripts
 import './scss/style.scss';
 
 import common from './js/common.js';
-import top from './js/top.js';
+// import top from './js/top.js';
 
 
 common();
-top()
+// top();
 	

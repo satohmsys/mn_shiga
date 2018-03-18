@@ -9,6 +9,9 @@ update : 201803
 @link: https://ics.media/entry/17376
 @link: https://gist.github.com/mburakerman/629783c16acf5e5f03de60528d3139af
 
+- optimization.splitChunks
+@link:https://qiita.com/soarflat/items/1b5aa7163c087a91877d
+
 -autoprefixer
 @link: https://blog.funxion.jp/314/
 
@@ -53,6 +56,8 @@ module.exports = [{
 		*/
 		entry: {
 			'bundle' : path.resolve(__dirname, './src/main.js'),
+			'top' : path.resolve(__dirname, './src/js/top.js'),
+			'page' : path.resolve(__dirname, './src/js/page.js'),
 		},
 
 
@@ -177,6 +182,27 @@ module.exports = [{
 					}
 				}
 			]
+		},
+
+		/**
+		* webpack 4 ~ CommonChunksPlugin
+		*/
+		optimization: {
+			splitChunks:{
+				// name: 'bundle',
+				// chunks: 'async'
+		      // cacheGroups内にバンドルの設定を複数記述できる
+		      cacheGroups: {
+		        // 今回はvendorだが、任意の名前で問題ない
+		        vendor: {
+		          // node_modules配下のモジュールをバンドル対象とする
+		          test: /node_modules/,
+		          name: 'bundle',
+		          chunks: 'async',
+		          enforce: true
+		        }
+		      }				
+			}
 		},
 
 		/**

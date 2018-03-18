@@ -24,14 +24,12 @@
 .wrap{
 	max-width: $outerWidth;
 	margin-left: auto;
-	margin-right: auto;
-	padding-left: 30px;
-	padding-right: 30px;	
+	margin-right: auto;	
 	box-sizing: border-box;
 	
-	@include break( sp ){
-			padding-left: 10%;
-			padding-right: 10%;
+	@include break( tab ){
+			padding-left: 5%;
+			padding-right: 5%;
 	}//max 580	
 }
 

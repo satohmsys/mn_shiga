@@ -14,14 +14,6 @@ var effefcts = () => {
 			const $scrollBottom = $scrollVal + $w.height();
 
 			/**
-			* mainvisual text
-			*/
-			if( $mainvisualArea.offset().top < $scrollBottom ) {
-				$mainvisualArea.addClass( 'fadeIn' );
-			}
-
-
-			/**
 			* section culture
 			*/
 			if( $sectionCulture.offset().top < $scrollBottom  - 20  &&

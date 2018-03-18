@@ -5,12 +5,13 @@ for static website
 
 update : 201803
 
--webpack4 x sass
+- webpack4 x sass
 @link: https://ics.media/entry/17376
 @link: https://gist.github.com/mburakerman/629783c16acf5e5f03de60528d3139af
 
 - optimization.splitChunks
-@link:https://qiita.com/soarflat/items/1b5aa7163c087a91877d
+@link: https://qiita.com/soarflat/items/1b5aa7163c087a91877d
+@link: http://webdesign-dackel.com/2015/09/10/webpack-multiple-output/
 
 -autoprefixer
 @link: https://blog.funxion.jp/314/
@@ -18,9 +19,6 @@ update : 201803
 -webpack
 @link: http://dackdive.hateblo.jp/entry/2016/05/07/183335
 @link: http://dackdive.hateblo.jp/entry/2016/04/13/123000
-@link: https://qiita.com/one-kelvin/items/b810aafb6b5ef90789a3
--sass
-@link: http://kinosuke.hatenablog.jp/entry/2017/08/02/100051
 
 *******************/
 
@@ -48,8 +46,8 @@ module.exports = [{
 			port: 3000,
 			host: "0.0.0.0"		
 		},
-		devtool: 'source-map',
 
+		devtool: 'source-map',
 
 		/**
 		* entry point
@@ -98,8 +96,8 @@ module.exports = [{
 									url: true,
 									minimize: true,
 									sourceMap: enabledSourceMap,
-									importLoaders: 2,
-
+									// Sass+PostCSSの場合は2を指定
+								     importLoaders: 2
 								}
 							},
 							{
@@ -118,39 +116,6 @@ module.exports = [{
 							}
 						]
 					})
-					// use: [
-					//   // linkタグに出力する機能
-					//   {
-					//   	loader:'style-loader'
-					//   },
-					//   // CSSをバンドルするための機能
-					//   {
-					//     loader: 'css-loader',
-					//     options: {
-					//       // オプションでCSS内のurl()メソッドの取り込みを禁止する
-					//       url: true,
-					//       sourceMap: enabledSourceMap,
-					//       // Sass+PostCSSの場合は2を指定
-					//       importLoaders: 2
-					//     }
-					//   },
-					//   // PostCSSのための設定
-					//   {
-					//     loader: 'postcss-loader',
-					//     options: {
-					//     	plugins: ( loader ) => [require('autoprefixer') ],
-					//       sourceMap: enabledSourceMap,
-					//     }
-					//   },
-					//   // Sassをバンドルするための機能
-					//   {
-					//     loader: 'sass-loader',
-					//     options: {
-					//     	url:true,
-					//       sourceMap: enabledSourceMap,
-					//     }
-					//   }
-					// ]
 				},
 				{
 					/**
@@ -174,7 +139,7 @@ module.exports = [{
 				// 	use: 'url-loader',
 				// 	// options: {
 				// 	// 	limit: 8192,
-	   //  //                 name: './img/[name].[ext]'
+	   			//  //  name: './img/[name].[ext]'
 				// 	// }
 				// },								
 				{

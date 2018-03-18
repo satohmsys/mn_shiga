@@ -5,6 +5,15 @@
 ************************/
 
 
+$slick-font-path: "~slick-carousel/slick/fonts/";
+
+// Slick Carousel ajax-loader.gif path
+$slick-loader-path: "~slick-carousel/slick/";
+
+@import '../../node_modules/slick-carousel/slick/slick-theme.scss';
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+
+
 ////////////////////////
 
 // mainvisual
@@ -97,13 +106,54 @@
 		font-size: 800px;
 		font-family: $fontFamily_bodoniSans_r;
 		
+		@include break( tab ){
+			font-size: 350px;
+			bottom: -55px;
+			left: auto;
+			right: -25px;
+		}
+		
 		span{
-			transition: transition();
+			opacity: 0;
+			display: inline-block;
+			transition: transition( all,1.5s);
+			transform-origin: center center;
 			
+			&:first-child{
+				transform: rotate3d(-10deg, 90deg, 1deg) translate( -10px, -20px) ;
+			}
+			&:last-child{
+				transform: rotate3d(60deg, -90deg, 1deg) translate( 10px, 20px) ;				
+			}
+
 			&:last-child{
 				margin-left: -0.25em;
 				transition-delay: 0.4s;
 			}
+		}
+	}
+	@at-root .mainvisual{
+		&.fadeIn .mainvisual__num span{
+			opacity: 1;
+			transform: rotate(0deg) translate(0,0);
+		}
+	}
+
+	.slick-slide{		
+		line-height: 0;
+		transition: all 0.5s linear 0s;
+		img{
+			transition: all 0.5s linear 0s;
+			opacity: 0;
+		}
+		background-image: linear-gradient( to bottom right, lighten( $blue_lighten, 10% ), #efffef, lighten( $blue_lighten, 7% ));
+		background-size: 100%;
+		&.slick-current{
+			background-size: 1000%;
+			img{
+				opacity: 1;
+			}
+			
 		}
 	}
 	
@@ -162,7 +212,6 @@
 ////////////////////////
 
 .section-navPanel{
-
 	margin-bottom: 100px;
 	
 	@include break( tab ){
@@ -219,7 +268,9 @@
 		}
 		&__panel{
 			display: block;
-			transition: transition();
+			opacity: 0;
+			transform: translateY( 10px );
+			transition: transition(all,0.35s);
 			
 		
 			@include break( tab ){
@@ -230,8 +281,7 @@
 			
 			@for $i from 1 through 3 {
 				&:nth-child( #{$i} ){
-					$delay: 0.4*$i;
-					transition-delay: #{$i * 0.4}s;
+					transition-delay: #{$i * 0.1}s;
 				}
 			}
 		}
@@ -262,12 +312,29 @@
 				display: none;
 			}
 		}
+		&__panel,
+		.panel-icon,
+		.panel-index,
+		.panel-content{
+			opacity: 0;
+			transition: easeInOut(all,0.6s);
+			transform: translateY( 10px );			
+		}
+
+		&__panel.fadeIn{
+			&,
+			.panel-icon,
+			.panel-index,
+			.panel-content{
+				opacity: 1;
+				transform: translateY( 0px );			
+			}			
+		}
 
 		.panel-icon{
 			text-align: center;
 			margin-bottom: 20px;
-			transition: transition();
-			transition-delay: 0.2s;	
+			transition-delay: 0.4s;	
 			@include break( tab ){
 				margin-bottom: 15px;
 			}	
@@ -275,18 +342,16 @@
 		.panel-index{
 			margin-bottom: 15px;
 			text-align: center;
-			font-weight: bold;
-			transition: transition();			
-			transition-delay: 0.4s;	
+			font-weight: bold;		
+			transition-delay: 0.6s;	
 			@include break( tab ){
 				margin-bottom: 10px;
 			}						
 		}	
 		.panel-content{
 			font-size: $small;
-			font-weight: lighter;
-			transition: transition();			
-			transition-delay: 0.6s;			
+			font-weight: lighter;			
+			transition-delay: 0.8s;			
 		}
 	}
 }

@@ -12,7 +12,7 @@ scripts
 /**
 * scss監視設定
 */
-import './scss/style.scss';
+import './ejs/scss/style.scss';
 
 import common from './js/common.js';
 // import top from './js/top.js';

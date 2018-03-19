@@ -26,9 +26,17 @@ const webpack = require( 'webpack' );
 const path = require( 'path' );
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MODE = 'development';
+const MODE = 'production';
 const enabledSourceMap = ( MODE === 'development' );
 
+const PATHS = {
+	devServer: {
+		contentBase: 'dist' 
+	},
+	output:{
+		path: path.resolve(__dirname,'____test')
+	}
+};
 
 
 module.exports = [{
@@ -57,6 +65,7 @@ module.exports = [{
 			'bundle' : path.resolve(__dirname, './src/main.js'),
 			'top' : path.resolve(__dirname, './src/js/top.js'),
 			'page' : path.resolve(__dirname, './src/js/page.js'),
+			'' : path.resolve(__dirname, './src/ejs/index.ejs'),
 		},
 
 
@@ -89,6 +98,7 @@ module.exports = [{
 					exclude: /node_modules/,
 					use: ExtractTextPlugin.extract({
 						fallback: 'style-loader',
+						publicPath: '../',
 						use: [
 							{
 								loader: 'css-loader',
@@ -116,20 +126,48 @@ module.exports = [{
 							}
 						]
 					})
-				},
+				},{
+					test: /\.ejs$/,
+					exclude: /node_modules/,
+					use: [
+							{
+								loader: 'html-loader'
+							},						
+							{
+								loader:'ejs-html-loader',
+								options: {
+									title: 'The Ant: An Introduction',
+									season: 1,
+									episode: 9,
+									production:enabledSourceMap
+								}
+							}
+						]
+					},
+
 				{
 					/**
 					*file-loaderはファイルをバンドルせずに外部ファイルの参照を保つためのローダー
 					*/
-					test: /\.(gif|png|jpg|eot|woff|ttf|svg)$/,
+					test: /\.(eot|woff|ttf)$/,
 					exclude: /node_modules\/^(slick-carousel)/,
 					use: {
 						loader:'file-loader',
-						// options: {
-		    //                 name: './img/[name].[ext]'
-						// }
+						options: {
+		                    name: './fonts/[name].[ext]'
+						}
 					}
 				},	
+				{
+					test: /\.(gif|png|jpg|svg)$/,
+					exclude: /node_modules\/^(slick-carousel)/,
+					use: {
+						loader:'file-loader',
+						options: {
+		                    name: './img/[name].[ext]'
+						}
+					}
+				},					
 				// {
 				//	/**
 				//	*url-loaderはCSS中で使用するアセットをBase64エンコードしたdata URIとしてバンドルできるようにします。
@@ -142,12 +180,12 @@ module.exports = [{
 	   			//  //  name: './img/[name].[ext]'
 				// 	// }
 				// },								
-				{
-					test: /\.html$/,
-					use: {
-						loader: 'html-loader'
-					}
-				}
+				// {
+				// 	test: /\.html$/,
+				// 	use: {
+				// 		loader: 'html-loader'
+				// 	}
+				// }
 			]
 		},
 
@@ -176,67 +214,17 @@ module.exports = [{
 		*
 		*/
 		output: {
-			path: path.resolve( __dirname, 'dist' ),
+			path: PATHS.output.path,
 			// publicPath: '/dist',		
-			publicPath: '/',
+			// publicPath: '/',
 			filename: '[name].js'
 		},
 
 	    plugins: [
 	        new ExtractTextPlugin({
-			   filename: 'main.css'
-			})
-	    ],
-
-		resolve: {
-			extensions: ['.js', '.jsx', '.css', '.scss'],
-			alias: {
-				slick: path.resolve( __dirname, 'node_modules/slick-carousel/slick/') 
-			}
-		},	    
-	},
-	{
-		entry: [
-		 path.resolve(__dirname, './src/ejs/index.ejs'),
-		]
-		,	
-		module: {
-			rules: [
-				{
-					test: /\.ejs$/,
-					exclude: /node_modules/,
-					use: [
-							{
-								loader: 'html-loader'
-							},						
-							{
-								loader:'ejs-html-loader',
-								options: {
-									title: 'The Ant: An Introduction',
-									season: 1,
-									episode: 9,
-									production:enabledSourceMap
-								}
-							}
-						]
-					},
-					{
-						test: /\.(gif|png|jpg|eot|woff|ttf|svg)$/,
-						exclude: /node_modules\/^(slick-carousel)/,
-						use: {
-							loader:'file-loader',
-						}
-					},						
-			]
-		},
-
-		output: {
-			path: path.resolve( __dirname, 'dist' ),
-			publicPath: '/',
-			filename: '[name].html'
-		},
-
-	    plugins: [
+			   filename: 'main.css',
+			   allChunks: true
+			}),
 	        new HtmlWebpackPlugin({ 
 				filename: 'index.html',
 				template: './src/ejs/index.ejs'
@@ -252,7 +240,14 @@ module.exports = [{
 			new HtmlWebpackPlugin({ 
 				filename: 'contact/index.html',
 				template: './src/ejs/contact/index.ejs'
-			}),			
-	    ]
+			}),						
+	    ],
+
+		resolve: {
+			extensions: ['.js', '.jsx', '.css', '.scss'],
+			alias: {
+				slick: path.resolve( __dirname, 'node_modules/slick-carousel/slick/') 
+			}
+		},	    
 	}
 ];

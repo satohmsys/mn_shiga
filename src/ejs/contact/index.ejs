@@ -1,0 +1,129 @@
+<% 
+	$path = '../';
+	$imgPath = '../../img/';
+	$active = 'contact';
+	include( $path + '_include/_function.ejs' );
+	$meta.title = 'お問い合わせ｜CONTACT';
+	$scripts = [ $path + 'page.js'];
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include( $path + '_include/head.ejs' ); %>
+</head>
+	<body class="contact">
+		<%- include( $path + '_include/header.ejs' ); %>
+		<main class="mainContent">
+			<!-- ***** mainvisual -->
+			<section class="mainvisual -inContents js-effect">
+				<div class="mainvisual__textArea">
+					<div class="wrap">
+						<header class="mainvisual__index">
+							<span class="en">
+								<span>C</span>
+								<span>O</span>
+								<span>N</span>
+								<span>T</span>
+								<span>A</span>
+								<span>C</span>
+								<span>T</span>
+							</span>
+							<h1 class="ja">お問い合わせ</h1>
+							
+						</header>
+						<p class="mainvisual__description">滋賀医科大学整形外科学講座からの<br>最新トピックスをお伝えします。</p>
+						<ul class="breadCrumb">
+							<li><a href="<%-$path %>index.html">TOP</a></li>
+							<li>お問い合わせ</li>
+						</ul>
+					</div>
+
+				</div>				
+			</section>
+			<!-- ///// mainvisual -->
+
+			<!-- ***** contents -->
+			<section class="articleContent">	
+				<div class="wrap">
+					<section class="section section--formArea">
+						<header class="formArea__heading">
+							<h2 class="formArea__index">
+								フォームからのお問い合わせ
+							</h2>
+							<p class="description">24時間受け付けております。下記のフォームに必要事項をご入力してください。</p>
+						</header>
+						<ul class="formArea__steps">
+							<li class="formArea__steps__step">
+								入力
+							</li>
+							<li class="formArea__steps__step">
+								確認
+							</li>
+							<li class="formArea__steps__step">
+								完了
+							</li>
+						</ul>
+						<form action="" class="form">
+							<table>
+								<tr class="form__row">
+									<th class="form__row__column -must">
+										お名前
+									</th>
+									<td>
+										<input type="text" >
+									</td>
+								</tr>
+								<tr class="form__row">
+									<th class="form__row__column -must">
+										ふりがな
+									</th>
+									<td>
+										<input type="text" >
+									</td>
+								</tr>	
+								<tr class="form__row">
+									<th class="form__row__column -must">
+										メールアドレス
+									</th>
+									<td>
+										<input type="mailaddress" >
+									</td>
+								</tr>	
+								<tr class="form__row">
+									<th class="form__row__column -must">
+										電話番号
+									</th>
+									<td>
+										<input type="telephone" >
+									</td>
+								</tr>	
+								<tr class="form__row">
+									<th class="form__row__column -must">
+										お問い合わせ内容
+									</th>
+									<td>
+										<textarea name="" id="" cols="30" rows="10"></textarea>
+									</td>
+								</tr>																																
+							</table>
+							<div class="button -hasArrow">
+								<input type="submit" value="確認画面へ" >
+							</div>
+						</form>						
+						<aside class="contactTelephone">
+							<header >
+								<h3 class="contactTel__index">お電話でのお問い合わせ</h3>
+							</header>
+							<div class="contactTel__content">
+								お電話の場合は077-548-2252（医局）、もしくは077-548-2562（外来）までご連絡ください。
+							</div>
+						</aside>
+					</section>
+				</div>
+			</section>
+			<!-- ///// contents -->
+			
+		</main>
+		<%- include( $path + '_include/footer.ejs' ); %>
+	</body>
+</html>

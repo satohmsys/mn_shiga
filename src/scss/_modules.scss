@@ -92,8 +92,8 @@
 	} 	
 
 	&__logo{
-		width: 120px;
-		height: 120px;
+		width: 100px;
+		height: 100px;
 		margin-top: auto;
 		margin-right: auto;
 		margin-bottom: auto;
@@ -103,6 +103,7 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
+		transition: transition();
 			@include break( tab ){
 				width: 100%;
 				height: $navHeightSp;
@@ -129,6 +130,8 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
+		transition: transition();
+		
 		
 		@include break( tab ){
 			height: 100%;
@@ -203,6 +206,18 @@
 			transform: translate(0,0);
 		}				
 	}
+}
+
+@include break( tab, min ){
+	.siteHeader.-isScrolled{
+		.siteHeader__logo{
+			width: 70px;
+			height: 70px;
+		}
+		.siteHeader__nav{
+			height: 100px;
+		}
+	}	
 }
 
 

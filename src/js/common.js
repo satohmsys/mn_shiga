@@ -79,10 +79,23 @@ var commonScrollToggle = () => {
 	});
 }
 
+var headExpand = () => {
+	$( function(){
+		let f = ( $scrollVal ) => {
+			let $header = $('.siteHeader');
+
+			300 < $scrollVal ? $header.addClass('-isScrolled') : $header.removeClass('-isScrolled') 
+		}
+
+		getScrollVal( f );
+	});
+}
+
 export {$w};
 export {getScrollVal};
 export default function(){
 	navToggle();
 	backToTop();
 	commonScrollToggle();
+	headExpand();
 }

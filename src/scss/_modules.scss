@@ -629,12 +629,7 @@
 
 ////////////////////
 
-.button
-{
-	display: inline-block;
-	
-	a{
-		padding: 1em;
+%buttonStyle_cv{
 		display: block;
 		position: relative;
 		border-radius: 3px;
@@ -642,16 +637,23 @@
 		color: #fff;	
 		transition: transition();
 		background-size: 100% auto;
-		background-image: linear-gradient( to right, lighten($orange, 10%), $orange);	
-		
+		background-image: linear-gradient( to right, lighten($orange, 10%), $orange);		
+}
+
+.button
+{
+	display: inline-block;
+	
+	a{
+		padding: 1em;
+		@extend %buttonStyle_cv;
+
 		@include mouseOver(){
 			background-size: 300% auto;
 		}
 	}
 
 	&--inquiry{
-
-
 		&.-hasArrow {
 			@extend .-hasArrow;			
 			a{
@@ -667,6 +669,39 @@
 				}
 			}
 		}
+	}
 
+	&--submit{
+		display: block;
+		position: relative;
+		
+		&:after{
+			content: " ";
+			width: 16px;
+			height: 8px;
+			margin-left: 10px;			
+			margin-top: auto;
+			margin-bottom: auto;
+			position: absolute;
+			top: 0;
+			right: 5px;
+			bottom: 0;
+			display: block;
+			background: url(../img/common/icon-arrow-white.svg) center center no-repeat;
+		}		
+
+		input{
+			width: 100%;
+			box-sizing: border-box;
+			cursor: pointer;
+			border: none;
+			font-size: 1em;
+
+			@extend%buttonStyle_cv;
+
+			@include mouseOver(){
+				background-size: 300% auto;
+			}
+		}
 	}
 }

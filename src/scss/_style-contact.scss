@@ -1,0 +1,258 @@
+/************************
+
+// about
+
+************************/
+
+%must{
+	content: " ";
+	width: 12px;
+	height: 12px;
+	margin-right: 5px;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 100%;
+	background-color: #c00;
+	@include break( tab ){
+		width: 7px;
+		height: 7px;
+	}
+}
+
+
+.contact{
+
+	.visual{
+		height: 300px;
+		
+		@include break( tab ){
+			height: auto;
+			margin-bottom: 30px;
+			padding-top: 50px;
+		}		
+		
+		&__textArea{
+			position: static;
+		}
+
+		.visual__index{
+			position: relative;
+
+			.en{
+				font-size: 10em;
+				letter-spacing: 0.08em;
+								
+				@include break( tab ){
+					margin-top: 0em;
+					margin-right: 0;
+					opacity: 0.7;
+					font-size: 18vw;			
+				}		
+			}
+			.ja{
+				@include break( tab ){
+				}		
+			}
+		}		
+				
+	}
+
+
+
+	//////////フォーム
+	.formArea
+	{
+		&__heading{
+			margin-bottom: 30px;
+		}
+		&__index{
+			@extend %indexStyle_a;
+		}	
+		&__description{
+			font-size: $small;
+		}
+
+
+		/////step
+		&__steps{
+			width: 100%;
+			display: table;
+			table-layout: fixed;
+			font-size: $small;
+			
+			li{
+				line-height: 1;
+				padding: 30px 20px;
+				display: table-cell;
+				vertical-align: middle;
+				position: relative;
+				border-right: solid 2px #fff;
+				border-bottom: solid 2px $gray ;
+				color: $basefontColor*3;
+				text-align: center;
+				background-color: #fdfdfd;
+				
+				@include break( tab ){
+					padding: 20px 10px;
+				}
+				
+				&:last-child{
+					border-right: none;
+				}
+				
+				&.active{
+					font-weight: normal;
+					color: $basefontColor;
+					border-bottom-color: $blue;
+					background-color: #fff;
+					
+					.en{
+						color: inherit;
+					}
+				}
+
+				.en{
+					display: inline-block;
+					font-family: $fontFamily_bodoniSans_b;
+					color: $gray;
+					letter-spacing: 0.025em;
+					&:before{
+						content: "";
+						width: 20px;
+						height: 1px;
+						margin-right: 3px;
+						margin-left: 3px;
+						display: inline-block;
+						background-color: $border;
+					}
+					@include break( tab ){
+						display: block;
+						
+						&:before{
+							width: 100%;
+							margin-top: 7px;
+							margin-bottom: 6px;
+						}
+					}					
+				}
+			}
+		}
+
+
+		&__icon{
+			margin-top: 30px;
+			margin-bottom: 30px;
+			color: $gray;
+			text-align: right;
+			font-size: $small;
+			
+				@include break( tab ){
+					margin-top: 20px;
+					margin-bottom: 2px;
+				}			
+
+			li{
+				line-height: 1;
+				display: inline-block;
+				&:before{
+					@extend %must;
+				}
+			}
+		}
+	}
+
+
+	//////// フォーム
+	.form{
+		margin-bottom: 60px;
+		
+		@include break( tab ){
+			margin-bottom: 40px;
+		}		
+	
+		input[type="text"],
+		input[type="mail"],
+		input[type="tel"],
+		textarea{
+			width: 100%;
+			min-height: 1em;
+			padding: 1em;
+			box-sizing: border-box;
+			border: solid 1px $border;
+			border-radius: 3px;
+			font-size: $small;
+		}
+		
+		table{
+			width: 100%;
+			tr{
+				border-bottom: solid 1px $border;
+			}
+			th,
+			td{
+				padding: 30px 10px;
+				@include break( tab ){
+					padding: 15px 10px;
+				}					
+			}
+
+			th{
+				width: 10em;
+				vertical-align: top;
+				text-align: left;
+				font-weight: normal;
+				position: relative;
+				
+				@include break( tab ){
+					width: 6em;
+				}					
+			}
+		}
+
+
+		.-must {
+			th{
+				&:after{
+					@extend %must;
+					// position: absolute;
+					// left: 0;
+					// top: -7px;
+				}	
+			}
+		}
+
+		.button{
+			margin-top: 20px;
+			@include break( sp ){
+				margin-top: 0;
+			}			
+			input{
+				padding-top: 2em;
+				padding-bottom: 2em;
+				@include break( sp ){
+					padding-top: 1em;
+					padding-bottom: 1em;
+				}					
+			}
+		}
+	}
+
+
+
+	///////// お電話の注意
+	.contactTel{
+		&__index{
+			@extend %indexStyle_b;
+		}
+
+		.telnum{
+			
+		}
+	}
+	
+	.articleContent{
+		
+	}
+
+
+}

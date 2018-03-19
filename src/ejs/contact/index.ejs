@@ -15,10 +15,10 @@
 		<%- include( $path + '_include/header.ejs' ); %>
 		<main class="mainContent">
 			<!-- ***** mainvisual -->
-			<section class="mainvisual -inContents js-effect">
-				<div class="mainvisual__textArea">
+			<section class="visual js-effect">
+				<div class="visual__textArea">
 					<div class="wrap">
-						<header class="mainvisual__index">
+						<header class="visual__index">
 							<span class="en">
 								<span>C</span>
 								<span>O</span>
@@ -31,7 +31,6 @@
 							<h1 class="ja">お問い合わせ</h1>
 							
 						</header>
-						<p class="mainvisual__description">滋賀医科大学整形外科学講座からの<br>最新トピックスをお伝えします。</p>
 						<ul class="breadCrumb">
 							<li><a href="<%-$path %>index.html">TOP</a></li>
 							<li>お問い合わせ</li>
@@ -45,60 +44,67 @@
 			<!-- ***** contents -->
 			<section class="articleContent">	
 				<div class="wrap">
-					<section class="section section--formArea">
+					<section class="formArea">
 						<header class="formArea__heading">
 							<h2 class="formArea__index">
 								フォームからのお問い合わせ
 							</h2>
-							<p class="description">24時間受け付けております。下記のフォームに必要事項をご入力してください。</p>
+							<p class="formArea__description">24時間受け付けております。下記のフォームに必要事項をご入力してください。<br>
+							※一般の方からの医療相談はお受けしておりません。ご了承ください。</p>
 						</header>
 						<ul class="formArea__steps">
-							<li class="formArea__steps__step">
-								入力
+							<li class="formArea__steps__step active">
+								入力<span class="en">INPUT</span>
 							</li>
 							<li class="formArea__steps__step">
-								確認
+								確認<span class="en">CHECK</span>
 							</li>
 							<li class="formArea__steps__step">
-								完了
+								完了<span class="en">DONE</span>
 							</li>
 						</ul>
+						<div class="formArea__icon">
+							<ul>
+								<li class="icon--must">必須入力項目</li>
+							</ul>
+						</div>
+						<!-- *** form -->
 						<form action="" class="form">
 							<table>
-								<tr class="form__row">
-									<th class="form__row__column -must">
+								<tr class="form__row  -must">
+									<th class="form__row__column">
 										お名前
 									</th>
 									<td>
 										<input type="text" >
 									</td>
 								</tr>
-								<tr class="form__row">
-									<th class="form__row__column -must">
+								<tr class="form__row  -must">
+									<th class="form__row__column">
 										ふりがな
 									</th>
 									<td>
 										<input type="text" >
 									</td>
 								</tr>	
-								<tr class="form__row">
-									<th class="form__row__column -must">
+								<tr class="form__row  -must">
+									<th class="form__row__column">
 										メールアドレス
 									</th>
 									<td>
-										<input type="mailaddress" >
+										<input type="mail" >
 									</td>
 								</tr>	
-								<tr class="form__row">
-									<th class="form__row__column -must">
+								<tr class="form__row  -must">
+									<th class="form__row__column">
 										電話番号
 									</th>
 									<td>
-										<input type="telephone" >
+										<input type="tel" >
 									</td>
 								</tr>	
-								<tr class="form__row">
-									<th class="form__row__column -must">
+								<tr class="form__row  -must">
+									<th class="form__row__column">
 										お問い合わせ内容
 									</th>
 									<td>
@@ -106,16 +112,17 @@
 									</td>
 								</tr>																																
 							</table>
-							<div class="button -hasArrow">
+							<div class="button button--submit -hasArrow">
 								<input type="submit" value="確認画面へ" >
 							</div>
-						</form>						
-						<aside class="contactTelephone">
+						</form>		
+						<!-- //// form -->				
+						<aside class="contactTel">
 							<header >
 								<h3 class="contactTel__index">お電話でのお問い合わせ</h3>
 							</header>
 							<div class="contactTel__content">
-								お電話の場合は077-548-2252（医局）、もしくは077-548-2562（外来）までご連絡ください。
+								お電話の場合は<a class="telnum" href="">077-548-2252（医局）</a>、もしくは<a class="telnum" href="">077-548-2562（外来）</a>までご連絡ください。
 							</div>
 						</aside>
 					</section>

@@ -36,7 +36,7 @@ const webpack = require( 'webpack' ),
 				contentBase: 'dist' 
 			},
 			output:{
-				path: path.resolve(__dirname,'_______test')
+				path: path.resolve(__dirname,'dist')
 			}
 		};
 const 	CopyWebpackPlugin = require('copy-webpack-plugin');		

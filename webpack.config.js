@@ -26,11 +26,11 @@ const webpack = require( 'webpack' ),
 		path = require( 'path' ),
 		ExtractTextPlugin = require('extract-text-webpack-plugin'),
 		HtmlWebpackPlugin = require('html-webpack-plugin'),
-		MODE = 'production',
+		MODE = 'development',
 		enabledSourceMap = ( MODE === 'development' ),
 		PATHS = {
 			dir: {
-				output: 'assets/'
+				output: 'assets'
 			},
 			devServer: {
 				contentBase: 'dist' 
@@ -131,7 +131,8 @@ module.exports = [{
 							}
 						]
 					})
-				},{
+				},
+				{
 					test: /\.ejs$/,
 					exclude: /node_modules/,
 					use: [
@@ -148,8 +149,7 @@ module.exports = [{
 								}
 							}
 						]
-					},
-
+				},
 				{
 					/**
 					*file-loaderはファイルをバンドルせずに外部ファイルの参照を保つためのローダー

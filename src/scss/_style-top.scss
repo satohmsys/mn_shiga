@@ -121,10 +121,10 @@ $slick-loader-path: "~slick-carousel/slick/";
 			transform-origin: center center;
 			
 			&:first-child{
-				transform: skewY(-10deg) translate( -20px, -20px) ;
+				transform: skewY(-10deg) translate( -30px, -30px) ;
 			}
 			&:last-child{
-				transform: skewY(10deg) translate( 20px, 20px) ;				
+				transform: skewY(10deg) translate( 30px, 30px) ;				
 			}
 
 			&:last-child{

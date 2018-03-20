@@ -210,7 +210,6 @@ module.exports = [{
 		          test: /node_modules/,
 		          name: 'bundle',
 		          chunks: 'async',
-		          enforce: true
 		        }
 		      }				
 			}

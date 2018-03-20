@@ -10,66 +10,6 @@
 
 ////////////////////
 
-// frame
-
-////////////////////
-
-.frame{
-	&:after,
-	&:before{
-		content: " ";
-		display: block;
-		position: fixed;
-		z-index: 10;
-		background-color: $blue_dull;
-	}
-
-	//縦
-	&--v{
-		&:before,
-		&:after{
-			width: 10px;
-			height: 100%;
-			@include break( tab ){
-				width: 5px;
-			} 			
-		}
-
-		&:before{
-			top: 0;
-			right: 0;
-		}
-		&:after{
-			bottom: 0;
-			left: 0;
-		}
-	}	
-
-	//横
-	&--h{
-		&:before,
-		&:after{
-			width: 100%;
-			height: 10px;
-			@include break( tab ){
-				height: 5px;
-			} 			
-		}
-
-		&:before{
-			top: 0;
-			left: 0;
-		}
-		&:after{
-			bottom: 0;
-			right: 0;
-		}
-	}
-}
-
-
-////////////////////
-
 // header
 
 ////////////////////
@@ -727,6 +667,104 @@
 			@include mouseOver(){
 				background-size: 300% auto;
 			}
+		}
+	}
+}
+
+
+
+
+
+////////////////////
+
+// frame
+
+////////////////////
+
+.frame{
+	&:after,
+	&:before{
+		content: " ";
+		display: block;
+		position: fixed;
+		z-index: 10;
+		background-color: $blue_dull;
+	}
+
+	//縦
+	&--v{
+		&:before,
+		&:after{
+			width: 10px;
+			height: 100%;
+			@include break( tab ){
+				width: 5px;
+			} 			
+		}
+
+		&:before{
+			top: 0;
+			right: 0;
+		}
+		&:after{
+			bottom: 0;
+			left: 0;
+		}
+	}	
+
+	//横
+	&--h{
+		&:before,
+		&:after{
+			width: 100%;
+			height: 10px;
+			@include break( tab ){
+				height: 5px;
+			} 			
+		}
+
+		&:before{
+			top: 0;
+			left: 0;
+		}
+		&:after{
+			bottom: 0;
+			right: 0;
+		}
+	}
+}
+
+
+
+
+
+////////////////////
+
+// loadingAnim
+
+////////////////////
+
+.loadingAnim{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	
+
+	.frame{
+		&:after,
+		&:before{
+			transition: transition();
+			background-color: $navy;
 		}
 	}
 }

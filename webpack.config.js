@@ -55,7 +55,7 @@ module.exports = [{
 			host: "0.0.0.0"		
 		},
 
-		devtool: 'source-map',
+		// devtool: 'source-map',
 
 		/**
 		* entry point
@@ -65,7 +65,7 @@ module.exports = [{
 			'bundle' : path.resolve(__dirname, './src/main.js'),
 			'top' : path.resolve(__dirname, './src/js/top.js'),
 			'page' : path.resolve(__dirname, './src/js/page.js'),
-			'' : path.resolve(__dirname, './src/ejs/index.ejs'),
+			// '_dust/index' : path.resolve(__dirname, './src/ejs/index.ejs'),
 		},
 
 

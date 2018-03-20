@@ -15,7 +15,6 @@ var getScrollVal = ( callback ) => {
 }
 
 var backToTop = () => {
-	$(function(){
 		$('.pagetop').on( 'click', function( e ){
 			e.preventDefault();
 			e.stopPropagation();
@@ -24,11 +23,9 @@ var backToTop = () => {
 				scrollTop: 0
 			}, '800', 'swing' );
 		});
-	});
 }
 
 var navToggle = () => {	
-	$( function(){
 		/**
 		* sp button
 		*/
@@ -50,11 +47,9 @@ var navToggle = () => {
 				}, 500 );
 			}
 		});
-	});		
 }
 
 var commonScrollToggle = () => {
-	$( function() {
 		let f = ( $scrollVal ) =>{
 			let $jsEffect = $('.js-effect'),
 				$scrollBottom = $scrollVal + $w.height();
@@ -74,11 +69,9 @@ var commonScrollToggle = () => {
 			}					
 		}
 		getScrollVal( f );
-	});
 }
 
 var headExpand = () => {
-	$( function(){
 		let f = ( $scrollVal ) => {
 			let $header = $('.siteHeader');
 
@@ -86,7 +79,6 @@ var headExpand = () => {
 		}
 
 		getScrollVal( f );
-	});
 }
 
 export {$w};

@@ -18,15 +18,5 @@
 <meta name="twitter:title" content="<%- $meta.twitter.title %>">
 <meta name="twitter:description" content="<%- $meta.twitter.description %>">
 <link rel="stylesheet" href="<%- $path %>main.css">
-<script src="<%- $path %>bundle.js"></script>
-
-<%
-      if( $scripts ){
-            $scripts.forEach( function( script ){
- %>
- <script type="text/javascript" src="<%- script %>"></script>
- <%     
-            });
-      }      
-%>   
+ 
 <link rel="shortcut icon" href="<%- $path %>common/img/favicon.png"> 

@@ -22,51 +22,56 @@ update : 201803
 
 *******************/
 
-const webpack = require( 'webpack' );
-const path = require( 'path' );
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MODE = 'production';
-const enabledSourceMap = ( MODE === 'development' );
+const webpack = require( 'webpack' ),
+		path = require( 'path' ),
+		ExtractTextPlugin = require('extract-text-webpack-plugin'),
+		HtmlWebpackPlugin = require('html-webpack-plugin'),
+		MODE = 'production',
+		enabledSourceMap = ( MODE === 'development' ),
+		PATHS = {
+			dir: {
+				output: 'assets/'
+			},
+			devServer: {
+				contentBase: 'dist' 
+			},
+			output:{
+				path: path.resolve(__dirname,'_______test')
+			}
+		};
+const 	CopyWebpackPlugin = require('copy-webpack-plugin');		
 
-const PATHS = {
-	devServer: {
-		contentBase: 'dist' 
-	},
-	output:{
-		path: path.resolve(__dirname,'____test')
-	}
-};
-
-
-module.exports = [{
+module.exports = [{	
 		/**
 		* mode
 		* v4 / developmentだとsource mapも有効化
 		*/
 		mode: MODE,
 
-		devServer: {
-			contentBase: 'dist', //ここをルートとしてサーブ
-			hot: true,
-			inline: true,
-			open: true,
-			port: 3000,
-			host: "0.0.0.0"		
-		},
-
-		// devtool: 'source-map',
+		devtool: 'source-map',
 
 		/**
 		* entry point
 		* v4 / エントリーポイントを指定しなければ自動的に「src/index.js」がエントリーポイントに
 		*/
-		entry: {
+		entry:  
+		// entries,
+		{
 			'bundle' : path.resolve(__dirname, './src/main.js'),
 			'top' : path.resolve(__dirname, './src/js/top.js'),
 			'page' : path.resolve(__dirname, './src/js/page.js'),
-			// '_dust/index' : path.resolve(__dirname, './src/ejs/index.ejs'),
 		},
+
+
+		/**
+		*
+		*/
+		output: {
+			path: PATHS.output.path,
+			// publicPath: '/dist',		
+			// publicPath: '/',
+			filename: 'assets/js/[name].js'
+		},		
 
 
 		/**
@@ -154,7 +159,8 @@ module.exports = [{
 					use: {
 						loader:'file-loader',
 						options: {
-		                    name: './fonts/[name].[ext]'
+							publicPath: '/',							
+		                    name: 'assets/[path][name].[ext]'
 						}
 					}
 				},	
@@ -164,7 +170,8 @@ module.exports = [{
 					use: {
 						loader:'file-loader',
 						options: {
-		                    name: './img/[name].[ext]'
+							publicPath: '/',
+		                    name: 'assets/[path][name].[ext]'
 						}
 					}
 				},					
@@ -198,8 +205,7 @@ module.exports = [{
 				// chunks: 'async'
 		      // cacheGroups内にバンドルの設定を複数記述できる
 		      cacheGroups: {
-		        // 今回はvendorだが、任意の名前で問題ない
-		        vendor: {
+		        bundle: {
 		          // node_modules配下のモジュールをバンドル対象とする
 		          test: /node_modules/,
 		          name: 'bundle',
@@ -210,21 +216,15 @@ module.exports = [{
 			}
 		},
 
-		/**
-		*
-		*/
-		output: {
-			path: PATHS.output.path,
-			// publicPath: '/dist',		
-			// publicPath: '/',
-			filename: '[name].js'
-		},
-
 	    plugins: [
 	        new ExtractTextPlugin({
-			   filename: 'main.css',
+			   filename: PATHS.dir.output + '/css/main.css',
 			   allChunks: true
 			}),
+		    new CopyWebpackPlugin([{
+		      from: './src/img/',
+		      to: PATHS.dir.output + '/img'
+		    }]),			
 	        new HtmlWebpackPlugin({ 
 				filename: 'index.html',
 				template: './src/ejs/index.ejs'
@@ -248,6 +248,15 @@ module.exports = [{
 			alias: {
 				slick: path.resolve( __dirname, 'node_modules/slick-carousel/slick/') 
 			}
-		},	    
+		},	
+
+		devServer: {
+			contentBase: PATHS.devServer.contentBase, //ここをルートとしてサーブ
+			hot: true,
+			inline: true,
+			open: true,
+			port: 3000,
+			host: "0.0.0.0"		
+		},
 	}
 ];

@@ -7,12 +7,11 @@ scripts
 /**
 * html監視設定
 */
-// import './ejs/index.ejs'; 
-// import './html/index.html'; 
+import './ejs/index.ejs'; 
 /**
 * scss監視設定
 */
-import './ejs/scss/style.scss';
+import './scss/style.scss';
 
 import common from './js/common.js';
 // import top from './js/top.js';

@@ -7,13 +7,11 @@ let $w = $( window ),
 * スクロール値を取得する
 */
 var getScrollVal = ( callback ) => {
-	$( function(){
 		$w.on( 'scroll load', function() {
 			let $scrollVal = $w.scrollTop();
 			// return $scrollVal;
 			callback( $scrollVal );
 		} );
-	})
 }
 
 var backToTop = () => {

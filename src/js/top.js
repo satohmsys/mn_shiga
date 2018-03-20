@@ -18,22 +18,24 @@ var effefcts = () => {
 			/**
 			* panel navigation area
 			*/
-			$.each( $navPanels, function(){
-				let $target = $( this );
+			if( $navPanels ){
+				$.each( $navPanels, function(){
+					let $target = $( this );
 
-				if( $target.offset().top < $scrollBottom - 20 ){
-					$target.addClass( 'fadeIn' );
-				}
-			});
+					if( $target.offset().top < $scrollBottom - 20 ){
+						$target.addClass( 'fadeIn' );
+					}
+				});				
+			}
 
 
 
 			/**
 			* mainvisual 40th num
 			*/
-			if( $mainvisualArea.offset().top < $scrollBottom ) {
+			if( $mainvisualArea && $mainvisualArea.offset().top < $scrollBottom || ! $mainvisualArea.length) {
 				$mainvisualArea.addClass( 'fadeIn' );
-			}
+			} 
 
 
 			/**
@@ -41,8 +43,11 @@ var effefcts = () => {
 			*/
 			let $locationArea = $( '.section-navPanel__location' );
 
-			if( $locationArea.offset().top < $scrollBottom + 30 &&
-				 $scrollVal < ($locationArea.offset().top + $locationArea.outerHeight()) ){
+			if( $locationArea = $( '.section-navPanel__location' ) && 
+				$locationArea.offset().top < $scrollBottom + 30 && 
+				$scrollVal < ($locationArea.offset().top + $locationArea.outerHeight()) ||
+				! $locationArea.length
+			){
 				let bgpY = 100 - $scrollVal *0.05;
 				$locationArea.css({
 					'background-position': '0 ' + bgpY + '%'
@@ -57,18 +62,22 @@ var effefcts = () => {
 		/**
 		* slick
 		*/
-		$( '.mainvisual__images' ).slick({
-			arrows: false,
-			autoplay: true,
-			autoplaySpeed: 0,
-			dots: false,
-			fade: true,
-			infinite: true,
-			slideToShow: 1,
-			slideToScroll: 1,
-			speed: 8000
+		$w.on( 'load', function(){
+			if( $( '.mainvisual__images' ) ){
+				$( '.mainvisual__images' ).slick({
+					arrows: false,
+					autoplay: true,
+					autoplaySpeed: 8000,
+					dots: false,
+					fade: true,
+					infinite: true,
+					slideToShow: 1,
+					slideToScroll: 1,
+					speed: 8000
+				});				
+			}			
 		});
-	})
+	});
 }
 
 export default function(){

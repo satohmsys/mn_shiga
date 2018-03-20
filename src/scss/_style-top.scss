@@ -255,24 +255,26 @@ $slick-loader-path: "~slick-carousel/slick/";
 				align-items: center;
 			}				
 			
-			@extend .-hasArrow;	
+			// @extend .-hasArrow;	
 			
-			a:after{
-				margin-top: auto;
-				margin-bottom: auto;
-				position: absolute;
-				top: 0;
-				right: 5px;
-				bottom: 0;
-				display: block;
-				background: url(../img/common/icon-arrow-white.svg) center center no-repeat;
-			}	
+			// // a:after{
+			// // 	margin-top: auto;
+			// // 	margin-bottom: auto;
+			// // 	position: absolute;
+			// // 	top: 0;
+			// // 	right: 5px;
+			// // 	bottom: 0;
+			// // 	display: block;
+			// // 	background: url(../img/common/icon-arrow-white.svg) center center no-repeat;
+			// // }	
 		}
 		&__panel{
 			display: block;
 			opacity: 0;
 			transform: translateY( 10px );
 			transition: transition(all,0.35s);
+			border-radius: $radius;			
+			background-color: $blue_dull;
 			
 		
 			@include break( tab ){
@@ -303,7 +305,8 @@ $slick-loader-path: "~slick-carousel/slick/";
 
 			
 			@include mouseOver(){
-				background-size: 300%;
+				opacity: 0.7;
+				background-position: 0 -100%;
 				box-shadow: none;
 			}
 		}

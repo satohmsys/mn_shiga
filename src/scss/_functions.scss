@@ -1,0 +1,39 @@
+//////////////////////////////////////////
+
+//functions
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+
+/////////
+// easing
+/////////
+
+/// easig effect
+// @link http://easings.net/ja
+// 
+@function easeInOut( $prop : all, $s: 0.5s){
+	@return $prop $s ease-in-out 0s;
+}
+@function easeInOutCirc( $prop : all, $s: 0.5s){
+	@return $prop $s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+}
+@function easeOutBack( $prop : all, $s: 0.5s){
+	@return $prop $s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+}
+@function easeInOutBack( $prop : all, $s: 0.5s){
+	@return $prop $s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s;
+}
+
+
+
+///トランジション 設定
+// @param @content CSS properties
+//
+
+@function transition( $prop:all, $s:0.3s ){
+	@return easeInOut($prop, $s);
+	// @return easeInOutCirc($prop, $s);
+}

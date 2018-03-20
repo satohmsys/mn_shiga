@@ -1,1 +1,8 @@
 node_modules
+/test/
+/.*test$/
+/.*test\/.*/
+______test
+_____test
+____test
+_______test

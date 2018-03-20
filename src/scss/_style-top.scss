@@ -102,7 +102,7 @@ $slick-loader-path: "~slick-carousel/slick/";
 		bottom: -140px;
 		left: -50px;
 		color: #fff;
-		opacity: 0.4;
+		opacity: 0.525;
 		mix-blend-mode: overlay;
 		font-size: 800px;
 		font-family: $fontFamily_bodoniSans_r;
@@ -302,6 +302,12 @@ $slick-loader-path: "~slick-carousel/slick/";
 			box-shadow: 0 0 10px rgba(#000,0.15);
 			background: $blue_gradation ;
 			background-size: 100%;		
+			
+			@include break( tab ){
+				max-width: 230px;
+				padding: 20px;
+			}				
+
 
 			
 			@include mouseOver(){
@@ -356,7 +362,10 @@ $slick-loader-path: "~slick-carousel/slick/";
 		.panel-content{
 			font-size: $small;
 			font-weight: lighter;			
-			transition-delay: 0.8s;			
+			transition-delay: 0.8s;		
+			@include break( tab ){
+				font-size: 0.95em;
+			}	
 		}
 	}
 }
@@ -436,8 +445,12 @@ $slick-loader-path: "~slick-carousel/slick/";
 				position: relative;
 				box-sizing: border-box;
 				display: table;
+				color: $gray;
 				border-bottom: solid 1px $border;
 				
+				@include mouseOver(){
+					color: $navy;
+				}
 		
 				@include break( tab ){
 					padding-top: 15px;
@@ -466,6 +479,8 @@ $slick-loader-path: "~slick-carousel/slick/";
 				.topics__date{
 					width: 100px;
 					padding-right: 20px;
+					letter-spacing: 0.05em;
+					font-family: $fontFamily_bodoniSans_b;
 				}				
 			}
 		}

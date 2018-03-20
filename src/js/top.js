@@ -33,9 +33,11 @@ var effefcts = () => {
 			/**
 			* mainvisual 40th num
 			*/
-			if( $mainvisualArea && $mainvisualArea.offset().top < $scrollBottom || ! $mainvisualArea.length) {
-				$mainvisualArea.addClass( 'fadeIn' );
-			} 
+			if( $mainvisualArea ) {
+				if( $mainvisualArea.offset().top < $scrollBottom ) {
+					$mainvisualArea.addClass( 'fadeIn' );
+				} 
+			}
 
 
 			/**
@@ -43,10 +45,10 @@ var effefcts = () => {
 			*/
 			let $locationArea = $( '.section-navPanel__location' );
 
-			if( $locationArea = $( '.section-navPanel__location' ) && 
+			if( $locationArea &&
 				$locationArea.offset().top < $scrollBottom + 30 && 
-				$scrollVal < ($locationArea.offset().top + $locationArea.outerHeight()) ||
-				! $locationArea.length
+				$scrollVal < ($locationArea.offset().top + $locationArea.outerHeight()) &&
+				780 < $w.width()				
 			){
 				let bgpY = 100 - $scrollVal *0.05;
 				$locationArea.css({

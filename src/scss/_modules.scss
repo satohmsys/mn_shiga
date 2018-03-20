@@ -635,6 +635,16 @@
 		background: url(../img/common/icon-arrow-navy.svg) center center no-repeat;
 	}
 }
+.-hasBlank{
+	a:after{
+		content: " ";
+		width: 10px;
+		height: 12px;
+		margin-left: 5px;
+		display: inline-block;
+		background: url(../img/common/icon-targetBlank.svg) center center no-repeat;
+	}	
+}
 
 
 

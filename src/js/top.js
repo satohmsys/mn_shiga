@@ -64,21 +64,19 @@ var effefcts = () => {
 		/**
 		* slick
 		*/
-		$w.on( 'load', function(){
-			if( $( '.mainvisual__images' ) ){
-				$( '.mainvisual__images' ).slick({
-					arrows: false,
-					autoplay: true,
-					autoplaySpeed: 8000,
-					dots: false,
-					fade: true,
-					infinite: true,
-					slideToShow: 1,
-					slideToScroll: 1,
-					speed: 8000
-				});				
-			}			
-		});
+		if( $( '.mainvisual__images' ) ){
+			$( '.mainvisual__images' ).slick({
+				arrows: false,
+				autoplay: true,
+				autoplaySpeed: 8000,
+				dots: false,
+				fade: true,
+				infinite: true,
+				slideToShow: 1,
+				slideToScroll: 1,
+				speed: 8000
+			});				
+		}			
 	});
 }
 

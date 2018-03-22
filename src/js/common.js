@@ -29,24 +29,25 @@ var navToggle = () => {
 		/**
 		* sp button
 		*/
-		var $toggle = $( '.navToggle' ),
-			$body = $( 'body' );
+			var $toggle = $( '.navToggle' ),
+				$body = $( 'body' );
 
-		$toggle.on( 'click', function(){
-			$body.toggleClass( 'navOpen' );
-		} );
-		$w.on( 'resize', function(){
-			if( $flag ){
-				$flag = false;
-				setTimeout(function(){
-					if( 700 < $w.width() ){
-						$body.removeClass( 'navOpen' );
-					}
-					$flag = true;
-					return $flag;
-				}, 500 );
-			}
-		});
+			$toggle.on( 'click', function(){
+				$body.toggleClass( 'navOpen' );
+			} );
+			$w.on( 'resize', function(){
+				if( $flag ){
+					$flag = false;
+					setTimeout(function(){
+						if( 700 < $w.width() ){
+							$body.removeClass( 'navOpen' );
+						}
+						$flag = true;
+						return $flag;
+					}, 500 );
+				}
+			});
+			console.log( $toggle );
 }
 
 var commonScrollToggle = () => {

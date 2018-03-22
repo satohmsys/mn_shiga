@@ -54,9 +54,7 @@ module.exports = [{
 		* entry point
 		* v4 / エントリーポイントを指定しなければ自動的に「src/index.js」がエントリーポイントに
 		*/
-		entry:  
-		// entries,
-		{
+		entry: {
 			'bundle' : path.resolve(__dirname, './src/main.js'),
 			'top' : path.resolve(__dirname, './src/js/top.js'),
 			'page' : path.resolve(__dirname, './src/js/page.js'),
@@ -103,7 +101,7 @@ module.exports = [{
 					exclude: /node_modules/,
 					use: ExtractTextPlugin.extract({
 						fallback: 'style-loader',
-						publicPath: '../',
+						// publicPath: '../',
 						use: [
 							{
 								loader: 'css-loader',
@@ -165,7 +163,7 @@ module.exports = [{
 					}
 				},	
 				{
-					test: /\.(gif|png|jpg|svg)$/,
+					test: /\.(gif|png|jpg|svg|ico)$/,
 					exclude: /node_modules\/^(slick-carousel)/,
 					use: {
 						loader:'file-loader',
@@ -226,19 +224,28 @@ module.exports = [{
 		    }]),			
 	        new HtmlWebpackPlugin({ 
 				filename: 'index.html',
-				template: './src/ejs/index.ejs'
+				// favicon: './src/img/common/favicon.ico',
+				template: './src/ejs/index.ejs',
+				// inject: 'head',
+				excludeChunks: /page/
 			}),
 	        new HtmlWebpackPlugin({ 
 				filename: 'about/index.html',
-				template: './src/ejs/about/index.ejs'
+				// favicon: './src/img/common/favicon.ico',
+				template: './src/ejs/about/index.ejs',
+				// inject: 'head'
 			}),
 			new HtmlWebpackPlugin({ 
 				filename: 'topics/index.html',
-				template: './src/ejs/topics/index.ejs'
+				// favicon: './src/img/common/favicon.ico',
+				template: './src/ejs/topics/index.ejs',
+				// inject: 'head'
 			}),
 			new HtmlWebpackPlugin({ 
 				filename: 'contact/index.html',
-				template: './src/ejs/contact/index.ejs'
+				// favicon: './src/img/common/favicon.ico',
+				template: './src/ejs/contact/index.ejs',
+				// inject: 'head'
 			}),						
 	    ],
 

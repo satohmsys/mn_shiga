@@ -76,6 +76,12 @@
 			width: 200px;
 			margin-right: 40px;
 			float: left;
+			
+			@include break( tab ){
+				width: 25%;
+				margin-right: 5%;
+				
+			}
 		}
 	}
 	

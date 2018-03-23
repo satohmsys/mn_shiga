@@ -33,6 +33,7 @@
 	}
 
 	.topic{
+		clear: both;
 
 		&__index{
 			.subject{
@@ -59,6 +60,7 @@
 		
 		&__content{
 			margin-top: 20px;
+			overflow: hidden;
 			@include break( tab ){
 				margin-top: 15px;
 			}
@@ -68,6 +70,12 @@
 			p:last-child{
 				margin-bottom: 0;
 			}
+		}
+
+		&__thumbnail{
+			width: 200px;
+			margin-right: 40px;
+			float: left;
 		}
 	}
 	

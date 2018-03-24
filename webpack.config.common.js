@@ -65,9 +65,6 @@ module.exports = [{
 		*
 		*/
 		output: {
-			path: PATHS.output.path,
-			// publicPath: '../',		
-			publicPath: '/',
 			filename: 'assets/js/[name].js'
 		},		
 
@@ -138,7 +135,13 @@ module.exports = [{
 								loader: 'html-loader'
 							},						
 							{
-								loader:'ejs-html-loader'
+								loader:'ejs-html-loader',
+								options: {
+									title: 'The Ant: An Introduction',
+									season: 1,
+									episode: 9,
+									production:enabledSourceMap
+								}
 							}
 						]
 				},
@@ -221,6 +224,7 @@ module.exports = [{
 				// favicon: './src/img/common/favicon.ico',
 				template: './src/ejs/index.ejs',
 				// inject: 'head',
+				excludeChunks: /page/
 			}),
 	        new HtmlWebpackPlugin({ 
 				filename: 'about/index.html',

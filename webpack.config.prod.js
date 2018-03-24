@@ -36,7 +36,7 @@ const webpack = require( 'webpack' ),
 				contentBase: 'dist' 
 			},
 			output:{
-				path: path.resolve(__dirname,'dist')
+				path: path.resolve(__dirname,'dist_wp')
 			}
 		};
 const 	CopyWebpackPlugin = require('copy-webpack-plugin');		
@@ -60,17 +60,12 @@ module.exports = [{
 			'page' : path.resolve(__dirname, './src/js/page.js'),
 		},
 
-
-		/**
-		*
-		*/
 		output: {
 			path: PATHS.output.path,
-			// publicPath: '../',		
-			publicPath: '/',
-			filename: 'assets/js/[name].js'
+			// publicPath: '/dist',		
+			// publicPath: '/',
+			filename: PATHS.dir.output + '/js/[name].js'
 		},		
-
 
 		/**
 		*ファイル変換
@@ -138,7 +133,13 @@ module.exports = [{
 								loader: 'html-loader'
 							},						
 							{
-								loader:'ejs-html-loader'
+								loader:'ejs-html-loader',
+								options: {
+									title: 'The Ant: An Introduction',
+									season: 1,
+									episode: 9,
+									production:enabledSourceMap
+								}
 							}
 						]
 				},
@@ -151,8 +152,8 @@ module.exports = [{
 					use: {
 						loader:'file-loader',
 						options: {
-							publicPath: '/',							
-		                    name: 'assets/[path][name].[ext]'
+							publicPath: '/wp-content/themes/sumsortho18/',		
+		                    name: PATHS.dir.output + '/[path][name].[ext]'
 						}
 					}
 				},	
@@ -162,29 +163,11 @@ module.exports = [{
 					use: {
 						loader:'file-loader',
 						options: {
-							publicPath: '/',
-		                    name: 'assets/[path][name].[ext]'
+							publicPath: '/wp-content/themes/sumsortho18/',
+		                    name: PATHS.dir.output + '/[path][name].[ext]'
 						}
 					}
-				},					
-				// {
-				//	/**
-				//	*url-loaderはCSS中で使用するアセットをBase64エンコードしたdata URIとしてバンドルできるようにします。
-				//	* options.limitより大きい場合は外部参照でディレクトリをコピー
-				//	*/
-				// 	test: /\.(eot|woff|ttf|svg|css)$/,
-				// 	use: 'url-loader',
-				// 	// options: {
-				// 	// 	limit: 8192,
-	   			//  //  name: './img/[name].[ext]'
-				// 	// }
-				// },								
-				// {
-				// 	test: /\.html$/,
-				// 	use: {
-				// 		loader: 'html-loader'
-				// 	}
-				// }
+				}
 			]
 		},
 

@@ -2,6 +2,12 @@
 
 // about
 
+// use MW WP Form
+
+//入力：mw_wp_form mw_wp_form_input  
+//確認：mw_wp_form mw_wp_form_confirm mw_wp_form_preview 
+//完了：mw_wp_form mw_wp_form_complete
+
 ************************/
 
 %must{
@@ -17,6 +23,17 @@
 		width: 7px;
 		height: 7px;
 	}
+}
+
+%stepActive {
+	font-weight: normal;
+	color: $basefontColor;
+	border-bottom-color: $blue;
+	background-color: #fff;
+
+	.en{
+		color: inherit;
+	}	
 }
 
 
@@ -88,9 +105,9 @@
 				position: relative;
 				border-right: solid 2px #fff;
 				border-bottom: solid 2px $gray ;
-				color: $basefontColor*3;
+				color: $border;
 				text-align: center;
-				background-color: #fdfdfd;
+				background-color: #f9f9f9;
 				
 				@include break( tab ){
 					padding: 20px 10px;
@@ -101,20 +118,13 @@
 				}
 				
 				&.active{
-					font-weight: normal;
-					color: $basefontColor;
-					border-bottom-color: $blue;
-					background-color: #fff;
-					
-					.en{
-						color: inherit;
-					}
+					@extend %stepActive;
 				}
 
 				.en{
 					display: inline-block;
 					font-family: $fontFamily_bodoniSans_b;
-					color: $gray;
+					color: inherit;
 					letter-spacing: 0.025em;
 					&:before{
 						content: "";
@@ -135,6 +145,25 @@
 						}
 					}					
 				}
+			}
+		}
+
+		///////// 入力ステップ
+		.mw_wp_form_input .formArea__steps{
+			li.step1{
+				@extend %stepActive;
+			}
+		}
+		///////// 確認ステップ
+		.mw_wp_form_confirm .formArea__steps{
+			li.step2{
+				@extend %stepActive;
+			}
+		}
+		///////// 送信完了ステップ
+		.mw_wp_form_complete .formArea__steps{
+			li.step3{
+				@extend %stepActive;
 			}
 		}
 
@@ -159,6 +188,10 @@
 				}
 			}
 		}
+		///////// 送信完了ステップ
+		.mw_wp_form_complete .formArea__icon{
+			display: none;
+		}		
 	}
 
 
@@ -171,7 +204,7 @@
 		}		
 	
 		input[type="text"],
-		input[type="mail"],
+		input[type="email"],
 		input[type="tel"],
 		textarea{
 			width: 100%;
@@ -191,14 +224,15 @@
 		
 		table{
 			width: 100%;
+			border-collapse: collapse;
 			tr{
-				border-bottom: solid 1px $border;
+				border-bottom: solid 1px $border*1.145;
 			}
 			th,
 			td{
-				padding: 30px 10px;
+				padding: 40px 10px;
 				@include break( tab ){
-					padding: 15px 10px;
+					padding: 20px 10px;
 				}					
 			}
 
@@ -227,6 +261,25 @@
 			}
 		}
 
+		&__buttons{
+			margin-top: 50px;
+			display: flex;
+			justify-content: space-between;
+			
+			@include break( sp ){
+				margin-top: 30px;
+				flex-direction: column;
+			}			
+			
+			 > .button{
+			 	width: 100%;
+			 	margin: 20px 2.5%;
+				@include break( sp ){
+					margin: 20px 0;
+				}				 	
+			 }
+		}
+
 		.button{
 			margin-top: 20px;
 			@include break( sp ){
@@ -241,24 +294,41 @@
 				}					
 			}
 		}
+
+		:placeholder-shown {
+		    color: #cccccc; }
+
+		/// Google Chrome, Safari, Opera 15+, Android, iOS 
+		::-webkit-input-placeholder {
+		    color: #cccccc; }
+
+		/// Firefox 19+ 
+		::-moz-placeholder {
+		    color: #cccccc; opacity: 1; }
+
+		/// IE 10+ 
+		:-ms-input-placeholder {
+		    color: #cccccc; }		
 	}
-
-
 
 	///////// お電話の注意
 	.contactTel{
 		&__index{
 			@extend %indexStyle_b;
 		}
+	}
 
-		.telnum{
-			
+	///// 入力ステップ
+	.mw_wp_form_input{
+		.button--back{
+			display: none;
 		}
-	}
-	
-	.articleContent{
-		
-	}
+	}		
 
-
+	///// 送信完了ステップ
+	.mw_wp_form_complete .form{
+		padding: 90px 30px;
+		text-align: center;
+		border: solid 1px $blue_lighten;
+	}		
 }

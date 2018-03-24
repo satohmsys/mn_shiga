@@ -510,6 +510,7 @@
 		
 		@include mouseOver(){
 			box-shadow: none;
+			transform: scale( 0.97 );
 			background-color: darken( $navy, 2.5% );
 		}
 		

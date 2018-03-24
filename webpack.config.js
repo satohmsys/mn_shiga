@@ -68,7 +68,7 @@ module.exports = [{
 			path: PATHS.output.path,
 			// publicPath: '../',		
 			publicPath: '/',
-			filename: 'assets/js/[name].js'
+			filename: PATHS.dir.output +　'/js/[name].js'
 		},		
 
 
@@ -152,7 +152,7 @@ module.exports = [{
 						loader:'file-loader',
 						options: {
 							publicPath: '/',							
-		                    name: 'assets/[path][name].[ext]'
+		                    name: PATHS.dir.output +　'/[path][name].[ext]'
 						}
 					}
 				},	
@@ -163,7 +163,7 @@ module.exports = [{
 						loader:'file-loader',
 						options: {
 							publicPath: '/',
-		                    name: 'assets/[path][name].[ext]'
+		                    name: PATHS.dir.output +　'/[path][name].[ext]'
 						}
 					}
 				},					

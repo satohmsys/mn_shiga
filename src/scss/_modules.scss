@@ -432,6 +432,7 @@
 		}				
 			
 		.banners{
+			text-align: center;
 			overflow: hidden;
 	
 			@include break( tab ){
@@ -449,14 +450,14 @@
 		}
 		
 		li{
-			padding-right: 30px;
-			padding-left: 30px;
-			float: left;
-			display: block;
-			@include break( tab ){
-				padding-left: 10px;
-				padding-right: 10px;
-			}				
+			padding-right: 20px;
+			padding-left: 20px;
+			// float: left;
+			display: inline-block;
+			// @include break( tab ){
+			// 	padding-left: 20px;
+			// 	padding-right: 20px;
+			// }				
 		}
 	}
 
@@ -729,4 +730,38 @@
 			}
 		}
 	}
+	&--back{
+		display: block;
+		position: relative;
+		
+		// &:after{
+		// 	content: " ";
+		// 	width: 16px;
+		// 	height: 8px;
+		// 	margin-left: 10px;			
+		// 	margin-top: auto;
+		// 	margin-bottom: auto;
+		// 	position: absolute;
+		// 	top: 0;
+		// 	right: 5px;
+		// 	bottom: 0;
+		// 	display: block;
+		// 	background: url(../img/common/icon-arrow-white.svg) center center no-repeat;
+		// }		
+
+		input{
+			width: 100%;
+			box-sizing: border-box;
+			cursor: pointer;
+			border: none;
+			font-size: 1em;
+
+			@extend%buttonStyle_cv;
+			background-image: $blue_gradation;
+
+			@include mouseOver(){
+				background-size: 300% auto;
+			}
+		}
+	}	
 }

@@ -47,7 +47,6 @@ var navToggle = () => {
 					}, 500 );
 				}
 			});
-			console.log( $toggle );
 }
 
 var commonScrollToggle = () => {
@@ -82,6 +81,7 @@ var headExpand = () => {
 		getScrollVal( f );
 }
 
+export {$};
 export {$w};
 export {getScrollVal};
 export default function(){

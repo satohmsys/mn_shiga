@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import 'slick-carousel';
 import { getScrollVal, $w } from './common.js';
+import 'slick-carousel';
 // import 'slick/slick.scss';
 
 

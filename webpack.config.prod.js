@@ -26,8 +26,8 @@ const webpack = require( 'webpack' ),
 		path = require( 'path' ),
 		ExtractTextPlugin = require('extract-text-webpack-plugin'),
 		HtmlWebpackPlugin = require('html-webpack-plugin'),
-		MODE = 'development',
-		enabledSourceMap = ( MODE === 'development' ),
+		MODE = 'production',
+		enabledSourceMap = ( MODE === 'production' ),
 		PATHS = {
 			dir: {
 				output: 'assets'
@@ -47,8 +47,6 @@ module.exports = [{
 		* v4 / developmentだとsource mapも有効化
 		*/
 		mode: MODE,
-
-		devtool: 'source-map',
 
 		/**
 		* entry point
@@ -134,12 +132,6 @@ module.exports = [{
 							},						
 							{
 								loader:'ejs-html-loader',
-								options: {
-									title: 'The Ant: An Introduction',
-									season: 1,
-									episode: 9,
-									production:enabledSourceMap
-								}
 							}
 						]
 				},
@@ -176,17 +168,17 @@ module.exports = [{
 		*/
 		optimization: {
 			splitChunks:{
-				// name: 'bundle',
-				// chunks: 'async'
+				name: 'bundle',
+				chunks: 'async'
 		      // cacheGroups内にバンドルの設定を複数記述できる
-		      cacheGroups: {
-		        bundle: {
-		          // node_modules配下のモジュールをバンドル対象とする
-		          test: /node_modules/,
-		          name: 'bundle',
-		          chunks: 'async',
-		        }
-		      }				
+		      // cacheGroups: {
+		      //   bundle: {
+		      //     // node_modules配下のモジュールをバンドル対象とする
+		      //     test: /node_modules/,
+		      //     name: 'bundle',
+		      //     chunks: 'async',
+		      //   }
+		      // }				
 			}
 		},
 

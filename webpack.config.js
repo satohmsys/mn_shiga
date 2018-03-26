@@ -60,7 +60,6 @@ module.exports = [{
 			'page' : path.resolve(__dirname, './src/js/page.js'),
 		},
 
-
 		/**
 		*
 		*/
@@ -70,7 +69,6 @@ module.exports = [{
 			publicPath: '/',
 			filename: PATHS.dir.output +　'/js/[name].js'
 		},		
-
 
 		/**
 		*ファイル変換
@@ -193,17 +191,17 @@ module.exports = [{
 		*/
 		optimization: {
 			splitChunks:{
-				// name: 'bundle',
-				// chunks: 'async'
+				name: 'bundle',
+				chunks: 'async'
 		      // cacheGroups内にバンドルの設定を複数記述できる
-		      cacheGroups: {
-		        bundle: {
-		          // node_modules配下のモジュールをバンドル対象とする
-		          test: /node_modules/,
-		          name: 'bundle',
-		          chunks: 'async',
-		        }
-		      }				
+		      // cacheGroups: {
+		      //   bundle: {
+		      //     // node_modules配下のモジュールをバンドル対象とする
+		      //     test: /node_modules/,
+		      //     name: 'bundle',
+		      //     chunks: 'async',
+		      //   }
+		      // }				
 			}
 		},
 
@@ -253,9 +251,14 @@ module.exports = [{
 			contentBase: PATHS.devServer.contentBase, //ここをルートとしてサーブ
 			hot: true,
 			inline: true,
+			compress: true,
 			open: true,
 			port: 3000,
 			host: "0.0.0.0"		
 		},
+
+		performance: {
+			'hints': 'warning'
+		}
 	}
 ];

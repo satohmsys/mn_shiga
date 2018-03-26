@@ -82,16 +82,20 @@ var headExpand = () => {
 }
 
 var isLoaded = () => {
-	$( '.loadingAnim' ).on( 'transitionend', function(){
-		$( '.loadingAnim' ).remove();
-		console.log( 'remove ')
-	})
-	$w.on( 'load', function(){
-		$body.addClass( 'isLoaded' );
-		// $( '.loadingAnim' ).fadeOut('fast', function(){
-		// 	$(this).remove();
-		// })
-	});
+
+	let $loadingAnim = $( '.loadingAnim' );
+	
+	if( $loadingAnim ){
+		$loadingAnim.on( 'transitionend', function(){
+			$loadingAnim.remove();
+		})
+		$w.on( 'load', function(){
+			$body.addClass( 'isLoaded' );
+			// $( '.loadingAnim' ).fadeOut('fast', function(){
+			// 	$(this).remove();
+			// })
+		});	
+	}
 }
 
 export {$};

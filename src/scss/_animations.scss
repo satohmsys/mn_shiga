@@ -7,3 +7,19 @@
 //////////////////////////////////////////
 
 
+@keyframes loading {
+	from {
+		transform: translateX(-30px);
+	}
+	to { 
+		transform: translateX(30px);
+	}
+}
+@keyframes loading_s {
+	from {
+		transform: translateX(-20px);
+	}
+	to { 
+		transform: translateX(20px);
+	}
+}

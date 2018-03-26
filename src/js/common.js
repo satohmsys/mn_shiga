@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
 let $w = $( window ),
+	$body = $( 'body' ),
 	$flag = true;
 
 /**
@@ -29,8 +30,7 @@ var navToggle = () => {
 		/**
 		* sp button
 		*/
-			var $toggle = $( '.navToggle' ),
-				$body = $( 'body' );
+			var $toggle = $( '.navToggle' );
 
 			$toggle.on( 'click', function(){
 				$body.toggleClass( 'navOpen' );
@@ -81,6 +81,19 @@ var headExpand = () => {
 		getScrollVal( f );
 }
 
+var isLoaded = () => {
+	$( '.loadingAnim' ).on( 'transitionend', function(){
+		$( '.loadingAnim' ).remove();
+		console.log( 'remove ')
+	})
+	$w.on( 'load', function(){
+		$body.addClass( 'isLoaded' );
+		// $( '.loadingAnim' ).fadeOut('fast', function(){
+		// 	$(this).remove();
+		// })
+	});
+}
+
 export {$};
 export {$w};
 export {getScrollVal};
@@ -89,4 +102,5 @@ export default function(){
 	backToTop();
 	commonScrollToggle();
 	headExpand();
+	isLoaded();
 }

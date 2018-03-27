@@ -148,10 +148,10 @@
 		position: relative;
 		
 		.section--culture__40th{
-			width: 400px;
+			width: percentage( 382.451 / 1366 );
 			// width: 482px;
 			height: 0;
-			padding-top: percentage( 500/ 910);
+			padding-top: percentage( 482.451 / 910.546);
 			position: absolute;
 			right: 0;
 			bottom: 0;

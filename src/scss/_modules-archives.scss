@@ -87,11 +87,48 @@
 	
 }
 
-.topicsListNext{
+// .topicsListNext{
+// 	margin-top: 40px;
+// 	font-size: $small;
+// 	text-align: right;
+// 	@extend .-hasArrow;
+// }
+
+////////// ページネーション
+.pagination{
+	// width: 300px;
 	margin-top: 40px;
-	font-size: $small;
-	text-align: right;
-	@extend .-hasArrow;
+	display: table;
+	margin-left: auto;
+	
+	@include break( tab ){
+		width: 300px;
+		margin-right: auto;
+	}
+
+	&__controller{
+		font-size: $small;
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.-previous{
+		a:before{
+			content: " ";
+			width: 16px;
+			height: 8px;
+			margin-right: 10px;
+			display: inline-block;
+			transform: rotate( -180deg );
+			background: url(../img/common/icon-arrow-navy.svg) center center no-repeat;
+		}		
+	}
+	.-next{
+		padding-left: 40px;
+		text-align: right;
+		@extend .-hasArrow;		
+	}
+	
 }
 }
 

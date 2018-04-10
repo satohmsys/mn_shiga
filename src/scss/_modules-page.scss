@@ -9,7 +9,7 @@
 	margin-bottom: 40px;
 	color: $blue_dull;
 	font-size: 2em;
-	letter-spacing: 0.01em;
+	letter-spacing: 0.1em;
 	
 	@include break( tab ){
 		margin-bottom: 30px;
@@ -22,7 +22,7 @@
 	margin-bottom: 30px;
 	font-weight: bold;
 	font-size: 1.25em;
-	letter-spacing: 0.01em;
+	letter-spacing: 0.075em;
 	
 	&:before{
 		line-height: 1;
@@ -427,10 +427,14 @@
 
 .aColumn{
 	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 30px;
 	display: table;
 	table-layout: fixed;
 	
 	@include break( tab ){
+		margin-top: 25px;
+		margin-bottom: 25px;
 		display: block;
 	}		
 	
@@ -454,12 +458,16 @@
 //////// 囲み
 .aInfo{
 	max-width: 770px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 	padding: 30px;
 	text-align: center;
 	border: solid 1px $border;
 	box-sizing: border-box;
 	
 	@include break( tab ){
+		margin-top: 25px;
+		margin-bottom: 25px;
 		padding: 20px;
 	}
 	

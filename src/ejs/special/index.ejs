@@ -1,0 +1,247 @@
+<% 
+	$path = '../';
+	$imgPath = '../../img/';
+	$active = 'special';
+	include( $path + '_include/_function.ejs' );
+	$meta.title = '特徴を知る |滋賀医科大学 整形外科学講座';
+	$meta.description = '滋賀医科大整形外科学講座が行っている研修プログラムや当講座ならではの特徴などを紹介します。';
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include( $path + '_include/head.ejs' ); %>
+</head>
+	<body class="page page-special">
+		<%- include( $path + '_include/header.ejs' ); %>
+		<main class="mainContent">
+			<!-- ***** mainvisual -->
+			<section class="visual -inContents js-effect">
+				<div class="visual__image">
+					<img src="<%- $imgPath + $active %>/special-mv.jpg" srcset="/assets/img/<%- $active %>/sp/special-mv.jpg 780w, /assets/img/<%- $active %>/special-mv.jpg" alt="">
+				</div>
+				<div class="visual__textArea">
+					<div class="wrap">
+						<header class="visual__index">
+							<span class="en"><span>S</span><span>P</span><span>E</span><span>C</span><span>I</span><span>A</span><span>L</span>
+							</span>
+							<h1 class="ja">特徴を知る</h1>
+							
+						</header>
+						<ul class="breadCrumb">
+							<li><a href="<%-$path %>index.html">TOP</a></li>
+							<li>特徴を知る</li>
+						</ul>
+					</div>
+
+				</div>				
+			</section>
+			<!-- ///// mainvisual -->
+
+			<!-- ***** contents -->
+			<article class="articleContent">
+				<section class="articleContent__section">
+					<div class="wrap">					
+						<h2 class="articleContent__section__index">
+							教室の特徴
+						</h2>
+						<div class="articleSection__content">
+							<p>当教室は2018年現在、大学の職務に従事している医局員が18名です。規模の大きな教室とはいえませんが、指導者と研修医や若手医師などの教育を受ける医師とのバランスがよく、学びやすい環境にあると自負しています。また、毎年3名程度の入局者がいます。</p>
+
+							<p>当教室では、幅広い整形外科の専門分野をほぼ網羅的に学ぶことができます。これまでの歴代4名の教授もリウマチ、脊椎、スポーツ、上肢・肩と、それぞれ違った分野を専門としてきた先生方で、それだけ多くの知識が蓄積された教室であるといえます。</p>
+
+							<p>また、教室の雰囲気はあたたかく、なんでも質問できるような雰囲気です。そのため、学びたいという意志の強い医師にとっては、非常に学びやすい環境ではないでしょうか。指導医はみな教育熱心で、面倒見がよいので、意欲的に取り組めばそれだけ多くのことを吸収できるはずです。</p>				
+
+							<section class="articleContent__child">
+								<h3 class="articleContent__child__index">
+									滋賀県の医師不足を解消し、よりよい医療を提供する
+								</h3>
+								<p>滋賀県全域の整形外科医の数は多いとはいえず、他県の大学病院から派遣されてくる医師を含めても医師不足が深刻です。当教室は滋賀県内の医師不足を少しでも解消し、頼りがいのある医師を多く輩出できるようこれからも精進してまいります。</p>
+							</section>											
+						</div>
+					</div>
+				</section>
+				<section class="articleContent__section section--needs">
+					<div class="wrap">					
+						<h2 class="articleContent__section__index">
+							整形外科の特色と社会的ニーズ
+						</h2>
+						<div class="articleSection__content">
+							<p>整形外科は、運動器を構成するすべての組織、つまり骨、軟骨、筋、靱帯、神経の疾患・救急外傷を対とします。厚生労働省の「平成19年度国民生活基礎調査」によると、腰痛・肩こり・手足の関節痛など運動器の症状がすべての症状の１～3位を占め、整形外科医の対象患者が如何に多いか分かります。</p>
+							<p>その原因疾患は、先天性発育異常、炎症、腫瘍、加齢による変性、スポーツ障害など多岐にわたり、新生児から成人、高齢者まで全ての年齢層が対象になります。救急医療の現場でも骨折や神経損傷など整形外科医の活躍が幅広く求められます。多くの基幹病院において新患患者数、外来患者数、入院患者数、手術件数などで整形外科の占める割合は大きく、医師派遣要請の最も多い診療科の一つと言えます。つまり整形外科の特色を一言で言うなら、「その活躍が広く社会から求められている」診療科と言えます。
+							</p>
+							<div class="aColumn">
+								<figure class="aColumn__row"><img src="<%- $imgPath + $active %>/special-chart-bar.svg" width="430" alt=""></figure>
+								<figure class="aColumn__row"><img src="<%- $imgPath + $active %>/special-chart-circle.svg" width="472" alt=""></figure>								
+							</div>
+							<p>
+								日本は世界にさきがけて高齢化社会を迎え、多くの人々が、運動器をこれほど長期間使用し続ける時代は、これまでありませんでした。<br>これに伴い運動器の障害も増加しています。要介護・要支援認定の24％が、「脊髄・関節の病気」や「転倒による骨折」が原因なのです。リハビリテーションは整形外科の重要な分野であり、人口の少子高齢化に伴い、そのニーズも急騰しています。<br>早期から適切な運動器リハビリテーションを行うことにより、障害そのものの発生を予防し、そして障害の程度を最小限にとどめることは、要介護となることを予防し、生活機能を維持・向上するうえでとても大切です。<br>運動器全般にかかわる医学領域は、高齢化社会を迎え、さらに拡大・拡充が要望されています。								
+							</p>									
+						</div>
+					</div>
+				</section>
+				<section class="articleContent__section ">
+					<div class="wrap">					
+						<h2 class="articleContent__section__index">
+							当教室でのキャリア形成
+						</h2>
+						<div class="articleSection__content">
+							<p>医師のキャリアには大きく「専門医取得」と「学位取得」と「自分の専門分野を持つ」という目標があると思います。</p>
+							<p>まず専門医に関しては当教室では日本整形外科学会の専門医資格を全員が取得しています。日本整形外科学会の専門医は最短で医学部卒後6年目に受験、7年目に合格します。<br>当教室のほとんどの医師は最短で専門医資格を取得しています。</p>
+
+							<p>学位取得を目指さず、臨床の現場で活躍したいと考える医師は、専門医資格を取得した段階で、自身のより細かな専門を決め、実際の現場で臨床に従事します。</p>
+												
+						</div>
+					</div>
+				</section>
+				<section class="articleContent__section ">
+					<div class="wrap">					
+						<h2 class="articleContent__section__index">
+							専門医の育成方針
+						</h2>
+						<div class="articleSection__content">
+							<p>滋賀医科大学整形外科専門研修プログラムは到達目標を「総合的な運動器の診療を行える整形外科専門医」としています。2017年からスタートする新専門医制度に先立ち、滋賀医科大学整形外科では、地域の研修指定病院と連携して、2013年より独自の後期研修プログラムを構築・運用してきました。その経験と実績により洗練された研修内容を提供します。</p>
+							<p>整形外科学は、運動器の機能と形態の維持・再建をめざす臨床医学であり、脊椎、上肢、下肢などの広範な診療領域を扱います。高齢化社会をむかえた我国 においては、整形外科への期待はますます大きくなっています。現在、滋賀医科大学 整形外科には、上肢・肩・手外科、脊椎、股関節、膝関節、スポーツ整形、リウマチ、足の外科、小児整形外科、骨代謝（骨粗鬆症）、リハビリテーションなどの診療・研究グルー プがあります。本プログラムの連携施設は、外傷外科（救急外傷）、小児整形外科、スポーツ整形、手外科、脊椎外科、関節外科、救急 医療、リハビリテーションなどそれぞれに特色をもった13におよぶ施設、病院があり、機能的なローテーションにより、プライマリケアから最先端の臨床・研究までを学ぶことができます。</p>
+
+							<p>滋賀医科大学整形外科は、創設から 39年（1977年4月1日創設）が経過し、整形外科全領域にわたる研究・ 教育・診療体制が整備されています。「総合的な運動器の診療科を目指して」を掲げる滋賀医科大学整形外科は、専攻医の皆様に素晴らしい研究環境を提供し、個々の能力を最大限に引き出す研修を目指します。</p>
+							<section class="articleContent__child">
+								<h3 class="articleContent__child__index">
+									専門医資格に向けた指導体制
+								</h3>
+								<div class="aInfo">
+									<p>
+										<small>参照資料</small> 整形外科専門研修プログラム整備基準及び付属資料（日本整形外科学会 HP）<br><a href="http://www.joa.or.jp/jp/edu/index.html" target="_blank">http://www.joa.or.jp/jp/edu/index.html</a>
+									</p>
+								</div>
+								<p>滋賀医科大学整形外科は、初代七川教授のリウマチ関節外科とヒューマニズム、二代福田教授の脊椎外科と先進性、三代松末教授の関節鏡外科とリーダーシップの３つの大きなうねりの中で育まれてきました。この三つの分野の直系後継者と言っても過言でない優秀なスタッフが現在の滋賀医大整形の各診療チームを形成しています。得意分野のご説明は、各診療チームの紹介の項に委ねます。</p>
+
+								<p>このように書いている第四代教授である私自身が、先の３名の先生方に薫陶を頂いた滋賀医大卒業生の一人であります。私に課せられた責務は、先の優れた先人が残された専門性豊かな医療を地域に還元するとともに、滋賀医大で育てられた整形外科医師や研究者を全国へ、そして世界へと輩出できるよう支援と機会を与えることと心がけています。これができるように自ら精進することが、先人への感謝と次の世代への贈り物につながると考えています。	</p>
+							</section>
+							<section class="articleContent__child">
+								<h3 class="articleContent__child__index">
+									指導方針
+								</h3>
+								<p>滋賀医科大学医学部附属病院（基幹施設）および連携施設群において研修を行います。研修実績の記録と評価には、日本整形外科学会整形外科専門医管理システムを用います。専攻医は、各研修領域終了時および研修施設移動時に日本整形外科学会が作成したカリキュラム成績表の自己評価欄に行動目標毎の自己評価を行います。また指導医評価表で指導体制、研修環境に対する評価を行います。<br> 研修実績と評価をもとに、専門研修最終年度の 3 月に研修プログラム管理委員会において、専門研修修了判定を行います。このプログラムおよび専門研修プログラム管理委員会は、サイトビジットを含む第3者の評価・指導を受けます。</p>
+							</section>							
+						</div>
+					</div>
+				</section>
+				<section class="articleContent__section section--after">
+					<div class="wrap">					
+						<h2 class="articleContent__section__index">
+							専門医資格習得後
+						</h2>
+						<div class="articleSection__content">
+							<p>滋賀医科大学整形外科研修プログラムを修了した専攻医は、運動器に関する科学的知識と高い社会的倫理観を備え、さらに、進歩する医学の新しい知識と技能を修得できるような幅広い基本的な臨床能力（知識・技能・態度）が身についた整形外科専門医となることができます。また、同時に専攻医は研修期間中に以下のコアコンピテンシーも習得できます。</p>
+							<ol class="afterIs">
+								<li>
+									<h3 class="afterIs__index">ホスピタリティー</h3>
+									<div class="afterIs__content">患者への接し方に配慮し、患者や医療関係者とのコミュニケーション能力を磨くこと</div>
+								</li>
+								<li>
+									<h3 class="afterIs__index">プロフェッショナリズム</h3>
+									<div class="afterIs__content">自立して、誠実に、自律的に医師としての責務を果たし、周囲から信頼されること</div>
+								</li>
+
+								<li>
+									<h3 class="afterIs__index">診察・診療力</h3>
+									<div class="afterIs__content">診療記録の適確な記載ができること</div>
+								</li>
+
+								<li>
+									<h3 class="afterIs__index">指導力</h3>
+									<div class="afterIs__content">後輩医師に教育・指導を行うこと</div>
+								</li>
+
+								<li>
+									<h3 class="afterIs__index">チームワーク</h3>
+									<div class="afterIs__content">チーム医療の一員として行動すること</div>
+								</li>
+
+								<li>
+									<h3 class="afterIs__index">臨床</h3>
+									<div class="afterIs__content">臨床から学ぶことを通して基礎医学・臨床医学の知識や技術を修得すること</div></li>
+
+								<li>
+									<h3 class="afterIs__index">思いやり</h3>
+									<div class="afterIs__content">医の倫理、医療安全等に配慮し、患者中心の医療を実践できること</div>
+								</li>
+							</ol>
+							<section class="articleContent__child">
+								<h3 class="articleContent__child__index">
+									支援体制
+								</h3>
+								<ol class="supportsIs">
+										<li>
+											<h4 class="supportsIs__index">専門知識・専門技能の習得計画</h4>
+											<div class="suportsIs__content">本研修プログラムでは、専門知識を領域毎に研修し、知識能習得状況を6 ヵ月毎に評価します（自己評価および指導医評価）。専門研修プログラム管理委員会による専攻医面接を年 1 回行い、評価したデータをまとめた評価表を参照し、知識習得に関する目標設定・取得単位調整・指導を行います。</div></li>
+
+										<li>
+											<h4 class="supportsIs__index">経験目標（経験すべき疾患・病態、診察・検査等、手術処置等） </h4>
+											<div class="suportsIs__content">経験すべき疾患・病態、診察・検査等、手術処置等は、整形外科専門医の受験資格に必要な症例数以上を滋賀医科大学医学部附属病院及び連携施設で偏りがないように経験することができます。</div></li>
+
+										<li>
+											<h4 class="supportsIs__index">プログラム全体と連携施設によるカンファレンス</h4>
+											<div class="suportsIs__content">各研修施設の研修委員会の計画の下、症例検討や抄読会を行います。専攻医の知識・技能習得のためのセミナーを専門研修プログラム 管理委員会が企画・開催します。</div></li>
+
+										<li>
+											<h4 class="supportsIs__index">リサーチマインドの養成計画</h4>
+											<div class="suportsIs__content">全ての専攻医が自らの症例を用いて研究した成果を発表するカンファレンス「レジデントデイ」を年 1 回以上開催します。研究指導は各施設の指導医が行います。</div></li>
+
+										<li>
+											<div class="suportsIs__content"><h4 class="supportsIs__index">学術活動に関する具体的目標とその指導体制（専攻医1人あたりの学会発表、論文等）</div></h4>
+											専攻医が学会発表年 1回以上、また論文執筆を年 1本以上行えるように指導します。専門研修プログラム管理委員会は全専攻医の学会発表数および論文執筆数を年 1 回集計し、面接時に指導・助言します。</li>
+
+										<li>
+											<h4 class="supportsIs__index">コアコンピテンシーの研修計画（医療倫理、医療安全、院内感染対策等） </h4>
+											<div class="suportsIs__content">滋賀医科大学医学部附属病院および各研修施設の医療安全・医療安全講習会等に参加し、その参加状況を年 1 回専門研修プログラム管理委員会に報告します。さらに専攻医評価表を用いてフィードバックをすることによって基本的診療能力（コアコンピテンシー）を早期に獲得させます。</div></li>
+
+										<li>
+											<h4 class="supportsIs__index">地域医療に関する研修計画 </h4>
+											<div class="suportsIs__content">本プログラムの研修施設群は医師不足地域中核病院を含みます。また、地域の特性上、地域医療に関する研修はほとんどの連携病院で行えると考えています。（11pの研修病院群と指導可能な研修領域（案）を参照）	</div></li>
+								</ol>
+							</section>	
+							<section class="articleContent__child">
+								<h3 class="articleContent__child__index">
+									サブスペシャルティ資格取得に向けて
+								</h3>
+								<p>本プログラムの滋賀医科大学医学部附属病院および連携施設にはこれらサブスペシャルティ領域の研修施設が複数施設ずつ含まれています。<br>整形外科専門研修期間からこれらのサブスペシャルティ領域の研修を行うことができ、専攻医のサブスペシャルティ領域の専門研修や学術活動を支援します。</p>
+							</section>									
+						</div>
+					</div>
+				</section>
+				<section class="articleContent__section section--related">
+					<div class="wrap">					
+						<h2 class="articleContent__section__index">
+							関連病院・施設のご紹介
+						</h2>
+						<div class="articleSection__content">
+							<ul class="relatedList">
+								<li>滋賀医科大学医学部附属病院</li>
+								<li>大津赤十字病院</li>
+								<li>公立甲賀病院</li>
+								<li>草津総合病院</li>
+								<li>市立長浜病院</li>
+							</ul>
+							<ul class="relatedList">
+								<li>長浜赤十字病院</li>
+								<li>滋賀県立総合病院</li>
+								<li>医仁会武田総合病院</li>
+								<li>京都岡本記念病院</li>
+								<li>宇治徳洲会病院</li>
+							</ul>
+							<ul class="relatedList">
+								<li>滋賀県立小児保健医療センター</li>
+								<li>近江八幡市立総合医療センター</li>
+								<li>京都民医連中央病院</li>
+								<li>多根総合病院</li>
+							</ul>														
+						</div>
+					</div>
+				</section>															
+			</article>
+			<!-- ///// contents -->
+			
+		</main>
+		<%- include( $path + '_include/footer.ejs' ); %>
+	</body>
+</html>

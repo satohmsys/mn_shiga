@@ -1,0 +1,200 @@
+<% 
+	$path = '../';
+	$imgPath = '../../img/';
+	$active = 'about';
+	include( $path + '_include/_function.ejs' );
+	$meta.title = '教室のご紹介 |滋賀医科大学 整形外科学講座';
+	$meta.description = '滋賀医科大整形外科学講座の教室紹介ページです。今井教授の挨拶をはじめ、当講座の沿革について紹介します。';
+
+	$scripts = [ $path + 'page.js'];
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include( $path + '_include/head.ejs' ); %>
+</head>
+	<body class="page page-about">
+		<%- include( $path + '_include/header.ejs' ); %>
+		<main class="mainContent">
+			<!-- ***** mainvisual -->
+			<section class="visual -inContents js-effect">
+				<div class="visual__image">
+					<img src="<%- $imgPath + $active %>/about-mv.jpg" srcset="/assets/img/<%- $active %>/sp/about-mv.jpg 780w, /assets/img/<%- $active %>/about-mv.jpg" alt="">
+				</div>
+				<div class="visual__textArea">
+					<div class="wrap">
+						<header class="visual__index">
+							<span class="en"><span>A</span><span>B</span><span>O</span><span>U</span><span>T</span></span>
+							<h1 class="ja">教室の紹介</h1>
+							
+						</header>
+						<ul class="breadCrumb">
+							<li><a href="<%-$path %>index.html">TOP</a></li>
+							<li>教室の紹介</li>
+						</ul>
+					</div>
+
+				</div>				
+			</section>
+			<!-- ///// mainvisual -->
+
+			<!-- ***** contents -->
+			<article class="articleContent">
+					<section class="articleContent__section section--greeting">
+						<div class="wrap">
+							<div class="greeting js-effect">
+								<figure>
+									<img src="<%- $imgPath + $active %>/about-greeting-imai.jpg" width="550" alt="">
+								</figure>
+								<div class="greeting__by">
+									<p>
+										滋賀医科大学<br>
+										整形外科学講座<br>
+										教授
+									</p>
+									<p class="greeting__by__name">今井晋二</p>
+								</div>
+							</div>						
+							<h2 class="articleContent__section__index">
+								教授ご挨拶
+							</h2>
+							<div class="articleSection__content">
+								<p>
+									整形外科は、運動器の外傷（ケガ）や疾患（病気）を診断し治療する診療科です。運動器とは骨、軟骨、筋肉、靱帯、神経など人体の運動を司る組織や器官のことであり、整形外科は四肢、体幹の運動器の健康を守る専門家です。整形外科の患者さんは新生児から高齢者まで全ての年齢層にわたり、先天的な疾患、成長期にみられる疾患、交通事故や労働災害による外傷、スポーツによる外傷や故障、加齢に伴う関節や脊椎の疾患、骨や軟部組織の腫瘍、関節リウマチや骨髄炎などの炎症性疾患、あるいは骨粗鬆症などの代謝性疾患など、多種多様な外傷や疾患を対象としています。さらに昨今の人口の高齢化などにより整形外科に対する社会的ニーズはますます大きくなっています。</p>
+											
+
+								<section class="articleContent__child">
+									<h3 class="articleContent__child__index">
+										滋賀医科大学整形外科の主なサブグループ
+									</h3>
+									<p>滋賀医科大学整形外科はいくつかのサブグループに分かれて臨床・研究を行っています。それぞれの分野の専門家が診療・研究を行い、保存的治療から最先端の再生医療、新生児、小児から超高齢者まで多くの患者さんの運動器の健康、整形外科医療の発展に寄与しています。また、当教室は複数の関連病院と協力し、他施設での検証試験にも取り組んでいます。これにより現在整形外科で用いられているさまざまな診断法や治療法の妥当性を検証し、安全で効果的な方法を確立することを目指しています。</p>
+								</section>
+								<section class="articleContent__child">
+									<h3 class="articleContent__child__index">
+										患者さんの健康に寄与し、整形外科診療に貢献する教室
+									</h3>
+									<p>滋賀医大整形外科では今後も診療の分野で最先端の治療を行い、患者さんの運動器の健康に大きく寄与してまいります。さらに臨床・基礎研究の分野でも今後の整形外科診療に貢献したいと考えています。滋賀医大整形外科に少しでも興味を持たれた学部生、研修医の先生方、当院でともに学びませんか。</p>
+								</section>
+								<aside class="greetingLink">
+									<p class="-hasBlank"><a href="" target="_blank">当講座のスタッフについて（PDF）</a></p>
+									
+								</aside>											
+							</div>
+						</div>
+					
+					</section>
+					<section class="articleContent__section section--culture">
+						<div class="wrap">
+							<h2 class="articleContent__section__index">
+								教室の歴史
+							</h2>
+							<div class="articleSection__content">
+						
+								<section class="articleContent__child">
+									<h3 class="articleContent__child__index">
+										昭和52年開設
+									</h3>
+									<p>今からおよそ40年前の昭和52年4月、七川歓次先生が初代教授に就任され、滋賀医科大学整形外科学講座が誕生しました。</p>
+									<p>七川歓次先生は、日本リウマチ学会の創設に深く寄与し、我が国のリウマチ研究の第一人者として活躍されました。昭和52年5月にはパリ大学デカルト章、昭和53年1月にはフランス政府教育功労章シェバリエ章を受章し、日仏整形外科学会を設立するなど日本とフランスの学術研究の進歩・交流にも大きく寄与されました。</p>
+								</section>
+								<section class="articleContent__child">
+									<h3 class="articleContent__child__index">
+										歴代教授について
+									</h3>
+									<p>第二代福田眞輔教授は、脊椎外科がご専門で、当時は手術さえ珍しかったリウマチの頸椎手術を早くから研究されました。それまでのリウマチ脊椎手術では侵された部位を後追いで固定することが関の山でしたが、当時導入後まだ日が浅い脊椎インスツルメンテーションをリウマチ頸椎手術に導入、現在では普通になっていますが、後頭骨－頸椎固定術を工夫されました。我が国におけるリウマチ脊椎分野の草分け的存在です。</p>
+									<p>第三代松末吉隆教授は、膝関節、特に関節鏡手術がご専門で鏡視下前十字靭帯再建手術などスポーツ医学にとって必要不可欠な分野を研究されました。これに加え、世界で初めて鏡視下骨軟骨柱移植術を報告され、この分野におけるリーダー的存在でした。松末先生は教授退官後も、滋賀医科大学附属病院院長として整形外科のみならず、病院全体を指導されています。</p>
+								</section>	
+								<section class="articleContent__child">
+									<h3 class="articleContent__child__index">
+										これからの滋賀医科大学整形外科について
+									</h3>
+									<p>滋賀医科大学整形外科は、初代七川教授のリウマチ関節外科とヒューマニズム、二代福田教授の脊椎外科と先進性、三代松末教授の関節鏡外科とリーダーシップの３つの大きなうねりの中で育まれてきました。この3つの分野の直系後継者と言っても過言でないスタッフが現在の滋賀医大整形の各診療チームを形成しています。得意分野のご説明は、各診療チームの紹介の項に委ねます。</p>
+									<p>このように書いている第四代教授である私自身が、先の３名の先生方に薫陶を頂いた滋賀医大卒業生の1人であります。私に課せられた責務は、先の優れた先人が残された専門性豊かな医療を地域に還元するとともに、滋賀医大で育てられた整形外科医師や研究者を全国へ、そして世界へと輩出できるよう支援と機会を与えることと心がけています。これができるように自ら精進することが、先人への感謝と次の世代への贈り物につながると考えています。</p>
+								</section>
+							</div>	
+						</div>	
+						<i class="section--culture__40th"></i>
+					</section>
+					<section class="articleContent__section section--access">
+						<div class="wrap">
+							<h2 class="articleContent__section__index">
+								アクセス
+							</h2>
+							<div class="articleSection__content">
+												
+								<section class="articleContent__child -introduction">
+									<table class="aTable aTable--access">
+										<tr>
+											<th>住所</th>
+											<td>〒520-2192　滋賀県大津市瀬田月輪町</td>
+										</tr>
+										<tr>
+											<th>最寄り駅</th>
+											<td>ＪＲ東海道本線（琵琶湖線）の「瀬田駅」からはタクシーをお使いくださいませ。</td>
+										</tr>									
+									</table>
+								</section>
+								<section class="articleContent__child -byBus">
+									<h3 class="articleContent__child__index">
+										バスでお越しの場合
+									</h3>
+									<div class="aColumn">
+										<figure class="aColumn__row">
+											<img src="<%- $imgPath + $active %>/about-access-flow.png" width="550" alt="">
+										</figure>
+										<div class="aColumn__row">
+											<ul class="aList -check">
+												<li>JR東海道本線「瀬田駅」下車</li>
+												<li>瀬田駅東口より「滋賀医大」行きのバスに乗車</li>
+											</ul>
+											<table class="aTable aTable--access">
+												<tr>
+													<th>帝産バス</th>
+													<td>「大学病院前」下車</td>
+												</tr>
+												<tr>
+													<th>近江バス</th>
+													<td>「滋賀医大前」下車</td>
+												</tr>									
+											</table>
+											<ul class="-hasBlank">
+												<li><a href="http://www.jr-odekake.net/" target="_blank">JR西日本の時刻と経路を調べる</a></li>
+												<li><a href="http://www.teisan-qr.com/" target="_blank">帝産バス時刻表</a></li>
+												<li><a href="https://ohmitetudo-bus.jorudan.biz/diagram" target="_blank">近江バス時刻表</a></li>
+											</ul>				
+										</div>
+									</div>
+								</section>	
+							<section class="articleContent__child -byCar">
+									<h3 class="articleContent__child__index">
+										車でお越しの場合
+									</h3>
+									<div class="aColumn">
+										<div class="aColumn__row">
+											<iframe frameborder="0" src="https://www.google.com/maps/d/embed?mid=1Aou2F1Ukc-AdvS52yGBUStXKhH4" width="640" height="480"></iframe>
+										</div>
+										<div class="aColumn__row">
+											<table class="aTable aTable--access">
+												<tr>
+													<th>高速の場合</th>
+													<td>名神高速道路「瀬田東I.C」より約10分近江バス</td>
+												</tr>
+												<tr>
+													<th>国道1号線<br>からの場合</th>
+													<td>「月輪一丁目」交差点を曲がって約3km</td>
+												</tr>									
+											</table>
+											
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>					
+					</section>				
+			</article>
+			<!-- ///// contents -->
+			
+		</main>
+		<%- include( $path + '_include/footer.ejs' ); %>
+	</body>
+</html>

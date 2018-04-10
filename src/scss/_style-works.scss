@@ -1,0 +1,261 @@
+/************************
+
+// 現場を知る
+
+************************/
+.page-works{
+
+
+	.visual{
+		&__textArea{
+			.visual__index{
+
+				.en{	
+					
+					@include break( tab ){
+					}		
+				}
+			}			
+		}
+
+	}
+
+
+	
+	.articleContent{
+		p{
+			max-width: 770px;
+		}
+	}
+	.interview__content{
+		max-width: 770px;
+	}
+
+
+	//////// page anchor
+	.works-anchor{
+		
+		ul{
+			display: flex;
+			flex-direction: row;
+			align-items: flex-end;
+			justify-content: space-between;
+			font-size: $small;
+			
+			li{
+				line-height: 1;
+				width: 195px;
+				display: block;
+				
+				a{
+					padding-top: 0px;
+					padding-right: 20px;
+					padding-bottom: 25px;
+					display: block;
+					position: relative;
+					border-bottom: solid 1px $navy;
+					
+					&:after{
+						content: " ";
+						width: 16px;
+						height: 8px;
+						margin-top: auto;
+						margin-bottom: auto;
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;						
+						display: inline-block;
+						background: url(../img/common/icon-arrow-navy.svg) center center no-repeat;
+						transform: rotate( 90deg );
+						
+					}
+				}
+
+				.en{
+					margin-top: 0;
+					margin-bottom: 10px;
+					font-family: $fontFamily_bodoniSans_r;
+					letter-spacing: 0.1em;
+				}
+				.ja{
+					margin-top: 0;
+					margin-bottom: 0;
+					letter-spacing: 0.075em;
+				}
+			}
+		}
+	}
+
+
+
+	//////// interview
+	.interviews{
+		padding-bottom: 100px;
+		margin-bottom: 100px;
+		border-bottom: solid 1px $border;
+	}
+
+	.interview{
+		margin-top: 150px;
+		position: relative;
+		
+		p{
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+
+		
+		&__index{
+			line-height: 1;
+			position: absolute;
+			z-index: 2;
+			top: -60px;
+			font-weight: bold;
+			display: flex;
+			
+			
+			.en,
+			.ja{
+				line-height: 1;
+				margin: 0;
+				writing-mode: vertical-rl;
+				display: inline-block;
+			}
+			
+			.en{
+				margin-top: 0;
+				margin-left: 10px;
+				
+				transform-origin: 0 0;
+				mix-blend-mode: multiply;
+				font-size: $large;
+				letter-spacing: 0.1em;
+				color: $blue;
+				font-family: $fontFamily_bodoniSans_r;
+			}
+
+			.ja{
+				letter-spacing: 0.1em;
+				font-size: $xlarge;
+			}
+		}
+
+		&:nth-of-type( odd ){
+			.interview__index{
+				left: 70px;
+			}
+		}
+		&:nth-of-type( even ){
+			.interview__index{
+				right: 70px;
+			}
+		}
+
+
+		&__content{
+			p:last-child{
+				margin-bottom: 0;
+			}
+			p:first-child{
+				margin-top: 0;
+			}
+		}
+	}
+
+
+	//////////invetview 1 
+	.-interview1
+	{
+		.interview{
+
+			&__img{
+				position: relative;
+			}
+
+			&__by{
+				position: absolute;
+				right: 20px;
+				bottom: 20px;
+				letter-spacing: 0.08em;
+				text-shadow: 0 0 20px rgba(#000, 0.5);
+				font-size: $xsmall;
+				color: #fff;
+				
+				p{
+					margin: 0 0 5px;
+				}
+				
+				&__name{
+					font-weight: bold;
+					font-size: $large;
+				}
+			}
+
+
+			&__content{
+				&__index{
+					margin-top: -40px;
+					padding-top: 30px;
+					padding-right: 30px;
+					background-color: #fff;
+					display: inline-block;
+					position: relative;
+					@extend %indexStyle_a;
+				}
+			}
+		}	
+	}
+
+	//////////invetview 2 
+	.-interview2
+	{
+		.interview{
+
+			&__by{
+				text-align: right;
+				font-size: $small;
+			}
+		}	
+
+
+		.talk{
+			
+			&__index{
+				margin-top: 70px;
+				margin-bottom: 40px;
+				font-size: $large;
+				font-weight: bold;
+				color: $blue_dull;
+				
+				&:before{
+					content: " ";
+					width: 20px;
+					height: 1px;
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 10px;
+					background-color: $border;
+				}
+			}
+
+			dl{
+				margin-bottom: 35px;
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				
+				dt{
+					width: 4em;
+					margin-right: 1em;
+					flex-shrink: 0;
+					font-weight: bold;
+				}
+
+				dd{
+					margin-left: 0;
+				}
+			}
+		}		
+	}	
+}

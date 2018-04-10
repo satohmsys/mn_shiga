@@ -1,9 +1,9 @@
 <% 
 	$path = '../';
 	$imgPath = '../../img/';
-	$active = 'topics';
+	$active = 'works';
 	include( $path + '_include/_function.ejs' );
-	$meta.title = 'トピックス |滋賀医科大学 整形外科学講座';
+	$meta.title = '現場を知る |滋賀医科大学 整形外科学講座';
 	$meta.description = '滋賀医科大整形外科学講座での活動やお知らせを掲載しております。';
 	// $scripts = [ $path + 'page.js'];
 %>
@@ -12,25 +12,25 @@
 <head>
 	<%- include( $path + '_include/head.ejs' ); %>
 </head>
-	<body class="archive archive-topics">
+	<body class="page page-works">
 		<%- include( $path + '_include/header.ejs' ); %>
 		<main class="mainContent">
 			<!-- ***** mainvisual -->
 			<section class="visual js-effect">
 				<div class="visual__image">
-					<img src="<%- $imgPath + $active %>/topics-mv.jpg" srcset="/assets/img/<%- $active %>/sp/topics-mv.jpg 780w, /assets/img/<%- $active %>/topics-mv.jpg" alt="">
+					<img src="<%- $imgPath + $active %>/works-mv.jpg" srcset="/assets/img/<%- $active %>/sp/works-mv.jpg 780w, /assets/img/<%- $active %>/works-mv.jpg" alt="">
 				</div>
 				<div class="visual__textArea">
 					<div class="wrap">
 						<header class="visual__index">
-							<span class="en"><span>T</span><span>O</span><span>P</span><span>I</span><span>C</span><span>S</span></span>
-							<h1 class="ja">トピックス</h1>
+							<span class="en"><span>W</span><span>O</span><span>R</span><span>K</span><span>S</span>
+							</span>
+							<h1 class="ja">現場を知る</h1>
 							
 						</header>
-						<p class="visual__description">滋賀医科大学整形外科学講座からの<br>最新トピックスをお伝えします。</p>
 						<ul class="breadCrumb">
 							<li><a href="<%-$path %>index.html">TOP</a></li>
-							<li>トピックス</li>
+							<li>現場を知る</li>
 						</ul>
 					</div>
 
@@ -39,193 +39,296 @@
 			<!-- ///// mainvisual -->
 
 			<!-- ***** contents -->
-			<article class="articleContent">	
+			<section>
 				<div class="wrap">
-					<ul class="topicsList">
-						<!-- *** news -->
-						<li id="news-1" class="topicsList__topic">
-							<article class="topic">
-								<header class="topic__index">
-									<h2 class="subject">2017年度　整形外科専門研修プログラム説明会のご案内</h2>
-									<p class="date">
-										2017.06.29
+					<nav class="works-anchor">
+						<ul>
+							<li>
+								<a href="">
+									<p class="en">
+										Interview1
 									</p>
-								</header>
-								<div class="topic__content">
-									<p>今年もプログラム説明会を開催します。</p>
-					
-									<p>2017年度のプログラム説明会を9月2日（土）に琵琶湖ホテルで開催します。詳細は各種説明会の案内を参照してください。今年も多くの皆様のご参加をお待ちしています。</p>
-								</div>
-							</article>							
-						</li>
-						<!-- /// news -->
-						<!-- *** news -->
-						<li id="news-2" class="topicsList__topic">
-							<article class="topic">
-								<header class="topic__index">
-									<h2 class="subject">2017年ハンズオンセミナーについて</h2>
-									<p class="date">
-										2017.06.29
+									<p class="ja">
+										指導医の声
 									</p>
-								</header>
-								<div class="topic__content">
-									<p>今年もハンズオンセミナーを以下の日程で開催します。奮って参加ください。</p>
-									<p>日時：2017年6月１７日　16時45分～<br>	
-										場所：大津プリンス</p>
-									<p>詳細は”各種説明会の案内”を参照ください。</p>
-								</div>
-							</article>							
-						</li>
-						<!-- /// news -->
-						<!-- *** news -->
-						<li id="news-3" class="topicsList__topic">
-							<article class="topic">
-								<header class="topic__index">
-									<h2 class="subject">2017年度　整形外科専門研修プログラム説明会のご案内</h2>
-									<p class="date">
-										2017.06.29
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="en">
+										Interview2
 									</p>
-								</header>
-								<div class="topic__content">
-									<p>今年もプログラム説明会を開催します。</p>
-					
-									<p>2017年度のプログラム説明会を9月2日（土）に琵琶湖ホテルで開催します。詳細は各種説明会の案内を参照してください。今年も多くの皆様のご参加をお待ちしています。</p>
-								</div>
-							</article>							
-						</li>
-						<!-- /// news -->
-						<!-- *** news -->
-						<li class="topicsList__topic">
-							<article class="topic">
-								<header class="topic__index">
-									<h2 class="subject">2017年ハンズオンセミナーについて</h2>
-									<p class="date">
-										2017.06.29
+									<p class="ja">
+										後期研修医体験談
 									</p>
-								</header>
-								<div class="topic__content">
-									<p>今年もハンズオンセミナーを以下の日程で開催します。奮って参加ください。</p>
-									<p>日時：2017年6月１７日　16時45分～<br>	
-										場所：大津プリンス</p>
-									<p>詳細は”各種説明会の案内”を参照ください。</p>
-								</div>
-							</article>							
-						</li>
-						<!-- /// news -->
-																								<!-- *** news -->
-						<li class="topicsList__topic">
-							<article class="topic">
-								<header class="topic__index">
-									<h2 class="subject">2017年度　整形外科専門研修プログラム説明会のご案内</h2>
-									<p class="date">
-										2017.06.29
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="en">
+										Interview3
 									</p>
-								</header>
-								<div class="topic__content">
-									<p>今年もプログラム説明会を開催します。</p>
-					
-									<p>2017年度のプログラム説明会を9月2日（土）に琵琶湖ホテルで開催します。詳細は各種説明会の案内を参照してください。今年も多くの皆様のご参加をお待ちしています。</p>
-								</div>
-							</article>							
-						</li>
-						<!-- /// news -->
-						<!-- *** news -->
-						<li class="topicsList__topic">
-							<article class="topic">
-								<header class="topic__index">
-									<h2 class="subject">2017年ハンズオンセミナーについて</h2>
-									<p class="date">
-										2017.06.29
+									<p class="ja">
+										女性のキャリア形成
 									</p>
-								</header>
-								<div class="topic__content">
-									<p>今年もハンズオンセミナーを以下の日程で開催します。奮って参加ください。</p>
-									<p>日時：2017年6月１７日　16時45分～<br>	
-										場所：大津プリンス</p>
-									<p>詳細は”各種説明会の案内”を参照ください。</p>
-								</div>
-							</article>							
-						</li>
-						<!-- /// news -->
-						<!-- *** news -->
-						<li class="topicsList__topic">
-							<article class="topic">
-								<header class="topic__index">
-									<h2 class="subject">2017年度　整形外科専門研修プログラム説明会のご案内</h2>
-									<p class="date">
-										2017.06.29
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="en">
+										Contents
 									</p>
-								</header>
-								<div class="topic__content">
-									<p>今年もプログラム説明会を開催します。</p>
-					
-									<p>2017年度のプログラム説明会を9月2日（土）に琵琶湖ホテルで開催します。詳細は各種説明会の案内を参照してください。今年も多くの皆様のご参加をお待ちしています。</p>
-								</div>
-							</article>							
-						</li>
-						<!-- /// news -->
-						<!-- *** news -->
-						<li class="topicsList__topic">
-							<article class="topic">
-								<header class="topic__index">
-									<h2 class="subject">2017年ハンズオンセミナーについて</h2>
-									<p class="date">
-										2017.06.29
+									<p class="ja">
+										海外・国内留学
 									</p>
-								</header>
-								<div class="topic__content">
-									<p>今年もハンズオンセミナーを以下の日程で開催します。奮って参加ください。</p>
-									<p>日時：2017年6月１７日　16時45分～<br>	
-										場所：大津プリンス</p>
-									<p>詳細は”各種説明会の案内”を参照ください。</p>
-								</div>
-							</article>							
-						</li>
-						<!-- /// news -->
-						<!-- *** news -->
-						<li class="topicsList__topic">
-							<article class="topic">
-								<header class="topic__index">
-									<h2 class="subject">2017年度　整形外科専門研修プログラム説明会のご案内</h2>
-									<p class="date">
-										2017.06.29
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="en">
+										Contents
 									</p>
-								</header>
-								<div class="topic__content">
-									<figure class="topic__thumbnail"><img src="<%- $imgPath + $active %>/_test2.jpg" alt=""></figure>
-									<p>今年もプログラム説明会を開催します。</p>
-					
-									<p>2017年度のプログラム説明会を9月2日（土）に琵琶湖ホテルで開催します。詳細は各種説明会の案内を参照してください。今年も多くの皆様のご参加をお待ちしています。</p>
-								</div>
-							</article>							
-						</li>
-						<!-- /// news -->
-						<!-- *** news -->
-						<li class="topicsList__topic">
-							<article class="topic">
-								<header class="topic__index">
-									<h2 class="subject">2017年ハンズオンセミナーについて</h2>
-									<p class="date">
-										2017.06.29
+									<p class="ja">
+										研修テーマ
 									</p>
-								</header>
-								<div class="topic__content">
-									<figure class="topic__thumbnail"><img src="<%- $imgPath + $active %>/_test.jpg" alt=""></figure>
-									<p>今年もハンズオンセミナーを以下の日程で開催します。奮って参加ください。</p>
-									<p>日時：2017年6月１７日　16時45分～<br>	
-										場所：大津プリンス</p>
-									<p>詳細は”各種説明会の案内”を参照ください。</p>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+					<section class="interviews">
+						<section class="interview -interview1">
+							<header class="interview__index">
+								<h2 class="ja">指導医の声</h2>
+								<p class="en">Interview 1</p>
+							</header>
+							<div class="interview__img">
+								<figure class="interviewVisual">
+									<img src="<%- $imgPath + $active %>/works-interview-1.jpg" srcset="/assets/img/<%- $active %>/sp/works-interview-1.jpg 780w, /assets/img/<%- $active %>/works-interview-1.jpg" alt="">
+								</figure>
+									<div class="interview__by">
+										<p>
+											滋賀医科大学 整形外科学講座<br>
+											助教
+										</p>
+										<p class="interview__by__name">三村 朋大</p>
+									</div>
+							</div>
+							<div class="interview__content">
+								<h3 class="interview__content__index">
+									滋賀県の医療に貢献するために
+								</h3>
+								<p>私はもともと滋賀出身で、滋賀医科大学の医学部を卒業したので、地元の医療に貢献することが自然であると感じていました。そのため、近隣の医局も見学しましたが「やはり滋賀医科大学の整形外科教室で学びたい」と思い、当教室に入局しました。</p>
+								<p>整形外科医を志したのは、幼い頃からサッカーや野球、ボートなど、さまざまなスポーツに熱中していたこともあり、整形外科という診療科がもっとも自分にとって身近だったからです。</p>
+								<p>私の医師としてのターニングポイントは大学院への入学です。<br>大学院で研究を経験したことにより、今までになかった考え方を得ることができました。</p>
+								<p>たとえば、研究をして論文にまとめることの大切さを学びました。1つの研究内容を突き詰め、論文を仕上げることはとても大変なことです。しかし、自分で研究し、自分で解を導き出して論文を作成すると、患者さんへの説明がよりわかりやすくできるようになったり、他の医師の論文を読んだ際により深い理解ができるようになったりします。そのため私は、大学院を卒業した後もできる限り論文の執筆に時間を充てるように心がけています。</p>
+								<p>現在は臨床の現場で股関節鏡視下手術に力を入れながら、指導医として学生や初期研修医のサポートなどを行っています。これからも後進の医師とともに滋賀医科大学整形外科教室を盛り上げていきたいと思っています。</p>
+							</div>
+						</section>
+						<section class="interview -interview2">
+							<header class="interview__index">
+								<h2 class="ja">後期研修体験談</h2>
+								<p class="en">Interview 2</p>
+							</header>
+							<div class="interview__img">
+								<figure class="interviewVisual">
+									<img src="<%- $imgPath + $active %>/works-interview-2.jpg" srcset="/assets/img/<%- $active %>/sp/works-interview-2.jpg 780w, /assets/img/<%- $active %>/works-interview-2.jpg" alt="">
+								</figure>
+									<div class="interview__by">
+										田村 翔（右）入山圭司（左）伴に平成27年卒
+									</div>
+							</div>
+							
+							<div class="interview__content">
+								<article class="talk">
+									<h3 class="talk__index">お二人の入局のきっかけを教えて下さい</h3>
+									<div class="talk__content">
+										<dl>
+											<dt>田村：</dt>
+											<dd>もともとスポーツが好きで運動器に携わる仕事がしたいと思っていたので、整形外科の教室で検討していました。私たちは、ふたりとも滋賀医科大学医学部の出身だったため、当教室に馴染みもありました。また、入局前からあたたかい雰囲気の教室だなと感じており、入局を決意しました。</dd>
+										</dl>
+										<dl>
+											<dt>入山：</dt>
+											<dd>私も、当教室のあたたかい雰囲気を魅力に感じていました。また、2016年当時滋賀県内で日本整形外科学会の専門医資格を取得できるのは当教室だけなので、それも決め手の1つです。</dd>
+										</dl>
+										<dl>
+											<dt>田村：</dt>
+											<dd>大学病院は症例のバリエーションも幅広く、さまざまな疾患・治療について勉強できるところも魅力ではないでしょうか。私たち若手医師は、まず数年間でさまざまな患者さんと出会い、症例を経験することが大切だと思っています。</dd>
+										</dl>
+										<dl>
+											<dt>入山：</dt>
+											<dd>特に当教室で力を入れて行っている肩の治療は、滋賀県内でも行っている病院が少ないことが現状です。そのため、私はぜひこの教室に入局し、詳しく学びたいという思いがありました。<br>実際に私は、初期研修を市中病院で、後期研修を当大学病院で経験しましたが、大学病院では市中病院在籍時にみたことがない症例も多く、非常に刺激的です。</dd>
+										</dl>
+									</div>
+								</article>
+								<article class="talk">
+									<h3 class="talk__index">実際入局してみての感想は？</h3>
+									<div class="talk__content">
+										<dl>
+											<dt>田村：</dt>
+											<dd><p>実際に大学病院での臨床を経験すると、頭で考えているより難しかったと思うこともあります。</p>
+											<p>たとえば、大学病院に来る患者さんは重症度が高い方も多く、術後の管理に苦労することも多々ありました。一般的に整形外科の手術は、術後の経過が大きく悪化することは少ないといわれています。ですから、重症化した患者さんをみたときは驚き、苦労もしました。<br>しかし、他の診療科の先生方とも協力し、長期的な術後管理を経験することができたため、今となっては思い出深いよい経験となりました。</p>
+											</dd>
+										</dl>
+										<dl>
+											<dt>入山：</dt>
+											<dd>大学病院は、市中病院と比較すると医師や患者さんの人数が多く、慌ただしい印象があります。しかし、それぞれの診療科が専門的に発達しており、システムも確立しているので、いざというときに他の診療科の先生とも協力して医療を提供できます。
+											</dd>
+										</dl>
+									</div>
+								</article>
+								<article class="talk">
+									<h3 class="talk__index">入局してくる方へのメッセージをお願いします</h3>
+									<div class="talk__content">
+										<dl>
+											<dt>田村・<br>入山：</dt>
+											<dd>当教室は教授の今井先生をはじめとする先輩方がみな明るく頼りがいがあるため、なんでも相談できる雰囲気です。そのため、学びたい気持ちさえあれば、さまざまな症例を経験し整形外科医としても人間としても大きく成長できる場だと思っています。<br>ぜひ、私たちと整形外科について学びましょう。</dd>
+										</dl>
+									</div>
+								</article>							
+							</div>
+						</section>
+						<section class="interview -interview3">
+							<header class="interview__index">
+								<h2 class="ja">女性の働き方や<br>キャリア形成について</h2>
+								<p class="en">Interview 3</p>
+							</header>
+							<div class="interview__img">
+								<figure class="interviewVisual">
+									<img src="<%- $imgPath + $active %>/works-interview-1.jpg" srcset="/assets/img/<%- $active %>/sp/works-interview-1.jpg 780w, /assets/img/<%- $active %>/works-interview-1.jpg" alt="">
+								</figure>
+							</div>
+							<div class="interview__content">
+								<section class="womensCareer">
+									<h3 class="womensCareer__index">
+										教授と相談しながらライフスタイルに合わせた勤務が可能
+									</h3>
+									<div class="womensCareer__content">
+										<p>当教室は2018年3月現在、複数の女性医師が活躍しています。子育てと両立している医師もおり、子どもが小さいうちは当直の免除などの配慮もあります。これらの対応は現在のところ教授の今井先生と相談のもと、その都度決定しています。</p>
+										<p>しかし、今後は具体的な制度についても検討予定です。ともに働く男性医師も、女性医師が働きやすい環境づくりに対して協力的で、積極的にフォローしてくれると感じています。一方で、その他の待遇面・学習面では、男性と見劣りせず平等に扱われていると感じます。そのため、整形外科医としてのスキルアップも可能です。</p>
+									</div>
+								</section>
+								<section class="womensCareer">
+									<h3 class="womensCareer__index">
+										性別にとらわれずキャリアを磨ける教室
+									</h3>
+									<div class="womensCareer__content">
+										<p>整形外科という診療科は、他の診療科と比較すると女性医師の数が少ない傾向にあります。<br>しかし、これからの時代、女性医師の活躍は必要不可欠です。<br>教授の今井先生も、女性医師がその才能や熱意を遺憾なく発揮できるようさまざまなサポートをしてくださっています。</p>
+									</div>
+								</section>							
+							</div>
+						</section>
+					</section>
+					<section class="articleContent">
+						<article class="articleContent__section section--theme">
+							<h2 class="articleContent__section__index">研究テーマ（最近の業績・研究）</h2>
+							<div class="articleSection__content">
+								<p>研究の道を志す医師は大学院へ進学、研究にも興味を持ち学位の取得を目指す医師は、専門医資格の取得を目指しながら、いずれかのタイミングで大学院へ進学します。多くの場合、入局後数年は現場で臨床を学び、その後専門医の取得前に大学院入学を検討します。<br>専門医と学位、両方の取得を検討する方でも多くは卒後10年目にはどちらも取得し、更に細かい自分の専門分野に向かって学び始めます。</p><p>当教室では次の研究に主に取り組んでおります</p>
+								<div class="aInfo">
+									<ul class="themeList">
+										<li>脊椎靭帯骨化症患者におけるCTを用いた全脊椎骨化巣の検討－多施設、前向き研究－</li>
+										<li>低線量CTを用いた整形外科（脊稚）疾患の画像評価の検討</li>
+										<li>脊柱靭帯における変性肥厚のメカニズムと進行抑制への試み</li>
+										<li>悪性骨腫瘍に対する液体窒素処理</li>
+										<li>人口膝関節置換術後の骨粗鬆症治療による骨折予防効果「PTH製剤と抗RANKL抗体製剤の比較研究」</li>
+										<li>Cortical bone trajectory(CBT)法による腰椎手術成績の調査</li>
+										<li>びまん性特発性骨増殖症(DISH)における脊椎損傷の研究</li>
+										<li>後縦勒帯骨化症における骨化勒帯の遺伝子発現・組織解析，ならびに骨化勒帯由来の幹細胞培養系の樹立</li>
+										<li>脊稚後縦靱帯骨化症の手術成績に関する前向き多施設研究</li>
+										<li>関節リウマチにおけるアダリムマブ薬物動態の検討「MTXとIGUの比較研究」</li>
+										<li>鏡視下腱板修復術後の骨粗鬆症治療が臨床成績に及ぼす影響「PTH製剤と抗RANKL抗体製剤の比較研究</li>
+										<li>日本の臨床現場における生物学的製剤未投与の関節リウマチ患者を対象としたアバタセプトの多施設共同による長期観察研究</li>
+										<li>圧迫性頚髄症手術前後の転倒による症状悪化に関する多施設前向き研究</li>
+										関節滑膜炎における病態について各疾患の滑膜サイトカイン産生を通じての分子実体解明の検討
+										<li>股関節術後成績に関する多施設研究</li>
+										<li>側方侵入椎体間固定術の合併症のデータベース構築に関する研究</li>
+									</ul>
 								</div>
-							</article>							
-						</li>
-						<!-- /// news -->												
-					</ul>
-					<div class="pagination">
-						<p class="pagination__controller -previous topicsListBefore"><a href="">前の10件へ戻る</a></p>
-						<p class="pagination__controller -next topicsListNext"><a href="">次の10件へ進む</a></p>
-					</div>
+							</div>	
+						</article>	
+						<article class="articleContent__section section--abroad">
+							<h2 class="articleContent__section__index">国内・海外留学</h2>
+							<div class="articleSection__content">
+								<p>当教室では、専門医・学位等の取得後、他施設や他国で学び、より広い視野を持った医師を育成できるようにしています。まず、臨床を中心に活躍したいと考える専門医資格取得後の医師には、国内留学への門戸が開かれています。過去には下記のような医療機関へ国内留学を果たした医師がいます。</p>
+								<p>一方、臨床だけでなく研究にも興味があり、専門医資格と学位を両方持つ医師には、国外留学を行ってより自分の専門性を高めることが可能です。</p>
+								<section class="articleContent__child">
+									<h3 class="articleContent__child__index">
+										海外留学 実績
+									</h3>		
+									<table class="aTable">
+										<tr>
+											<th>フランス</th>
+											<td>
+												<ul>
+													<li>Université de Nantes</li>
+													<li>Université Grenoble</li>
+													<li>Clinique Emilie de Vialar</li>
+													<li>Hôpital Cochin</li>
+													<li>
+													 Hôpitaux Universitaires de Strasbourg</li>
+													 <li>Clinique Jouvenet</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th>アメリカ合衆国</th>
+											<td>
+												<ul>
+													<li>Columbia University</li>
+													<li>Mayo Clinic</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th>イギリス</th>
+											<td>
+												<ul>
+													<li>Wrightington Hospital, </li>
+													<li>University of Leeds</li>
+													<li> University of Oxford</li>
+													<li> University of Aberdeen</li>
+													<li> University of Liverpool</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th>シンガポール</th>
+											<td>
+												<ul>
+													<li>National University Hospital</li>
+												</ul>
+											</td>
+										</tr>
+									</table>
+								</section>
+								<section class="articleContent__child">
+									<h3 class="articleContent__child__index">
+										国内留学 実績
+									</h3>		
+									<table class="aTable">
+										<tr>
+											<th>日本</th>
+											<td>
+												<ul>
+													<li>船橋整形外科 </li><li>帝京大学整形外科</li><li> 市立奈良病院 がん研有明病院</li>
+												</ul>
+											</td>
+										</tr>
+									</table>
+								</section>								
+							</div>	
+						</article>												
+					</section>
 				</div>
-			</article>
+				<footer class="articleFooterContact">
+					<div class="wrap">
+						<div class="button button--inquiry">
+							<a href="<%- $path %>contact/">お問い合わせ</a>
+						</div>
+					</div>
+				</footer>				
+			</section>
+			
 			<!-- ///// contents -->
 			
 		</main>

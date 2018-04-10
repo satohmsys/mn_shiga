@@ -7,6 +7,17 @@
 
 .page-special{
 
+	.visual{
+		&__textArea{
+			.visual__index .en {
+				@include break( tab ){
+					font-size: 17vw;
+					letter-spacing: 0.2em;
+				}				
+			}
+		}
+	}
+
 	.articleContent p {
 		max-width: 770px;
 	}
@@ -47,18 +58,18 @@
 			justify-content: space-between;
 			flex-wrap: wrap;
 			
-
 			@include break( tab ){
 				margin-top: 40px;
 				margin-bottom: 40px;
 				flex-direction: column;				
-			}			
+			}		
+
 			
 			&:after{
 				content: " ";
 				max-width: 250px;
 				width: calc( 100% / 4 );
-				display: block;	
+				display: block;					
 
 				@include break( tab ){
 					display: none;
@@ -75,11 +86,21 @@
 				display: block;
 				list-style: none;
 				position: relative;
-				transition: transition();
 				box-sizing: border-box;
 				box-shadow: 0 0 15px rgba( #000, 0.08 );
 				border-radius: $radius;
 				background-color: #fff;
+				
+				@at-root .afterIs li {
+					opacity: 0;
+					transform: translateX( 10px );
+					transition: transition(all, 1s);					
+				}
+				@at-root .afterIs.-on li {
+					opacity: 1;
+					transform: translateX( 0px );				
+				}					
+
 				
 				@include break( tab ){
 					max-width: none;
@@ -88,6 +109,15 @@
 					margin-bottom: 20px;
 				}					
 				
+				@for $i from 1 through 7 {
+					&:nth-child( #{$i} ){
+						transition-delay: #{$i * 0.15 }s;
+						
+						&:before{
+							transition-delay: #{$i * 0.15 * 1 }s;
+						}
+					}
+				}	
 				
 				&:before{
 					content: counter( count );
@@ -95,20 +125,32 @@
 					line-height: 1;
 					top: -28px;
 					left: -13px;
-					transition: transition();
 					transition-delay: 0.5s;
 					color: $blue_lighten;
 					font-size: 6.111em;
 					opacity: 0.6;
 					font-family: $fontFamily_bodoniSans_r;
+					
+					@at-root .afterIs li:before {
+						opacity: 0;
+						transform: skewX( 10deg ) translateX( 30px );
+						transition: transition(all, 2s);					
+					}					
+					@at-root .afterIs.-on li:before {
+						opacity: 1;
+						transform: skewX( 0deg ) translateX( 0px );				
+					}					
+					
 
 					@include break( tab ){
 						font-size: 50px;
 						top: -15px;
 						left: -5px;
-					}					
-									
+					}														
 				}
+
+
+
 			}
 
 
@@ -180,9 +222,18 @@
 					margin-right: 10px;
 					display: inline-block;
 					vertical-align: middle;
+					transition: transition(all, 1s);
+					transition-delay: 0.8s;
 					background-image: linear-gradient( to left, $blue, $blue_lighten);
 				}			
 			
+		}
+
+		@at-root .section--related.js-effect li:before {
+			width: 0;
+		}
+		@at-root .section--related.-on li:before {
+			width: 12px;
 		}
 	}
 	

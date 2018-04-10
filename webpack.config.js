@@ -262,6 +262,12 @@ module.exports = [{
 				// favicon: './src/img/common/favicon.ico',
 				template: './src/ejs/kanja/index.ejs',
 				// inject: 'head'
+			}),
+			new HtmlWebpackPlugin({ 
+				filename: 'special/index.html',
+				// favicon: './src/img/common/favicon.ico',
+				template: './src/ejs/special/index.ejs',
+				// inject: 'head'
 			}),									
 	    ],
 

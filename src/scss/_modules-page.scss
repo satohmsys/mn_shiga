@@ -19,7 +19,7 @@
 
 %indexStyle_b{
 	line-height: 1.4;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	font-weight: bold;
 	font-size: 1.25em;
 	letter-spacing: 0.01em;
@@ -36,7 +36,7 @@
 	}
 
 	@include break( tab ){
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 		font-size: 1.2em;
 		padding-left: calc(1em + 8px);
 		text-indent: calc(-1em - 8px);
@@ -197,17 +197,18 @@
 			// span:nth-child( even ){
 			// 	transform: translateY( 10px );
 			// }
-			@for $i from 1 through 10 {
+			@for $i from 1 through 20 {
 				span:nth-child( #{$i} ){
-					transition-delay: #{$i * 0.15 + 0.5}s;
+					transition-delay: #{$i * 0.15 + 0.85}s;
 				}
 			}			
 		}
 
 		.ja{
 			opacity: 0;
-			transform: translateX( 5px );
+			transform: translateX( 10px );
 			transition: transition(all, 1s);
+			transition-delay: 0.5s;
 		}
 	}
 	@at-root .isLoaded &.-on .visual__index{
@@ -321,11 +322,11 @@
 	p{
 		margin-top: 15px;
 		margin-bottom: 15px;
-			@include break( tab ){
-				margin-top: 0.8em;
-				margin-bottom: 0.8em;
-			}
-		
+
+		@include break( tab ){
+			margin-top: 0.8em;
+			margin-bottom: 0.8em;
+		}		
 	}
 	
 	&__section{
@@ -338,25 +339,25 @@
 		@include break( tab ){
 			margin-bottom: 55px;
 		}
-
-
 	}
 
 	&__child{
-		margin-top: 40px;
-		margin-bottom: 40px;
+		margin-top: 45px;
+		margin-bottom: 45px;
 			
 		&__index{
 			@extend %indexStyle_b;
 		}
 
 		@include break( tab ){
-			margin-top: 30px;
-			margin-bottom: 31px;
+			margin-top: 40px;
+			margin-bottom: 40px;
 		}		
 	}
 }
 
+
+//////// check mark list
 .aList{
 	&.-check{
 		li{
@@ -371,19 +372,21 @@
 				display: inline-block;
 				vertical-align: text-top;
 				
+				@include break( sp ){
+					width: 10px;
+					height: 5px;					
+				}				
 			}
 		}
 	}
 }
 
+
+//////// table
 .aTable{
 	width: 100%;
 	border-collapse: collapse;
 	display: table;
-	
-		// @include break( tab ){
-		// 	display: block;
-		// } 	
 
 	tr,
 	.aTable__tr{
@@ -415,6 +418,7 @@
 	.aTable__th{
 		width: 100px;
 		font-weight: lighter;
+		
 		@include break( tab ){
 			width: 6em;
 		} 		
@@ -444,6 +448,84 @@
 			padding-left: 0;
 		}
 	}	
+}
+
+
+//////// 囲み
+.aInfo{
+	max-width: 770px;
+	padding: 30px;
+	text-align: center;
+	border: solid 1px $border;
+	box-sizing: border-box;
+	
+	@include break( tab ){
+		padding: 20px;
+	}
+	
+	p{
+		max-width: none;
+		
+		&:first-child{
+			margin-top: 0;
+		}
+		
+		&:last-child{
+			margin: 0;
+		}
+	}
+
+	&__telnum{
+		line-height: 1;
+		font-size: $xxlarge;
+		font-family: $fontFamily_bodoniSans_b;
+		letter-spacing: 0.075em;
+		
+		@include break( tab ){
+			font-size: 2em;
+		}		
+		
+		&:before{
+			content: "TEL";
+			margin-right: 5px;
+			display: inline-block;
+			font-size: 0.5em;
+			color: $gray;			
+		}
+	}
+}
+
+
+
+////////// ページフッター部分問い合わせ
+.articleFooterContact{
+	line-height: 1;
+	margin-top: 120px;
+	margin-bottom: -20px;
+	padding-top: 80px;
+	border-top: solid 1px $border;
+	text-align: center;
+	
+	
+	@include break( tab ){
+		margin-top: 60px;
+		padding-top: 35px;
+		margin-bottom: -25px;
+	}	
+	
+	.button{	
+		width: 80%;
+		max-width: 600px;	
+		a{
+			padding-top: 30px;
+			padding-bottom: 30px;
+			
+			@include break( sp ){
+				padding-top: 15px;
+				padding-bottom: 15px;
+			}				
+		}
+	}
 }
 
 

@@ -1,20 +1,33 @@
 /************************
 
-// about
+// 患者様へのご案内
 
 ************************/
-.page-about{
+.page-information{
+
 
 	.visual{
-		margin-bottom: 200px;
+		&__textArea{
+			.visual__index{
 
-		@include break( tab ){
-			margin-bottom: 0;
-		}				
+				.en{
+					mix-blend-mode: multiply;	
+					
+					@include break( tab ){
+						margin-top: -1em;
+						margin-right: 0;
+						opacity: 0.7;
+						font-size: 17vw;			
+					}		
+				}
+			}			
+		}
+
 	}
+
+
 	
 	.articleContent{
-		
 		p{
 			max-width: 770px;
 		}
@@ -25,18 +38,16 @@
 
 	///// 先生
 	.greeting{
-		margin-top: -100px;
-		margin-left: 80px;
+		margin-left: 50px;
 		margin-bottom: 40px;
 		float: right;
 		position: relative;
 		
 		@include break( tab ){
-			margin-bottom: 60px;
-			padding-left: 15px;			
+			margin-bottom: 35px;
+			// padding-left: 15px;			
 			margin-top: 0;
 			margin-left: 0;
-			font-weight: normal;
 		}		
 		
 		figure{
@@ -49,22 +60,21 @@
 				position: relative;
 				z-index: 2;
 			}
-
-			&:after{
-				content: " ";
-				display: block;
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				top: 30px;
-				left: -40px;
-				background-image: linear-gradient( to right, $blue_lighten, $blue_dull);
-				@include break( tab ){
-					top: 10px;
-					left: -15px;
-				}
+			// &:after{
+			// 	content: " ";
+			// 	display: block;
+			// 	width: 100%;
+			// 	height: 100%;
+			// 	position: absolute;
+			// 	top: 30px;
+			// 	left: -40px;
+			// 	background-image: linear-gradient( to right, $blue_lighten, $blue_dull);
+			// 	@include break( tab ){
+			// 		top: 10px;
+			// 		left: -15px;
+			// 	}
 				
-			}
+			// }
 		}
 		&.js-effect{
 			figure img,
@@ -103,27 +113,23 @@
 
 		&__by{
 			position: absolute;
-			right: 10px;
+			left: 30px;
 			bottom: 30px;
 			z-index: 2;
-			color: $blue_dull;
-			letter-spacing: 0.1em;
+			color: #fff;
+			letter-spacing: 0.1em;			
 			font-size: $xsmall;
-			font-weight: lighter;			
+			font-weight: lighter;
 			text-shadow: 0 0 10px rgba(#000,0.25);
-			writing-mode: vertical-rl;
 			
 			@include break( tab ){
-				right: 10px;
+				left: 10px;
 				bottom: 10px;
-				font-size: $xsmall;
 			}
 
 			p{
 				margin-right: 0;
-			}
-			p{
-				margin-left: 10px;
+				margin-left: 0px;
 			}
 			
 			&__name{
@@ -138,8 +144,6 @@
 	}
 	
 	.section--greeting{
-
-
 		.articleContent__child{
 			clear: both;
 		}

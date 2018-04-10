@@ -190,18 +190,37 @@ module.exports = [{
 		* webpack 4 ~ CommonChunksPlugin
 		*/
 		optimization: {
-			splitChunks:{
-				name: 'bundle',
-				chunks: 'async'
-		      // cacheGroups内にバンドルの設定を複数記述できる
-		      // cacheGroups: {
-		      //   bundle: {
-		      //     // node_modules配下のモジュールをバンドル対象とする
-		      //     test: /node_modules/,
-		      //     name: 'bundle',
-		      //     chunks: 'async',
-		      //   }
-		      // }				
+			// splitChunks: {
+			//     chunks: "async",
+			//     minSize: 30000,
+			//     minChunks: 1,
+			//     maxAsyncRequests: 5,
+			//     maxInitialRequests: 3,
+			//     name: true,
+			//     cacheGroups: {
+			//         default: {
+			//             minChunks: 2,
+			//             priority: -20,
+			//             reuseExistingChunk: true
+			//         },
+			//         vendors: {
+			//             test: /[\\/]node_modules[\\/]/,
+			//             priority: -10
+			//         }
+			//     }
+			// }			
+			splitChunks:{			
+				// name: 'bundle',
+				// chunks: 'async'
+		  //     cacheGroups内にバンドルの設定を複数記述できる
+		      cacheGroups: {
+		        bundle: {
+		          // node_modules配下のモジュールをバンドル対象とする
+		          test: /node_modules/,
+		          name: 'bundle',
+		          chunks: 'async',
+		        }
+		      }				
 			}
 		},
 
@@ -237,7 +256,13 @@ module.exports = [{
 				// favicon: './src/img/common/favicon.ico',
 				template: './src/ejs/contact/index.ejs',
 				// inject: 'head'
-			}),						
+			}),		
+			new HtmlWebpackPlugin({ 
+				filename: 'kanja/index.html',
+				// favicon: './src/img/common/favicon.ico',
+				template: './src/ejs/kanja/index.ejs',
+				// inject: 'head'
+			}),									
 	    ],
 
 		resolve: {

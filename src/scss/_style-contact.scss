@@ -50,27 +50,26 @@
 		
 		&__textArea{
 			position: static;
-		}
+	
+			.visual__index{
+				position: relative;
 
-		.visual__index{
-			position: relative;
-
-			.en{
-				font-size: 9.5em;
-				white-space: nowrap;
-				letter-spacing: 0.08em;
-								
-				@include break( tab ){
-					margin-top: 0em;
-					font-size: 18vw;			
-				}		
-			}
-			.ja{
-				@include break( tab ){
-				}		
-			}
-		}		
-				
+				.en{
+					// font-size: 9.5em;
+					white-space: nowrap;
+					letter-spacing: 0.08em;
+									
+					@include break( tab ){
+						white-space: normal;
+						margin-top: 0em;		
+					}		
+				}
+				.ja{
+					@include break( tab ){
+					}		
+				}
+			}		
+		}				
 	}
 
 

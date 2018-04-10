@@ -16,19 +16,27 @@
 ////////////////////////
 
 .topicsList{
+	margin-top: -115px;
+
+		@include break( tab ){
+			margin-top: -75px;
+		}	
 	
 	&__topic{
-		padding-top: 35px;
+		padding-top: 115px;
+		margin-top: -80px;
 		padding-bottom: 35px;
 		border-bottom: solid 1px $border;
 		
 		@include break( tab ){
-			padding-top: 25px;
+			padding-top: 75px;
+			margin-top: -50px;
 			padding-bottom: 25px;
 		}		
 		
 		&:first-child{
-			padding-top: 0;
+			// margin-top: 0;
+			// padding-top: 0;
 		}
 	}
 

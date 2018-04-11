@@ -1,0 +1,120 @@
+<% 
+	$path = '../';
+	$imgPath = '../../img/';
+	$active = 'dosokai';
+	include( $path + '_include/_function.ejs' );
+	$meta.title = '同窓会 |滋賀医科大学 整形外科学講座';
+	$meta.description = '滋賀医科大整形外科学講座に入局されている方へのページです。';
+
+	$scripts = [ $path + 'page.js'];
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include( $path + '_include/head.ejs' ); %>
+</head>
+	<body class="meeting">
+		<%- include( $path + '_include/header.ejs' ); %>
+		<main class="mainContent">
+			<!-- ***** mainvisual -->
+			<section class="visual js-effect">
+				<div class="visual__textArea">
+					<div class="wrap">
+						<header class="visual__index">
+							<span class="en"><span>A</span><span>L</span><span>U</span><span>M</span><span>N</span><span>I</span>
+								<br><span>M</span><span>E</span><span>E</span><span>T</span><span>I</span><span>N</span><span>G</span>
+							</span>
+							<h1 class="ja">同窓会</h1>							
+						</header>
+						<ul class="breadCrumb">
+							<li><a href="<%-$path %>index.html">TOP</a></li>
+							<li>同窓会</li>
+						</ul>
+					</div>
+
+				</div>				
+			</section>
+			<!-- ///// mainvisual -->
+
+			<!-- ***** contents -->
+			<section class="articleContent">	
+				<div class="wrap">
+					<section class="articleContent__section section--information">
+						<section class="section--information__block -renraku">
+							<h2 class="articleContent__section__index">
+								連絡先一覧について
+							</h2>
+							<div class="articleContent__section__content">
+								<div class="button button--secondary">
+									<a href="">連絡先一覧(PDF) </a>
+								</div>
+							</div>
+						</section>
+						<section class="section--information__block -date">
+							<h2 class="articleContent__section__index">
+								同窓会開催のお知らせについて
+							</h2>
+							<div class="articleContent__section__content">
+								<div class="button button--secondary">
+									<a href="">連絡先一覧(PDF) </a>
+								</div>
+								<div class="aInfo">
+									<h3 class="aInfo__index">
+										次回の同窓会
+									</h3>
+									<div class="aInfo__date">
+										<span class="y">2018</span>年<span class="m">12</span>月<span class="d">1</span>日
+									</div>
+								</div>
+							</div>
+						</section>						
+					</section>
+					<section class="articleContent__section section--gallery">
+						<h2 class="articleContent__section__index">
+							同窓会写真
+						</h2>		
+						<div class="articleContent__section__content">
+							<section class="articleContent__child">
+								<h3 class="articleContent__child__index">
+									最近の写真<br>（XXX年X月X日開催）
+								</h3>
+								<ul class="gPhotos">
+									<li>
+										<figure><img src="https://amd.c.yimg.jp/amd/20180411-03203501-saga-000-4-view.jpg" alt="sample"></figure>
+									</li>
+									<li>
+										<figure><img src="https://amd.c.yimg.jp/amd/20180411-03203501-saga-000-4-view.jpg" alt="sample"></figure>
+									</li>
+									<li>
+										<figure><img src="https://amd.c.yimg.jp/amd/20180411-03203501-saga-000-4-view.jpg" alt="sample"></figure>
+									</li>
+									<li>
+										<figure><img src="https://amd.c.yimg.jp/amd/20180411-03203501-saga-000-4-view.jpg" alt="sample"></figure>
+									</li>
+									<li>
+										<figure><img src="https://amd.c.yimg.jp/amd/20180411-03203501-saga-000-4-view.jpg" alt="sample"></figure>
+									</li>
+								</ul>
+								<div class="section--gallery__button">
+									<div class="button button-inquiry"><a href="">この会の写真をすべて見る</a></div>
+								</div>
+								<aside class="section--gallery__info aInfo">
+									<h4 class="aInfo__index">
+										過去開催しました、同窓会の写真については、Google photo から一括ダウンロードください。
+									</h4>
+									<div class="button button--secondary">
+										<a href="">Google Photo</a>
+									</div>
+								</aside>
+							</section>
+						</div>										
+					</section>
+					
+				</div>
+			</section>
+			<!-- ///// contents -->
+			
+		</main>
+		<%- include( $path + '_include/footer.ejs' ); %>
+	</body>
+</html>

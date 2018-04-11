@@ -275,6 +275,12 @@ module.exports = [{
 				template: './src/ejs/works/index.ejs',
 				// inject: 'head'
 			}),	
+			new HtmlWebpackPlugin({ 
+				filename: 'dosokai/index.html',
+				// favicon: './src/img/common/favicon.ico',
+				template: './src/ejs/dosokai/index.ejs',
+				// inject: 'head'
+			}),				
 	    ],
 
 		resolve: {

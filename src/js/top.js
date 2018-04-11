@@ -80,9 +80,9 @@ var effefcts = () => {
 	});
 }
 
-export default function(){
-	effefcts();
-}
+// export default function(){
+// 	effefcts();
+// }
 
 
 effefcts();

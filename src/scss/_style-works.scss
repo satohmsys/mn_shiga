@@ -10,10 +10,15 @@
 		&__textArea{
 			.visual__index{
 
-				.en{	
-					
+				.en{						
 					@include break( tab ){
 					}		
+				}
+
+				.ja{
+					@include break( tab ){
+						margin-bottom: 50px;
+					}						
 				}
 			}			
 		}
@@ -22,11 +27,8 @@
 
 
 	
-	.articleContent{
-		p{
-			max-width: 770px;
-		}
-	}
+	.articleContent p,
+	.articleContent__child,
 	.interview__content{
 		max-width: 770px;
 	}
@@ -41,11 +43,17 @@
 			align-items: flex-end;
 			justify-content: space-between;
 			font-size: $small;
+			flex-wrap: wrap;
 			
 			li{
 				line-height: 1;
 				width: 195px;
 				display: block;
+				
+				@include break( tab ){
+					width: calc( 50% - 10px);
+					margin-bottom: 15px;
+				}
 				
 				a{
 					padding-top: 0px;
@@ -54,6 +62,29 @@
 					display: block;
 					position: relative;
 					border-bottom: solid 1px $navy;
+					
+					@include break( tab ){
+						padding-right: 15px;
+						padding-bottom: 15px;
+					}					
+					
+					&:before{
+						content: " ";
+						width: 0%;
+						height: 1px;
+						position: absolute;
+						bottom: -1px;
+						left: 0;
+						transition: transition();
+						display: block;
+						background-color: $border;
+					}
+
+					@include mouseOver( ){
+						&:before{
+							width: 100%;						
+						}
+					}
 					
 					&:after{
 						content: " ";
@@ -77,6 +108,10 @@
 					margin-bottom: 10px;
 					font-family: $fontFamily_bodoniSans_r;
 					letter-spacing: 0.1em;
+					
+					@include break( tab ){
+						font-family: $fontFamily_bodoniSans_b;
+					}					
 				}
 				.ja{
 					margin-top: 0;
@@ -94,15 +129,72 @@
 		padding-bottom: 100px;
 		margin-bottom: 100px;
 		border-bottom: solid 1px $border;
+		
+		@include break( tab ){
+			padding-bottom: 50px;
+			margin-bottom: 50px;
+		}
 	}
+
+
+	///////// js  efect settings
+	.interview.js-effect{
+		.js-effect__maskTarget{
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+			
+			&:after{
+				content: " ";
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				transition: transition(all, 0.75s);
+				transform-origin: right bottom;
+				transform: translateX( 0% ) skewX( 0deg );			
+				display: block;
+				background-color: lighten( $blue_lighten, 20% );
+			}
+		}
+
+		&.-on {
+			.js-effect__maskTarget:after,
+			.js-effect.-on .js-effect__maskTarget:after{
+				width: 0;
+				left: auto;
+				right: 0;
+				transform:skewX( -20deg ) translateX( 110% ) ;
+			}
+
+			.js-effect .js-effect__maskTarget:after{
+				width: 100%;
+				right: auto;
+				left: 0;
+				transform: translateX( 0% ) skewX( 0deg );							
+			}
+		}
+	}
+
 
 	.interview{
 		margin-top: 150px;
 		position: relative;
+
+		@include break( tab ){
+			margin-top: 75px;
+		}		
 		
 		p{
 			margin-top: 30px;
 			margin-bottom: 30px;
+			
+				@include break( tab ){
+					margin-top: 18px;
+					margin-bottom: 18px;
+				}			
 		}
 
 		
@@ -113,7 +205,12 @@
 			top: -60px;
 			font-weight: bold;
 			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
 			
+			@include break( tab ){
+				top: -30px;
+			}			
 			
 			.en,
 			.ja{
@@ -133,6 +230,10 @@
 				letter-spacing: 0.1em;
 				color: $blue;
 				font-family: $fontFamily_bodoniSans_r;
+
+				@include break( tab ){
+					font-size: $xlarge;
+				}									
 			}
 
 			.ja{
@@ -144,12 +245,74 @@
 		&:nth-of-type( odd ){
 			.interview__index{
 				left: 70px;
+				
+				@include break( tab ){
+					left: 20px;
+				}					
 			}
 		}
 		&:nth-of-type( even ){
 			.interview__index{
 				right: 70px;
+				
+				@include break( tab ){
+					right: 20px;
+				}									
 			}
+		}
+
+		///// transition setting
+		@at-root .isLoaded .js-effect.interview{
+			.interview__index{
+				.en,
+				.ja{
+					opacity: 0;
+					transform-origin: bottom;
+					transition: transition( all, 1s );
+					transform: skewX( 5deg ) rotateX(-3deg) translate3d( -5px,0,0 );
+				}
+				.en{
+					transition-delay: 0.5s;
+				}
+				.ja{
+					transition-delay: 0.75s;
+				}
+			}
+			&.-on{
+				.interview__index{
+					.en,
+					.ja{
+						opacity: 1;
+						transform: skewX( 0deg ) rotateX(0deg) translate3d( 0px,0,0 );
+					}
+				}				
+			}				
+		}		
+
+
+		&__img{
+			line-height: 1;
+			&,figure{
+			}
+		}
+
+		///// transition setting
+		@at-root .isLoaded .js-effect.interview{
+			.interview__img{
+				img{
+					opacity: 0;
+					transform: translateX( -20px );
+					transition: transition(all, 1s );					
+				}
+			}
+			&.-on{
+				.interview__img {
+					img{
+						opacity: 1;
+						transform: translateX( 0px );					
+					}
+				}
+			}				
 		}
 
 
@@ -202,6 +365,14 @@
 					display: inline-block;
 					position: relative;
 					@extend %indexStyle_a;
+					
+					@include break( tab ){
+						margin-top: 30px;
+						padding-top: 0;
+						padding-right: 0;
+						display: block;
+					}					
+
 				}
 			}
 		}	
@@ -211,7 +382,6 @@
 	.-interview2
 	{
 		.interview{
-
 			&__by{
 				text-align: right;
 				font-size: $small;
@@ -227,6 +397,11 @@
 				font-size: $large;
 				font-weight: bold;
 				color: $blue_dull;
+				
+				@include break( tab ){
+					margin-top: 30px;
+					margin-bottom: 20px;
+				}					
 				
 				&:before{
 					content: " ";
@@ -245,8 +420,12 @@
 				flex-direction: row;
 				align-items: flex-start;
 				
+				@include break( tab ){
+					margin-bottom: 25px;
+				}				
+				
 				dt{
-					width: 4em;
+					width: 3em;
 					margin-right: 1em;
 					flex-shrink: 0;
 					font-weight: bold;
@@ -258,4 +437,165 @@
 			}
 		}		
 	}	
+
+
+	///////// interview 3
+	.-interview3{
+
+		.interview{
+			&__index .ja {
+				width: 1.4em;
+				line-height: 1.4;
+				
+				@include break( tab ){
+					width: auto;
+				}				
+			}			
+		}
+
+
+		.womensCareer{
+			margin-top: 40px;
+			margin-bottom: 40px;
+			
+			@include break( tab ){
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}			
+
+			&__index{
+				@extend %indexStyle_b;
+			}
+			
+		}
+
+
+		.interview__footer{
+			margin-top: 100px;
+			line-height: 1;
+			text-align: center;
+			
+			@include break( tab ){
+				margin-top: 45px;
+			}			
+			
+			figure{
+				position: relative;
+				overflow: hidden;
+				
+				img{
+					margin-right: auto;
+					margin-left: auto;
+					opacity: 0;
+					transform: translateX( -20px );
+					transition: transition(all, 1s );					
+				}
+			}
+
+			@at-root .isLoaded .interview__footer.-on{
+				figure{					
+					img{
+						opacity: 1;
+						transform: translateX( 0px );					
+					}
+				}
+			}
+		}
+
+	}
+
+
+	
+	/**************
+
+	// sections 
+	
+	**************/
+	
+	.section--theme
+	{
+		.aInfo{
+			text-align: left;
+			position: relative;
+			
+			@include break( tab ){
+				height: 350px;
+				overflow: hidden;
+			}
+		}
+		.themeList{
+			font-size: $small;
+			
+			@include break( tab ){
+				font-size: 1em;
+			}			
+
+			li{
+				margin-bottom: 13px;
+				padding-left: calc(1em + 8px);
+				text-indent: calc(-1em - 8px);				
+				display: block;
+				&:before{
+					line-height: 1;
+					content: " ";
+					width: 15px;
+					height: 1px;
+					margin-right: 10px;
+					display: inline-block;
+					vertical-align: middle;
+					background-image: linear-gradient( to left, $blue, $blue_lighten);
+				}				
+			}
+
+			&__toggle{
+				width: 100%;
+				display: none;
+				
+				a{
+					padding-top: 50px;
+					padding-bottom: 25px;
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					text-align: center;
+					text-decoration: underline;
+					background: linear-gradient( to bottom, rgba(#fff,0),rgba(#fff,1));
+					
+					@include break( tab ){
+						padding-bottom: 13px;
+					}					
+					
+				}
+
+				@include break( tab ){
+					display: block;
+				}
+			}
+		}	
+	}
+
+
+	.section--abroad{
+		
+		.aTable{
+			 th{
+				width: 150px;
+				vertical-align: top;
+				
+				@include break( tab ){
+					width: 100px;
+				}				
+			}
+			ul li{
+				display: inline-block;
+				&:not(:last-child):after{
+					content: ",";
+					display: inline-block;
+					margin-right: 3px;
+					margin-left: 3px;
+				}
+			}
+		}
+	}
 }

@@ -405,12 +405,21 @@
 		padding-top: 20px;
 		padding-bottom: 20px;
 		display: table-cell;
+		vertical-align: top;
 		
 		@include break( tab ){
 			padding-top: 15px;
 			padding-bottom: 15px;
 			// display: block;
 		} 		
+	}
+
+	tr:first-child,
+	.aTable__tr:first-child{
+		th,
+		td{
+			padding-top: 0;			
+		}		
 	}
 
 
@@ -529,8 +538,8 @@
 			padding-bottom: 30px;
 			
 			@include break( sp ){
-				padding-top: 15px;
-				padding-bottom: 15px;
+				padding-top: 20px;
+				padding-bottom: 20px;
 			}				
 		}
 	}

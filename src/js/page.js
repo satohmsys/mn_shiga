@@ -30,11 +30,25 @@ var effefcts = () => {
 		getScrollVal( f ) ;
 
 	})
-}
+},
+	moreView = () =>{
+		let $toggle = $( '.moreView a');
+
+
+		if( $toggle ){
+			$toggle.on( 'click', function( e ){
+				e.preventDefault();
+				e.stopPropagation();
+
+				$( this ).closest( '.aInfo' ).css( {
+					'height': 'auto'
+				}).find( $( this) ).remove();
+			}) 
+		}
+	}
 
 export default function(){
-	effefcts();
 }
 
-
-effefcts();
+moreView();
+// effefcts();

@@ -44,7 +44,7 @@
 					<nav class="works-anchor">
 						<ul>
 							<li>
-								<a href="">
+								<a href="#i1">
 									<p class="en">
 										Interview1
 									</p>
@@ -54,7 +54,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="#i2">
 									<p class="en">
 										Interview2
 									</p>
@@ -64,7 +64,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="#i3">
 									<p class="en">
 										Interview3
 									</p>
@@ -74,17 +74,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="">
-									<p class="en">
-										Contents
-									</p>
-									<p class="ja">
-										海外・国内留学
-									</p>
-								</a>
-							</li>
-							<li>
-								<a href="">
+								<a href="#th">
 									<p class="en">
 										Contents
 									</p>
@@ -93,26 +83,36 @@
 									</p>
 								</a>
 							</li>
+							<li>
+								<a href="#ab">
+									<p class="en">
+										Contents
+									</p>
+									<p class="ja">
+										海外・国内留学
+									</p>
+								</a>
+							</li>
 						</ul>
 					</nav>
 
 					<section class="interviews">
-						<section class="interview -interview1">
+						<section id="i1" class="interview -interview1 js-effect">
 							<header class="interview__index">
 								<h2 class="ja">指導医の声</h2>
 								<p class="en">Interview 1</p>
 							</header>
 							<div class="interview__img">
-								<figure class="interviewVisual">
+								<figure class="interviewVisual js-effect__maskTarget">
 									<img src="<%- $imgPath + $active %>/works-interview-1.jpg" srcset="/assets/img/<%- $active %>/sp/works-interview-1.jpg 780w, /assets/img/<%- $active %>/works-interview-1.jpg" alt="">
 								</figure>
-									<div class="interview__by">
-										<p>
-											滋賀医科大学 整形外科学講座<br>
-											助教
-										</p>
-										<p class="interview__by__name">三村 朋大</p>
-									</div>
+								<div class="interview__by">
+									<p>
+										滋賀医科大学 整形外科学講座<br>
+										助教
+									</p>
+									<p class="interview__by__name">三村 朋大</p>
+								</div>
 							</div>
 							<div class="interview__content">
 								<h3 class="interview__content__index">
@@ -125,13 +125,13 @@
 								<p>現在は臨床の現場で股関節鏡視下手術に力を入れながら、指導医として学生や初期研修医のサポートなどを行っています。これからも後進の医師とともに滋賀医科大学整形外科教室を盛り上げていきたいと思っています。</p>
 							</div>
 						</section>
-						<section class="interview -interview2">
+						<section id="i2" class="interview -interview2  js-effect">
 							<header class="interview__index">
 								<h2 class="ja">後期研修体験談</h2>
 								<p class="en">Interview 2</p>
 							</header>
 							<div class="interview__img">
-								<figure class="interviewVisual">
+								<figure class="interviewVisual js-effect__maskTarget">
 									<img src="<%- $imgPath + $active %>/works-interview-2.jpg" srcset="/assets/img/<%- $active %>/sp/works-interview-2.jpg 780w, /assets/img/<%- $active %>/works-interview-2.jpg" alt="">
 								</figure>
 									<div class="interview__by">
@@ -188,13 +188,13 @@
 								</article>							
 							</div>
 						</section>
-						<section class="interview -interview3">
+						<section id="i3" class="interview -interview3  js-effect">
 							<header class="interview__index">
 								<h2 class="ja">女性の働き方や<br>キャリア形成について</h2>
 								<p class="en">Interview 3</p>
 							</header>
 							<div class="interview__img">
-								<figure class="interviewVisual">
+								<figure class="interviewVisual js-effect__maskTarget">
 									<img src="<%- $imgPath + $active %>/works-interview-1.jpg" srcset="/assets/img/<%- $active %>/sp/works-interview-1.jpg 780w, /assets/img/<%- $active %>/works-interview-1.jpg" alt="">
 								</figure>
 							</div>
@@ -215,38 +215,46 @@
 									<div class="womensCareer__content">
 										<p>整形外科という診療科は、他の診療科と比較すると女性医師の数が少ない傾向にあります。<br>しかし、これからの時代、女性医師の活躍は必要不可欠です。<br>教授の今井先生も、女性医師がその才能や熱意を遺憾なく発揮できるようさまざまなサポートをしてくださっています。</p>
 									</div>
-								</section>							
+								</section>						
 							</div>
+							<footer class="interview__footer js-effect">
+								<figure class="js-effect__maskTarget">
+									<img src="<%- $imgPath + $active %>/works-interview-3-last.jpg" alt="">
+								</figure>
+							</footer>
 						</section>
 					</section>
 					<section class="articleContent">
-						<article class="articleContent__section section--theme">
+						<article id="th" class="articleContent__section section--theme">
 							<h2 class="articleContent__section__index">研究テーマ（最近の業績・研究）</h2>
 							<div class="articleSection__content">
 								<p>研究の道を志す医師は大学院へ進学、研究にも興味を持ち学位の取得を目指す医師は、専門医資格の取得を目指しながら、いずれかのタイミングで大学院へ進学します。多くの場合、入局後数年は現場で臨床を学び、その後専門医の取得前に大学院入学を検討します。<br>専門医と学位、両方の取得を検討する方でも多くは卒後10年目にはどちらも取得し、更に細かい自分の専門分野に向かって学び始めます。</p><p>当教室では次の研究に主に取り組んでおります</p>
 								<div class="aInfo">
-									<ul class="themeList">
-										<li>脊椎靭帯骨化症患者におけるCTを用いた全脊椎骨化巣の検討－多施設、前向き研究－</li>
-										<li>低線量CTを用いた整形外科（脊稚）疾患の画像評価の検討</li>
-										<li>脊柱靭帯における変性肥厚のメカニズムと進行抑制への試み</li>
-										<li>悪性骨腫瘍に対する液体窒素処理</li>
-										<li>人口膝関節置換術後の骨粗鬆症治療による骨折予防効果「PTH製剤と抗RANKL抗体製剤の比較研究」</li>
-										<li>Cortical bone trajectory(CBT)法による腰椎手術成績の調査</li>
-										<li>びまん性特発性骨増殖症(DISH)における脊椎損傷の研究</li>
-										<li>後縦勒帯骨化症における骨化勒帯の遺伝子発現・組織解析，ならびに骨化勒帯由来の幹細胞培養系の樹立</li>
-										<li>脊稚後縦靱帯骨化症の手術成績に関する前向き多施設研究</li>
-										<li>関節リウマチにおけるアダリムマブ薬物動態の検討「MTXとIGUの比較研究」</li>
-										<li>鏡視下腱板修復術後の骨粗鬆症治療が臨床成績に及ぼす影響「PTH製剤と抗RANKL抗体製剤の比較研究</li>
-										<li>日本の臨床現場における生物学的製剤未投与の関節リウマチ患者を対象としたアバタセプトの多施設共同による長期観察研究</li>
-										<li>圧迫性頚髄症手術前後の転倒による症状悪化に関する多施設前向き研究</li>
-										関節滑膜炎における病態について各疾患の滑膜サイトカイン産生を通じての分子実体解明の検討
-										<li>股関節術後成績に関する多施設研究</li>
-										<li>側方侵入椎体間固定術の合併症のデータベース構築に関する研究</li>
-									</ul>
+									<div class="themeList">
+										<ul>
+											<li>脊椎靭帯骨化症患者におけるCTを用いた全脊椎骨化巣の検討－多施設、前向き研究－</li>
+											<li>低線量CTを用いた整形外科（脊稚）疾患の画像評価の検討</li>
+											<li>脊柱靭帯における変性肥厚のメカニズムと進行抑制への試み</li>
+											<li>悪性骨腫瘍に対する液体窒素処理</li>
+											<li>人口膝関節置換術後の骨粗鬆症治療による骨折予防効果「PTH製剤と抗RANKL抗体製剤の比較研究」</li>
+											<li>Cortical bone trajectory(CBT)法による腰椎手術成績の調査</li>
+											<li>びまん性特発性骨増殖症(DISH)における脊椎損傷の研究</li>
+											<li>後縦勒帯骨化症における骨化勒帯の遺伝子発現・組織解析，ならびに骨化勒帯由来の幹細胞培養系の樹立</li>
+											<li>脊稚後縦靱帯骨化症の手術成績に関する前向き多施設研究</li>
+											<li>関節リウマチにおけるアダリムマブ薬物動態の検討「MTXとIGUの比較研究」</li>
+											<li>鏡視下腱板修復術後の骨粗鬆症治療が臨床成績に及ぼす影響「PTH製剤と抗RANKL抗体製剤の比較研究</li>
+											<li>日本の臨床現場における生物学的製剤未投与の関節リウマチ患者を対象としたアバタセプトの多施設共同による長期観察研究</li>
+											<li>圧迫性頚髄症手術前後の転倒による症状悪化に関する多施設前向き研究</li>
+											<li>関節滑膜炎における病態について各疾患の滑膜サイトカイン産生を通じての分子実体解明の検討</li>
+											<li>股関節術後成績に関する多施設研究</li>
+											<li>側方侵入椎体間固定術の合併症のデータベース構築に関する研究</li>
+										</ul>
+										<div class="themeList__toggle moreView"><a>すべて見る</a></div>
+									</div>
 								</div>
 							</div>	
 						</article>	
-						<article class="articleContent__section section--abroad">
+						<article id="ab" class="articleContent__section section--abroad">
 							<h2 class="articleContent__section__index">国内・海外留学</h2>
 							<div class="articleSection__content">
 								<p>当教室では、専門医・学位等の取得後、他施設や他国で学び、より広い視野を持った医師を育成できるようにしています。まず、臨床を中心に活躍したいと考える専門医資格取得後の医師には、国内留学への門戸が開かれています。過去には下記のような医療機関へ国内留学を果たした医師がいます。</p>
@@ -283,7 +291,7 @@
 											<th>イギリス</th>
 											<td>
 												<ul>
-													<li>Wrightington Hospital, </li>
+													<li>Wrightington Hospital</li>
 													<li>University of Leeds</li>
 													<li> University of Oxford</li>
 													<li> University of Aberdeen</li>

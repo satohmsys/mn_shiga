@@ -55,13 +55,11 @@
 				position: relative;
 
 				.en{
-					// font-size: 9.5em;
-					white-space: nowrap;
-					letter-spacing: 0.08em;
-									
+					// font-size: 9.5em;									
 					@include break( tab ){
 						white-space: normal;
-						margin-top: 0em;		
+						margin-top: 0em;	
+					    font-size: 14.5vw;
 					}		
 				}
 				.ja{

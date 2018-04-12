@@ -1,0 +1,60 @@
+<% 
+	$path = '../';
+	$imgPath = '../../img/';
+	$active = 'topics';
+	include( $path + '_include/_function.ejs' );
+	$meta.title = '関連リンク |滋賀医科大学 整形外科学講座';
+	$meta.description = '滋賀医科大整形外科学講座に関連している学会、病院、クリニックなどの紹介ページです。';
+	// $scripts = [ $path + 'page.js'];
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include( $path + '_include/head.ejs' ); %>
+</head>
+	<body class="page page-links">
+		<%- include( $path + '_include/header.ejs' ); %>
+		<main class="mainContent">
+			<!-- ***** mainvisual -->
+			<section class="visual js-effect">
+				<div class="visual__image">
+					<img src="<%- $imgPath + $active %>/topics-mv.jpg" srcset="/assets/img/<%- $active %>/sp/topics-mv.jpg 780w, /assets/img/<%- $active %>/topics-mv.jpg" alt="">
+				</div>
+				<div class="visual__textArea">
+					<div class="wrap">
+						<header class="visual__index">
+							<span class="en">
+								<span>L</span>
+								<span>I</span>
+								<span>N</span>
+								<span>K</span>
+							</span>
+							<h1 class="ja">関連リンク</h1>
+							
+						</header>
+						<p class="visual__description">当局と関連のある各会のリンクをまとめています。</p>
+						<ul class="breadCrumb">
+							<li><a href="<%-$path %>index.html">TOP</a></li>
+							<li>関連リンク</li>
+						</ul>
+					</div>
+
+				</div>				
+			</section>
+			<!-- ///// mainvisual -->
+
+			<!-- ***** contents -->
+			<article class="articleContent">	
+				<div class="wrap">
+					<ul class="linkList">
+						<li></li>	
+					</ul>
+
+				</div>
+			</article>
+			<!-- ///// contents -->
+			
+		</main>
+		<%- include( $path + '_include/footer.ejs' ); %>
+	</body>
+</html>

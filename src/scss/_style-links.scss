@@ -1,0 +1,35 @@
+/************************
+
+// links
+
+************************/
+
+.page-links{
+	
+	.visual{
+		height: 300px;
+		
+		@include break( tab ){
+			height: auto;
+			margin-bottom: 30px;
+			padding-top: 50px;
+		}		
+		
+		&__textArea{
+			position: static;
+	
+			.visual__index{
+				position: relative;
+
+				.en{								
+				}
+				.ja{
+					@include break( tab ){
+					}		
+				}
+			}		
+		}				
+	}
+}
+
+

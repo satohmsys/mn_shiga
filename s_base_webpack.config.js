@@ -238,7 +238,13 @@ let baseConfig = {
 				// favicon: './src/img/common/favicon.ico',
 				template: './src/ejs/dosokai/index.ejs',
 				// inject: 'head'
-			}),				
+			}),	
+			new HtmlWebpackPlugin({ 
+				filename: 'links/index.html',
+				// favicon: './src/img/common/favicon.ico',
+				template: './src/ejs/links/index.ejs',
+				// inject: 'head'
+			}),							
 	    ],    
 
 		resolve: {

@@ -240,6 +240,11 @@
 	li{
 		display: inline-block;
 		vertical-align: middle;
+		
+		a{
+			letter-spacing: 0.05em;
+		}
+		
 		@include break( tab ){
 			display: block;
 		}		

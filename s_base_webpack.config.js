@@ -22,31 +22,16 @@ update : 201803
 
 *******************/
 
-const webpack = require( 'webpack' ),
+const 	webpack = require( 'webpack' ),
 		path = require( 'path' ),
 		ExtractTextPlugin = require('extract-text-webpack-plugin'),
 		HtmlWebpackPlugin = require('html-webpack-plugin'),
-		MODE = 'production',
-		enabledSourceMap = ( MODE === 'production' ),
-		PATHS = {
-			dir: {
-				output: 'assets'
-			},
-			devServer: {
-				contentBase: 'dist' 
-			},
-			output:{
-				path: path.resolve(__dirname,'dist_wp')
-			}
-		};
-const 	CopyWebpackPlugin = require('copy-webpack-plugin');		
+		CopyWebpackPlugin = require('copy-webpack-plugin');		
 
-module.exports = [{	
-		/**
-		* mode
-		* v4 / developmentだとsource mapも有効化
-		*/
-		mode: MODE,
+let vars = require('./s_variables.js');		
+
+
+let baseConfig = {	
 
 		/**
 		* entry point
@@ -58,11 +43,14 @@ module.exports = [{
 			'page' : path.resolve(__dirname, './src/js/page.js'),
 		},
 
+		/**
+		*
+		*/
 		output: {
-			path: PATHS.output.path,
-			// publicPath: '/dist',		
-			// publicPath: '/',
-			filename: PATHS.dir.output + '/js/[name].js'
+			path: vars.PATHS.output.path,
+			// publicPath: '../',		
+			publicPath: '/',
+			filename: vars.PATHS.dir.output +　'/js/[name].js'
 		},		
 
 		/**
@@ -101,7 +89,7 @@ module.exports = [{
 								options: {
 									url: true,
 									minimize: true,
-									sourceMap: enabledSourceMap,
+									sourceMap: vars.enabledSourceMap,
 									// Sass+PostCSSの場合は2を指定
 								     importLoaders: 2
 								}
@@ -110,13 +98,13 @@ module.exports = [{
 								loader: 'postcss-loader',
 								options: {
 									plugins: ( loader ) => [ require('autoprefixer') ],
-									sourceMap: enabledSourceMap								
+									sourceMap: vars.enabledSourceMap								
 								}
 							},
 							{
 								loader: 'sass-loader',
 								options:{
-									sourceMap: enabledSourceMap,
+									sourceMap: vars.enabledSourceMap,
 									minimize: true								
 								}
 							}
@@ -131,7 +119,7 @@ module.exports = [{
 								loader: 'html-loader'
 							},						
 							{
-								loader:'ejs-html-loader',
+								loader:'ejs-html-loader'
 							}
 						]
 				},
@@ -144,8 +132,9 @@ module.exports = [{
 					use: {
 						loader:'file-loader',
 						options: {
-							publicPath: '/wp-content/themes/sumsortho18/',		
-		                    name: PATHS.dir.output + '/[path][name].[ext]'
+							publicPath: '/',		
+		                    name: vars.PATHS.dir.output +　'/fonts/[name].[ext]'																			
+		                    // name: vars.PATHS.dir.output +　'/[path][name].[ext]'
 						}
 					}
 				},	
@@ -155,11 +144,29 @@ module.exports = [{
 					use: {
 						loader:'file-loader',
 						options: {
-							publicPath: '/wp-content/themes/sumsortho18/',
-		                    name: PATHS.dir.output + '/[path][name].[ext]'
+							publicPath: '/',
+		                    name: vars.PATHS.dir.output +　'/[path][name].[ext]'
 						}
 					}
-				}
+				},					
+				// {
+				//	/**
+				//	*url-loaderはCSS中で使用するアセットをBase64エンコードしたdata URIとしてバンドルできるようにします。
+				//	* options.limitより大きい場合は外部参照でディレクトリをコピー
+				//	*/
+				// 	test: /\.(eot|woff|ttf|svg|css)$/,
+				// 	use: 'url-loader',
+				// 	// options: {
+				// 	// 	limit: 8192,
+	   			//  //  name: './img/[name].[ext]'
+				// 	// }
+				// },								
+				// {
+				// 	test: /\.html$/,
+				// 	use: {
+				// 		loader: 'html-loader'
+				// 	}
+				// }
 			]
 		},
 
@@ -167,29 +174,48 @@ module.exports = [{
 		* webpack 4 ~ CommonChunksPlugin
 		*/
 		optimization: {
-			splitChunks:{
-				name: 'bundle',
-				chunks: 'async'
-		      // cacheGroups内にバンドルの設定を複数記述できる
-		      // cacheGroups: {
-		      //   bundle: {
-		      //     // node_modules配下のモジュールをバンドル対象とする
-		      //     test: /node_modules/,
-		      //     name: 'bundle',
-		      //     chunks: 'async',
-		      //   }
-		      // }				
+			// splitChunks: {
+			//     chunks: "async",
+			//     minSize: 30000,
+			//     minChunks: 1,
+			//     maxAsyncRequests: 5,
+			//     maxInitialRequests: 3,
+			//     name: true,
+			//     cacheGroups: {
+			//         default: {
+			//             minChunks: 2,
+			//             priority: -20,
+			//             reuseExistingChunk: true
+			//         },
+			//         vendors: {
+			//             test: /[\\/]node_modules[\\/]/,
+			//             priority: -10
+			//         }
+			//     }
+			// }			
+			splitChunks:{			
+				// name: 'bundle',
+				// chunks: 'async'
+		  //     cacheGroups内にバンドルの設定を複数記述できる
+		      cacheGroups: {
+		        bundle: {
+		          // node_modules配下のモジュールをバンドル対象とする
+		          test: /node_modules/,
+		          name: 'bundle',
+		          chunks: 'async',
+		        }
+		      }				
 			}
 		},
 
 	    plugins: [
 	        new ExtractTextPlugin({
-			   filename: PATHS.dir.output + '/css/main.css',
+			   filename: vars.PATHS.dir.output + '/css/main.css',
 			   allChunks: true
 			}),
 		    new CopyWebpackPlugin([{
 		      from: './src/img/',
-		      to: PATHS.dir.output + '/img'
+		      to: vars.PATHS.dir.output + '/img'
 		    }]),			
 	        new HtmlWebpackPlugin({ 
 				filename: 'index.html',
@@ -214,23 +240,49 @@ module.exports = [{
 				// favicon: './src/img/common/favicon.ico',
 				template: './src/ejs/contact/index.ejs',
 				// inject: 'head'
-			}),						
+			}),		
+			new HtmlWebpackPlugin({ 
+				filename: 'kanja/index.html',
+				// favicon: './src/img/common/favicon.ico',
+				template: './src/ejs/kanja/index.ejs',
+				// inject: 'head'
+			}),
+			new HtmlWebpackPlugin({ 
+				filename: 'special/index.html',
+				// favicon: './src/img/common/favicon.ico',
+				template: './src/ejs/special/index.ejs',
+				// inject: 'head'
+			}),	
+			new HtmlWebpackPlugin({ 
+				filename: 'works/index.html',
+				// favicon: './src/img/common/favicon.ico',
+				template: './src/ejs/works/index.ejs',
+				// inject: 'head'
+			}),	
+			new HtmlWebpackPlugin({ 
+				filename: 'dosokai/index.html',
+				// favicon: './src/img/common/favicon.ico',
+				template: './src/ejs/dosokai/index.ejs',
+				// inject: 'head'
+			}),				
 	    ],
+
+		devServer: {
+			contentBase: vars.PATHS.devServer.contentBase, //ここをルートとしてサーブ
+			hot: true,
+			inline: true,
+			compress: true,
+			open: true,
+			port: 3000,
+			host: "0.0.0.0"		
+		},	    
 
 		resolve: {
 			extensions: ['.js', '.jsx', '.css', '.scss'],
 			alias: {
 				slick: path.resolve( __dirname, 'node_modules/slick-carousel/slick/') 
 			}
-		},	
+		}
+	};
 
-		devServer: {
-			contentBase: PATHS.devServer.contentBase, //ここをルートとしてサーブ
-			hot: true,
-			inline: true,
-			open: true,
-			port: 3000,
-			host: "0.0.0.0"		
-		},
-	}
-];
+module.exports = baseConfig;

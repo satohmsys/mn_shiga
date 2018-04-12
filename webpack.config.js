@@ -41,6 +41,10 @@ const webpack = require( 'webpack' ),
 		};
 const 	CopyWebpackPlugin = require('copy-webpack-plugin');		
 
+
+require("babel-polyfill");
+
+
 module.exports = [{	
 		/**
 		* mode
@@ -150,7 +154,8 @@ module.exports = [{
 						loader:'file-loader',
 						options: {
 							publicPath: '/',							
-		                    name: PATHS.dir.output +　'/[path][name].[ext]'
+		                    name: PATHS.dir.output +　'/fonts/[name].[ext]'
+		                    // name: PATHS.dir.output +　'/[path][name].[ext]'
 						}
 					}
 				},	

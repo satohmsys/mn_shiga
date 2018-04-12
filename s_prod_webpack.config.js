@@ -36,8 +36,9 @@ let prodConfig = merge( baseConfig, {
 					use: {
 						loader:'file-loader',
 						options: {
+							context: 'src',
 							publicPath: '/wp-content/themes/sumsortho18/',							
-		                    name: vars.PATHS.dir.output +　'/[path][name].[ext]'
+		                    name: vars.PATHS.dir.output +　'/fonts/[path][name].[ext]'
 						}
 					}
 				},	
@@ -47,6 +48,7 @@ let prodConfig = merge( baseConfig, {
 					use: {
 						loader:'file-loader',
 						options: {
+							context: 'src',
 							publicPath: '/wp-content/themes/sumsortho18/',							
 		                    name: vars.PATHS.dir.output +　'/[path][name].[ext]'
 						}

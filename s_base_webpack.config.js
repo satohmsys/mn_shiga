@@ -122,33 +122,7 @@ let baseConfig = {
 								loader:'ejs-html-loader'
 							}
 						]
-				},
-				{
-					/**
-					*file-loaderはファイルをバンドルせずに外部ファイルの参照を保つためのローダー
-					*/
-					test: /\.(eot|woff|ttf)$/,
-					exclude: /node_modules\/^(slick-carousel)/,
-					use: {
-						loader:'file-loader',
-						options: {
-							publicPath: '/',		
-		                    name: vars.PATHS.dir.output +　'/fonts/[name].[ext]'																			
-		                    // name: vars.PATHS.dir.output +　'/[path][name].[ext]'
-						}
-					}
-				},	
-				{
-					test: /\.(gif|png|jpg|svg|ico)$/,
-					exclude: /node_modules\/^(slick-carousel)/,
-					use: {
-						loader:'file-loader',
-						options: {
-							publicPath: '/',
-		                    name: vars.PATHS.dir.output +　'/[path][name].[ext]'
-						}
-					}
-				},					
+				},			
 				// {
 				//	/**
 				//	*url-loaderはCSS中で使用するアセットをBase64エンコードしたdata URIとしてバンドルできるようにします。
@@ -265,17 +239,7 @@ let baseConfig = {
 				template: './src/ejs/dosokai/index.ejs',
 				// inject: 'head'
 			}),				
-	    ],
-
-		devServer: {
-			contentBase: vars.PATHS.devServer.contentBase, //ここをルートとしてサーブ
-			hot: true,
-			inline: true,
-			compress: true,
-			open: true,
-			port: 3000,
-			host: "0.0.0.0"		
-		},	    
+	    ],    
 
 		resolve: {
 			extensions: ['.js', '.jsx', '.css', '.scss'],

@@ -30,6 +30,67 @@
 			}		
 		}				
 	}
+
+
+	.linkList{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		
+		li{
+			width: calc( 33% - 10px );
+			margin: 0 5px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			box-sizing: border-box;
+			// border-bottom: solid 1px $border ;
+			border-bottom: solid 1px $navy;		
+			
+			@include break( sp ){
+				width: calc( 50% - 10px );
+			}
+			
+			a{
+				height: 100%;
+				padding: 50px 15px;			
+				display: block;
+				position: relative;
+				box-sizing: border-box;								
+
+				@include break( 1200 ){
+					padding: 25px;
+				}
+
+				@include break( sp ){
+					min-height: 2.5em;
+					box-sizing: content-box;
+				}				
+
+				&:before{
+					content: " ";
+					width: 0%;
+					height: 1px;
+					position: absolute;
+					bottom: -1px;
+					left: 0;
+					transition: transition();
+					display: block;
+					background-color: $border;
+				}		
+				@include mouseOver( ){
+					&:before{
+						width: 100%;						
+					}
+				}
+			}
+
+		}
+
+		@include break( tab ){}
+		
+	}
 }
 
 

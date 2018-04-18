@@ -51,6 +51,13 @@
 			@include break( sp ){
 				width: calc( 50% - 10px );
 			}
+
+			@include break( 340 ){
+				width: 100%;
+				margin-right: 0;
+				margin-left: 0;
+			}
+
 			
 			a{
 				height: 100%;
@@ -64,9 +71,13 @@
 				}
 
 				@include break( sp ){
+					padding: 25px 12px;
 					min-height: 2.5em;
 					box-sizing: content-box;
-				}				
+				}
+				@include break( 340 ){
+					min-height: 0;
+				}
 
 				&:before{
 					content: " ";

@@ -98,6 +98,22 @@ var isLoaded = () => {
 	}
 }
 
+var smoothScroll = () => {
+	$('a[href^="#"]').click(function( e ){
+		e.stopPropagation();
+		e.preventDefault();
+
+	    var speed = 500,
+	    	href= $(this).attr("href"),
+	    	target = $(href == "#" || href == "" ? 'html' : href),
+	    	position = target.offset().top - $('.siteHeader__logo').height() * 1.5;
+	    
+	    $("html, body").animate({scrollTop:position}, speed, "swing");
+	    return false;
+	});
+}
+
+
 export {$};
 export {$w};
 export {getScrollVal};
@@ -107,4 +123,5 @@ export default function(){
 	commonScrollToggle();
 	headExpand();
 	isLoaded();
+	smoothScroll();
 }

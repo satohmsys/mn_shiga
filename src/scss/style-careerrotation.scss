@@ -1,0 +1,807 @@
+// @charset "UTF-8";
+
+@import "colors.scss";
+@import "variables.scss";
+@import "mixins.scss";
+
+////////////////////////
+
+// mainVisual
+
+////////////////////////
+
+.visual {
+  margin-bottom: 100px;
+  padding-bottom: 60px;
+  line-height: 1;
+  overflow: hidden;
+  position: relative;
+  background-color: $blue_dull;
+
+  @include break(tab) {
+    margin-bottom: 50px;
+  }
+
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  // align-items: center;
+
+
+  &__image {
+    line-height: 1;
+    width: percentage(1086/ 1366);
+    height: auto;
+    margin-left: auto;
+    padding-top: 0;
+    background-color:transparent;
+
+    @include break(tab) {
+      width: 100%;
+      height: auto;
+    }
+
+    img{
+      line-height: 1;
+      position: static;
+    }
+  }
+
+
+  &__textArea {
+    left: 0;
+    text-shadow: 0 0 10px rgba(#333,0.05);
+
+    @include break(tab) {
+      position: static;
+    }
+
+    > .wrap {
+      @include break(sp) {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    .visual__index {
+      position: relative;
+
+      .en {
+        line-height: 1.2;
+        margin-right: -0.25em;
+        font-size: 4rem;				
+        letter-spacing: 0.175em;
+        display: block;
+        color: #fff;
+        opacity: 1;
+        mix-blend-mode: normal;
+
+        @include break(tab) {
+          margin-top: -0.5em;
+          font-size: 10vw;
+        }
+
+        @include break(sp){
+          font-size: 10vw; 
+          letter-spacing: 0.05em;
+          mix-blend-mode: overlay;
+        }
+
+        br {
+          @include break(sp){
+            display: none;
+          }
+        }
+      }
+
+      .ja {
+        height: 1em;
+        margin-top: $sSpace;
+        margin-bottom: $mSpace;
+        font-size: 1.315rem;
+        font-weight: bold;
+        position: static;
+        color: #ffffff;
+        letter-spacing: 0.15em;
+
+        @include break(tab) {
+          margin-top: 25px;
+          margin-bottom: 25px;
+          position: static;
+          font-size: 1.0875em;
+        }
+
+        @include break(sp) {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .wrap {
+      text-align: left;
+
+      @include break(tab) {
+        position: static;
+        display: block;
+        text-align: center;
+      }
+
+    }
+  }
+
+
+  &__description {
+    line-height: 1.75;
+    font-size: 1rem;
+    color: #ffffff;
+    position: static;
+
+    @include break(sp) {
+      line-height: 2;
+      margin-bottom: 0;
+    }
+  }
+
+  &.js-effect .visual__description {
+    opacity: 0;
+    transform: translateX(5px);
+    transition: transition(all, 1s);
+    transition-delay: 0.25s;
+  }
+
+  &.-on .visual__description {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+
+  .breadCrumb {
+    color: #ffffff;
+    right: 0;
+    bottom: 25px;
+
+    @include break(tab) {
+      top: 5px;
+      right: 10px;
+      bottom: auto;
+    }
+  }
+
+}
+
+
+/////////////////////
+
+// ナビ
+
+/////////////////////
+
+	//////// page anchor
+	.career-anchor {
+    margin-bottom: $lSpace;
+
+	  ul {
+	    display: flex;
+	    flex-direction: row;
+	    align-items: flex-end;
+	    justify-content: space-between;
+	    font-size: $small;
+	    flex-wrap: wrap;
+
+	    li {
+	      line-height: 1;
+	      width: 195px;
+	      display: block;
+
+	      @include break(tab) {
+	        width: calc(50% - 10px);
+	        margin-bottom: 15px;
+	      }
+
+	      a {
+	        padding-top: 0px;
+	        padding-right: 20px;
+	        padding-bottom: 25px;
+	        display: block;
+	        position: relative;
+	        border-bottom: solid 1px $navy;
+
+	        @include break(tab) {
+	          padding-right: 15px;
+	          padding-bottom: 15px;
+	        }
+
+	        &:before {
+	          content: " ";
+	          width: 0%;
+	          height: 1px;
+	          position: absolute;
+	          bottom: -1px;
+	          left: 0;
+	          transition: transition();
+	          display: block;
+	          background-color: $border;
+	        }
+
+	        @include mouseOver() {
+	          &:before {
+	            width: 100%;
+	          }
+	        }
+
+	        &:after {
+	          content: " ";
+	          width: 16px;
+	          height: 8px;
+	          margin-top: auto;
+	          margin-bottom: auto;
+	          position: absolute;
+	          top: 0;
+	          right: 0;
+	          bottom: 0;
+	          display: inline-block;
+	          background: url(../img/common/icon-arrow-navy.svg) center center no-repeat;
+	          transform: rotate(90deg);
+
+	        }
+	      }
+
+	      .en {
+	        margin-top: 0;
+	        margin-bottom: 10px;
+	        font-family: $fontFamily_bodoniSans_r;
+	        letter-spacing: 0.1em;
+
+	        @include break(tab) {
+	          font-family: $fontFamily_bodoniSans_b;
+	        }
+	      }
+
+	      .ja {
+	        margin-top: 0;
+	        margin-bottom: 0;
+	        letter-spacing: 0.075em;
+	        font-feature-settings: 'palt';
+	      }
+	    }
+	  }
+	}
+
+
+/////////////////////
+
+// キャリア（メイン
+
+/////////////////////
+
+
+.careerRotation {
+
+  &__main__index {
+    line-height: 1;
+    margin-bottom: -0.75em;
+    color: $blue;
+    opacity: 0.3;
+    font-weight: 300;
+    font-size: #{(106/16)}em;
+    letter-spacing: 0.05em;
+    font-family: $fontFamily_bodoniSans_b;
+
+    @include break(tab) {
+      font-size: 4.5em;
+      margin-bottom: -0.5em;
+    }
+
+    @include break(sp) {
+      letter-spacing: 0.1em;
+      font-size: $xxlarge;
+      margin-bottom: -0.25em;
+    }
+
+    .wrap {
+      display: flex;
+      align-items: flex-start;
+      
+      @include break(sp) {
+        margin-left: auto;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+    }
+
+    .year {
+      position: relative;
+      z-index: 1;
+      margin-left: auto;
+      display: flex;
+      align-items: baseline;
+
+      &__num {
+        font-size: 2.5em;
+      }
+    }
+  }
+
+  ///// nuri
+  &__main__area {
+    color: #ffffff;
+    background-color: $blue_dull;
+
+    @include break(sp) {
+      padding-bottom: 40px;
+    }
+
+    > .wrap {
+      transform: translateY(-80px);
+
+      @include break(sp) {
+        transform: translateY(0px);
+      }
+    }
+  }
+
+  &__main__top {
+    margin-bottom: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include break(sp) {
+      margin-bottom: -45px;
+      flex-direction: column;
+      align-items: flex-start;
+      transform: translateY(-75px);
+    }
+  }
+
+  &__main__img {
+    margin-right: 30px;
+    position: relative;
+    z-index: 1;
+
+    @include break(sp) {
+      max-width: 50%;
+      margin-right: auto;
+    }
+  }
+
+  &__main__profile {
+    margin-top: 40px;
+
+    @include break(sp) {
+      margin-top: -40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  &__main__name {
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 30px!important;
+    font-weight: bold;
+    font-size: $large;
+    letter-spacing: 0.03em;
+
+    @include break(sp) {
+      margin-top: 0!important;
+      margin-bottom: 10px!important;
+      font-size: $xxlarge;
+      letter-spacing: 0.04em;
+    }
+  }
+
+  &__main__viewmore {
+    margin-bottom: 30px;
+    line-height: 1;
+    font-size: $small;
+
+    @include break(sp) {
+      margin-bottom: 20px;
+    }
+
+    a{
+      color: #ffffff;
+
+      &:after{
+        filter: brightness(100);
+      }
+    }
+  }
+
+  &__main__range {
+    line-height: 1;
+  }
+
+
+  ///////// bottom
+
+  &__main__interviews {
+    display: flex;
+
+    @include break(sp) {
+      flex-direction: column;
+    }
+  }
+
+  &__main__interview {
+    width: percentage(520/1100);
+
+    @include break(sp) {
+      width: 100%;
+    }
+
+
+    &:nth-child(odd) {
+      margin-right: percentage(60/1100);
+
+      @include break(sp) {
+        margin-right: 0;
+        margin-bottom: $mSpace;
+      }
+
+    }
+    &__index {
+      line-height: 1;
+      margin-bottom: 30px;
+      font-weight: bold;
+      font-size: $large;
+
+      @include break(sp) {
+        line-height: 1.5;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+
+  //////// sub 
+  &__sub {
+    padding: $xlSpace 0;
+
+    @include break(sp) {
+      padding: $lSpace 0 $mSpace;
+    }
+
+    ///// index
+    &__index {
+      margin-bottom: $xlSpace;
+      line-height: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: bold;
+      justify-content: center;
+      font-size: $xxlarge;
+      letter-spacing: 0.01em;
+
+      @include break(tab) {
+        font-size: 6.5rem;
+      }
+
+      @include break(sp) {
+        margin-bottom: $lSpace;
+        font-size: #{(20/13)}em;
+      }
+
+
+      &:before {
+        line-height: 1;
+        margin-bottom: 15px;
+        justify-content: center;
+        font-size: 1.5rem;
+        letter-spacing: 0.15em;
+        font-family: $fontFamily_bodoniSans_b;
+        color: $blue;
+      }
+    }
+
+    @at-root .careerRotation--1y .careerRotation__sub__index:before {
+      content:"1st year";
+    }
+    @at-root .careerRotation--2y .careerRotation__sub__index:before {
+      content:"2nd year";
+    }
+    @at-root .careerRotation--3y .careerRotation__sub__index:before {
+      content:"3rd year";
+    }
+    @at-root .careerRotation--4y .careerRotation__sub__index:before {
+      content:"4th year";
+    }
+
+    /////interview
+    &__interviews {
+      display: flex;
+      flex-wrap: wrap;
+
+      @include break(sp){
+        flex-direction: column;
+      }
+    }
+
+    &__interview {
+      width: percentage(520/1100);
+      margin-top: $mSpace;
+      margin-bottom: $sSpace;
+      padding-top: 25px;
+      padding-bottom: 30px;
+      position: relative;
+      border-top: 1px solid $blue_dull;
+
+      @include break(sp) {
+        width: 100%;
+        padding-top: 20px;
+        margin-top: 15px;
+        margin-bottom: 35px;
+        padding-bottom: 0;
+      }
+
+
+      &:nth-child(odd){
+        margin-right: percentage(60/1100);
+
+        @include break(sp) {
+          margin-right: 0;
+        }
+      }
+
+
+      &__name {
+        margin-bottom: 30px;
+        font-size: $small;
+        color: $gray;
+        line-height: 1;
+
+        @include break(sp) {
+          font-size: 10px;
+          flex-direction: column;
+        }
+
+      }
+
+      &__icon img{
+        position: absolute;
+        top: -50px;
+        right: 0;
+        border-radius: 1000000px;
+        box-shadow:-20px 0px 0px 20px #fff;
+
+        @include break(sp) {
+          top: -35px;
+          width: 70px;
+          box-shadow:-10px 0px 0px 10px #fff;
+        }
+
+      }
+    }
+  }
+}
+
+
+//////// 指導医
+
+.supervisors {
+  margin-top: $xlSpace;
+
+  &__index{
+    position: relative;
+    font-size: $xlarge;
+    font-weight: bold;
+    margin-bottom: $lSpace;
+
+    @include break(sp) {
+    }
+    
+    &:before {
+      line-height: 0.75;
+      content: "Interviews";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      font-family: $fontFamily_bodoniSans_b;
+      color: $blue;
+      opacity: 0.3;
+      letter-spacing: 0.05em;
+      z-index: -1;
+      font-size: 13.5rem;
+
+      @include break(sp) {
+        font-size: 4.5rem;
+        line-height: 1;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+
+  &__interviews {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto percentage(15/ 1100) * -1; 
+
+    @include break(sp) {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+  }
+
+  &__interview {
+    width: percentage(200/1100);
+    margin: 15px percentage(15 / 1100); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include break(sp) {
+      width: calc(50% - 30px);
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+
+    &__img {
+      line-height: 0;
+      margin-bottom: 30px;
+      position: relative;
+      cursor: pointer;
+
+      @include break(sp) {
+        margin-bottom: 20px;
+      }
+
+      @include mouseOver() {
+        &:after{
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      &:after {
+        content:"";
+        width: 35px;
+        height: 35px;
+        position: absolute;right: 0;
+        bottom: 0;
+        background: url(../img/careerrotation/icon-modal.svg) center center no-repeat;
+        background-size: 100%;
+        display: block;
+        transition: transition(all,0.35s);
+      }
+    }
+    &__div {
+      text-align: center;
+      margin-bottom: 5px;
+      line-height: 1.3;
+      font-weight: bold;
+    }
+    &__role {
+      line-height: 1;
+      font-weight: bold;
+    }
+
+    &__name {
+      margin-top: 20px;
+      line-height: 1;
+      font-size: $small;
+
+      @include break(sp) {
+        margin-top: 10px;
+      }
+    }
+
+
+    &__article {
+      width: 680px;
+      // height: 600px;
+      // position: fixed;
+      // margin: auto;
+      // top: 0;
+      // right: 0;
+      // bottom: 0;
+      // left: 0;
+      display: none;
+      background-color: #ffffff;
+
+      @include break(sp) {
+        width: 90%;
+      }
+
+      &__index {
+        height: 100px;
+        padding: 20px 20px 20px 130px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        position: relative;
+        color: #ffffff;
+        background-color: $blue_dull;
+
+        @include break(sp) {
+          height: 85px;
+          padding: 10px;
+          justify-content: center;
+        }
+      }
+
+      &__div {
+        font-size: $large;
+        padding-right: 5px;
+
+        @include break(sp) {
+          font-size: 1em;
+        }
+      }
+
+      &__name {
+        @include break(sp) {
+          font-size: $small;
+        }
+      }
+
+      &__img {
+        width: 100px;
+        height: 100px;
+        border-radius: 10000px;
+        position: absolute;
+        left: 20px;
+        bottom: -20px;
+        overflow: hidden;
+
+          @include break(sp) {
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            right: 0;
+            bottom: -50px;
+            left: 0;
+          }
+      }
+
+      &__content {
+        padding: 60px;
+
+        @include break(sp) {
+          padding: 45px 30px 30px;
+        }
+      }
+
+      &__section {
+        &:not(:last-child ){
+          margin-bottom: 25px;
+        }
+
+        &__index {
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  
+}
+
+
+///////// faboncy box
+body {
+  .fancybox-content{
+    padding: 0;
+  }
+
+  .fancybox-bg{
+    background-color: #0f298f;
+  }
+
+  .fancybox-button svg path {
+    fill: #ffffff;
+  }
+
+  .fancybox-slide--html .fancybox-close-small{
+    top: 25px;
+
+    @include break(sp) {
+      padding: 5px;
+      top: -2px;
+    }
+  }
+}

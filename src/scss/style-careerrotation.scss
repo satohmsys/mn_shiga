@@ -57,6 +57,10 @@
     }
 
     > .wrap {
+      @media screen and (min-width: 1919px) {
+        max-width: 80%;
+      }
+
       @include break(sp) {
         padding-right: 0;
         padding-left: 0;
@@ -640,15 +644,10 @@
       margin-left: 15px;
     }
 
-    &__img {
+    > a {
       line-height: 0;
-      margin-bottom: 30px;
       position: relative;
       cursor: pointer;
-
-      @include break(sp) {
-        margin-bottom: 20px;
-      }
 
       @include mouseOver() {
         &:after{
@@ -669,12 +668,19 @@
         transition: transition(all,0.35s);
       }
     }
+    
     &__div {
       text-align: center;
+      margin-top: 30px;
       margin-bottom: 5px;
       line-height: 1.3;
       font-weight: bold;
+
+      @include break(sp) {
+        margin-top: 20px;
+      }
     }
+
     &__role {
       line-height: 1;
       font-weight: bold;
@@ -726,7 +732,7 @@
 
       &__div {
         font-size: $large;
-        padding-right: 5px;
+        padding-right: 12px;
 
         @include break(sp) {
           font-size: 1em;
